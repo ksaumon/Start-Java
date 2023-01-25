@@ -17,6 +17,25 @@ public class VariablesTheme{
         System.out.println("motherboard L");
         boolean screen = true;
         System.out.println("screen true");
+        System.out.println("2 Расчет стоимости товара со скидкой");
+
+        int pen = 100;
+        int book = 200;
+        int sum = pen + book;
+        System.out.println(sum);
+        System.out.println(sum - 267);
+        System.out.println(sum - 33);
+
+        System.out.println("3 Вывод слова JAVA");
         
+        System.out.println("   J   a v     V a  ");
+        System.out.println("   J  a a v   v a  a  ");
+        System.out.println("J  J aaaaa V V  aaaaa ");
+        System.out.println(" JJ a     a V a       a");
+        System.out.println("");
+
+
+
     }
+    
 }
