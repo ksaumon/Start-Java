@@ -1,7 +1,6 @@
 public class VariablesTheme{
 	public static void main(String[] args) {
-        System.out.println("1 Вывод значений переменных на консоль");
-
+        System.out.println("1.Вывод значений переменных на консоль");
         byte numberofcores = 8;
         System.out.println("numberofcores 8");
         short cpufreguency = 3300;
@@ -18,24 +17,22 @@ public class VariablesTheme{
         System.out.println("motherboard L");
         boolean screen = true;
         System.out.println("screen true");
-
-        System.out.println("2 Расчет стоимости товара со скидкой");
-
+        System.out.println("");
+        System.out.println("2.Расчет стоимости товара со скидкой");
         int pen = 100;
         int book = 200;
         int sum = pen + book;
         System.out.println(sum);
         System.out.println(sum - 267);
         System.out.println(sum - 33);
-
+        System.out.println("");
         System.out.println("3 Вывод слова JAVA");
-        
         System.out.println("   J   a v     V a  ");
         System.out.println("   J  a a v   v a  a  ");
         System.out.println("J  J aaaaa V V  aaaaa ");
         System.out.println(" JJ a     a V a       a");
-
-        System.out.println("4 Вывод min и max значений целых числовых типов");
+        System.out.println("");
+        System.out.println("4.Вывод min и max значений целых числовых типов");
         byte max = 127;
         short max1 = 9999;
         int max2 = 999999999;
@@ -52,8 +49,8 @@ public class VariablesTheme{
         System.out.println(max3);
         System.out.println(max3 + 1);
         System.out.println(max3 - 1);
-
-        System.out.println("5 Перестановка значений переменных");
+        System.out.println("");
+        System.out.println("5.Перестановка значений переменных");
         int two = 2;
         int five = 5;
         int c;
@@ -65,11 +62,9 @@ public class VariablesTheme{
         five = c;
         System.out.println("two =" + two);
         System.out.println("five =" + five);
-    
         System.out.println("с помощью арифметических операций");
         System.out.println("two =" + five);
         System.out.println("five =" + two);
-        
         five = two + five;
         two = five - two;
         five = five - two;
@@ -83,8 +78,8 @@ public class VariablesTheme{
         two = two ^ five;
         System.out.println("two =" + two);
         System.out.println("five =" + five);
-
-        System.out.println("6 Вывод символов и их кодов");
+        System.out.println("");
+        System.out.println("6.Вывод символов и их кодов");
         char n = '#';
         char n1 = '&';
         char n2 = '@';
@@ -95,18 +90,39 @@ public class VariablesTheme{
         System.out.println("64 " + n2);
         System.out.println("94 " + n3);
         System.out.println("95 " + n4);
-
-        System.out.println("7 Вывод в консоль ASCII-арт Дюка");
+        System.out.println("");
+        System.out.println("7.Вывод в консоль ASCII-арт Дюка");
         char n47 = '/';
-        char n92 = '\';
+        char n92 = '\\';
         char n40 = '(';
         char n41 = ')';
         char n43 = '_';
-        System.out.println("       " + v92);
-
-
-
+        System.out.println("        " + n47 + n92 + "   ");
+        System.out.println("       " + n47 + "  " + n92 + "    ");
+        System.out.println("      " + n47 + n43 + n40 + " " + n41 + "" + n92 + "   ");
+        System.out.println("     " + n47 + "   " + "   " + n92 + "    ");
+        System.out.println("    " + n47 + n43 + n43 + n43 + n43 + n47 + n92 + n43 + n43 + "" + n92 + " ");
+        System.out.println("");
+        System.out.println("8.Вывод количества сотен, десятков и единиц числа");
+        int N = 123;
+        System.out.println("Число " + N + " содержит");
+        System.out.println(N%1000/100 + " Сотню");
+        System.out.println(N%100/10 + " Десятки"); 
+        System.out.println(N%10 + " Единици");
+        int a = 1;
+        int b = 2;
+        int d = 3;
+        int m = a+b+d;
+        System.out.println("Сумму его цифр = " + m);
+        int j = a*b*d;
+        System.out.println("Произведение = " + j);
+        System.out.println("");
+        System.out.println("9.Вывод времени");
+        int r = 86399;
+        int t = 60;
+        int e = r % t;
+        int h = r / t / 60;
+        System.out.println(h + ":" + e + ":" + e);
     }
-
     
 }
