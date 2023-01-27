@@ -36,14 +36,14 @@ public class IfElseStatementTheme{
     		}
     		System.out.println("");
     		System.out.println("2.Поиск max и min числа");
-    		int a = 12;
-    		int b = 7;
+    		int a = 1;
+    		int b = 12;
     		if(a > b){
     			System.out.println(" a - max" + " b - min");
-    			System.out.println("a не равно b");
+    			
     		}if(a < b){
     			System.out.println(" b - max" + " a - min");
-    			System.out.println("a не равно b");
+    			
     		}if(a==b){
     			System.out.println("a равно b");
     		}else{
