@@ -42,17 +42,17 @@ public class VariablesTheme {
         int max2 = 999999999;
         long max3 = 999999999;
         System.out.println(max);
-        System.out.println(max + 1);
-        System.out.println(max - 1);
+        System.out.println(++ max);
+        System.out.println(-- max);
         System.out.println(max1);
-        System.out.println(max1 + 1);
-        System.out.println(max1 - 1);
+        System.out.println(++ max1);
+        System.out.println(-- max1);
         System.out.println(max2);
-        System.out.println(max2 + 1);
-        System.out.println(max2 - 1);
+        System.out.println(++ max2);
+        System.out.println(-- max2);
         System.out.println(max3);
-        System.out.println(max3 + 1);
-        System.out.println(max3 - 1);
+        System.out.println(++ max3);
+        System.out.println(-- max3);
         System.out.println("");
 
         System.out.println("5.Перестановка значений переменных");
