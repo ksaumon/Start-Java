@@ -3,17 +3,17 @@ public class VariablesTheme {
 
         System.out.println("1.Вывод значений переменных на консоль");
         byte numberOfcores = 8;
-        System.out.println("numberofcores 8");
+        System.out.println("numberOfcores 8");
         short cpuFreguency = 3300;
-        System.out.println("cpufreguency 3300");
+        System.out.println("cpuFreguency 3300");
         int hardDisk = 512;
-        System.out.println("harddisk 512");
+        System.out.println("harDisk 512");
         long systemType = 64;
-        System.out.println("sysnemtype 64");
+        System.out.println("sysnemType 64");
         float ram = 16;
         System.out.println("float 16");
         double videoCard = 5600;
-        System.out.println("videocard 5600");
+        System.out.println("videoCard 5600");
         char motherBoard = 'L';
         System.out.println("motherboard L");
         boolean screen = true;
@@ -116,7 +116,7 @@ public class VariablesTheme {
         System.out.println("Число " + number + " содержит");
         System.out.println(number%1000/100 + " Сотню");
         System.out.println(number%100/10 + " Десятки"); 
-        System.out.println(number%10 + " Единици");
+        System.out.println(number%10 + " Единицы");
         int i1 = 1;
         int j = 2;
         int k = 3;
