@@ -64,7 +64,7 @@ public class VariablesTheme {
         System.out.println("pear =" + pear);
         apple -= pear;
         pear += apple;
-        apple  = pear - apple;
+        apple = pear - apple;
         System.out.println("apple =" + apple);
         System.out.println("pear =" + pear);
         System.out.println("с помощью побитовой операции ^");
