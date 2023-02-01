@@ -129,5 +129,4 @@ public class VariablesTheme {
         int hour = seconds / measure / 60;
         System.out.println(hour + ":" + minutes + ":" + minutes);
     }
-    
 }
