@@ -114,20 +114,20 @@ public class VariablesTheme {
         System.out.println(number%1000/100 + " Сотню");
         System.out.println(number%100/10 + " Десятки"); 
         System.out.println(number%10 + " Единицы");
-        int i1 = 1;
-        int j = 2;
-        int k = 3;
-        int sum_ = i1 + j + k;
+        int hundreds = 1;
+        int dozens = 2;
+        int units = 3;
+        int sum_ = hundreds + dozens + units;
         System.out.println("Сумму его цифр = " + sum_);
-        int mult = i1 * j * k;
+        int mult = hundreds * dozens * units;
         System.out.println("Произведение = " + mult);
 
         System.out.println("\n9.Вывод времени");
-        int r = 86399;
-        int t = 60;
-        int e = r % t;
-        int h = r / t / 60;
-        System.out.println(h + ":" + e + ":" + e);
+        int seconds = 86399;
+        int measure = 60;
+        int minutes = seconds % measure;
+        int hour = seconds / measure / 60;
+        System.out.println(hour + ":" + minutes + ":" + minutes);
     }
     
 }
