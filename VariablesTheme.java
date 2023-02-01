@@ -1,5 +1,5 @@
 public class VariablesTheme {
- public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println("\n1.Вывод значений переменных на консоль");
         byte numberOfcores = 8;
         System.out.println("numberOfcores 8");
@@ -21,11 +21,11 @@ public class VariablesTheme {
         System.out.println("\n2.Расчет стоимости товара со скидкой");
         int pricePen = 100;
         int priceBook = 200;
-        int subGoods = pricePen + priceBook;
-        int discount = subGoods * 11 / 100;
-        System.out.println("Общую стоимость товаров без скидки = " + subGoods);
+        int sumGoods = pricePen + priceBook;
+        int discount = sumGoods * 11 / 100;
+        System.out.println("Общую стоимость товаров без скидки = " + sumGoods);
         System.out.println("Сумма скидки = " + discount);
-        System.out.println("Общую стоимость товаров со скидкой = " + (subGoods - discount));
+        System.out.println("Общая стоимость товаров со скидкой = " + (sumGoods - discount));
 
         System.out.println("\n3 Вывод слова JAVA");
         System.out.println("   J   a v     V a");
@@ -50,11 +50,10 @@ public class VariablesTheme {
         System.out.println("\n5.Перестановка значений переменных");
         int number1 = 2;
         int number2 = 5;
-        int temp;
+        char temp = 2;
         System.out.println("с помощью третьей переменной");
         System.out.println("number1 =" + number1);
         System.out.println("number2 =" + number2);
-        temp = number1;
         number1 = number2;
         number2 = temp;
         System.out.println("number1 =" + number1);
@@ -82,16 +81,11 @@ public class VariablesTheme {
         char at = '@';
         char caret = '^';
         char underscore = '_';
-        int latticeCode = lattice;
-        int endCode = end;
-        int atCode = at;
-        int caretCode = caret;
-        int underscoreCode = underscore;
-        System.out.println(latticeCode + " " + lattice);
-        System.out.println(endCode + " " + end);
-        System.out.println(atCode + " " + at);
-        System.out.println(caretCode + " " + caret);
-        System.out.println(underscoreCode + " " + underscore);
+        System.out.println(35 + " " + lattice);
+        System.out.println(38 + " " + end);
+        System.out.println(64 + " " + at);
+        System.out.println(94 + " " + caret);
+        System.out.println(95 + " " + underscore);
 
         System.out.println("\n7.Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
@@ -102,11 +96,11 @@ public class VariablesTheme {
         System.out.println("        " + slash + backslash);
         System.out.println("       " + slash + "  " + backslash);
         System.out.println("      " + slash + underscore1 + leftParentheses + " " + rightParentheses
-                + "" + backslash);
+                + backslash);
         System.out.println("     " + slash + "   " + "   " + backslash);
         System.out.println("    " + slash + underscore1 + underscore1 + underscore1 + underscore1
                 + slash + backslash + underscore1 + underscore1
-                + "" + backslash);
+                + backslash);
 
         System.out.println("\n8.Вывод количества сотен, десятков и единиц числа");
         int number = 123;
@@ -114,18 +108,17 @@ public class VariablesTheme {
         System.out.println(number / 100 + " Сотню");
         System.out.println(number % 100 / 10 + " Десятки"); 
         System.out.println(number % 10 + " Единицы");
-        int hundreds = 1;
-        int tens = 2;
-        int units = 3;
-        System.out.println("Сумму его цифр = " + (hundreds + tens + units));
-        System.out.println("Произведение = " + hundreds * tens * units);
+        int hundreds = number / 100;
+        int tens = number % 100 / 10;
+        int ones = number % 10;
+        System.out.println("Сумму его цифр = " + (hundreds + tens + ones));
+        System.out.println("Произведение = " + hundreds * tens * ones);
 
         System.out.println("\n9.Вывод времени");
-        int seconds = 86399;
-        int seconds1 = seconds % 60;
-        int hour = seconds / 60;
-        int minutes = hour % 60;
-        hour = hour / 60;
-        System.out.println(hour + ":" + minutes + ":" + seconds1);
+        int srcSeconds = 86399;
+        int hour = srcSeconds / 3600;
+        int minutes = srcSeconds / 60 % 60;
+        int seconds = srcSeconds % 60;
+        System.out.println(hour + ":" + minutes + ":" + seconds);
     }
 }
