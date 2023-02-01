@@ -1,6 +1,6 @@
 public class IfElseStatementTheme {
-	public static void main(String[] args) {
-        System.out.println("\n1.Перевод псевдокода на язык Java");
+ public static void main(String[] args) {
+        System.out.println("1.Перевод псевдокода на язык Java");
         int age = 21;
         if (age > 20) {
         System.out.println("Ты совершеннолетний");
@@ -44,15 +44,15 @@ public class IfElseStatementTheme {
         System.out.println("\n3.Проверка числа");
         int num = 7;
         System.out.println(num);
-        if(num == 0){
+        if(num == 0) {
         System.out.println("Является нулем");
-        }else if(num > 0 && num % 2 == 0){
+        } else if(num > 0 && num % 2 == 0) {
         System.out.println("положительное четное");
-        }else if(num > 0 && num % 2 != 0){
+        } else if(num > 0 && num % 2 != 0) {
         System.out.println("положительное нечетное");	
-        }else if(num < 0 && num % 2 == 0) {
+        } else if(num < 0 && num % 2 == 0) {
         System.out.println("Отрицательное четное");
-        }else if(num < 0 && num % 2 != 0){
+        } else if(num < 0 && num % 2 != 0) {
         System.out.println("отрицательное нечетное");
         }
         
@@ -66,12 +66,44 @@ public class IfElseStatementTheme {
         int dozens1 = second%100/10;
         int units1 = second%10;
         System.out.println(fist + " " + second);
-        if(hundreds1 == hundreds){ 
+        if(hundreds1 == hundreds) { 
         System.out.println(hundreds1 + " " + hundreds + "\nРавны сотни");
-        }if (dozens == dozens1){
+        } if (dozens == dozens1) {
         System.out.println(dozens + " " + dozens1 + "\nРавны десятки");	
-        }if(units == units1){
+        } if(units == units1) {
         System.out.println(units + " " + units1 + "\nРавны единици");
+        }
+
+        System.out.println("\n5.Определение символа по его коду");
+        char recognition = '\u0057';
+        int symbol1 = 92;
+        int symbol2 = 117;
+        int symbol3 = 00;
+        int symbol4 = 57;
+        if( symbol1 == '\\') {
+        System.out.println('\\' + " " + "не буква и не число");
+        } if(symbol2 == 'u') {
+        System.out.println('u' + " " + "маленькая буква");
+        } if(symbol3 == ' ') {
+        System.out.println(' ' + " " + "не буква и не число");
+        } if(symbol4 == '9') {
+        System.out.println('9' + " " + "число");
+        }
+
+        System.out.println("\n6.Подсчет суммы вклада и начисленных банком %");
+        int deposit = 300000;
+        if(deposit < 100000) {
+        System.out.println(deposit + " " + "депозит");
+        System.out.println(deposit / 100 * 5 + " " + "5% годовых");
+        System.out.println(deposit + (deposit / 100 * 5) + " " + "сумма через год");
+        } if(deposit >= 100000 || deposit <= 300000) {
+        System.out.println(deposit + " " + "депозит");
+        System.out.println(deposit / 100 * 7 + " " + "7% годовых");
+        System.out.println(deposit + (deposit / 100 * 7) + " " + "сумма через год");
+        } if(deposit >300000) {
+        System.out.println(deposit + " " + "депозит");
+        System.out.println(deposit / 100 * 10 + " " + "10% годовых");
+        System.out.println(deposit + (deposit / 100 * 10) + " " + "сумма через год");
         }
     }
 }
