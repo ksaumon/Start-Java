@@ -72,8 +72,6 @@ public class IfElseStatementTheme {
         System.out.println(dozens + " " + dozens1 + "\nРавны десятки");	
         }if(units == units1){
         System.out.println(units + " " + units1 + "\nРавны единици");
-        
         }
-
-  }
+    }
 }
