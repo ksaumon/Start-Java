@@ -23,7 +23,7 @@ public class VariablesTheme {
         int priceBook = 200;
         int sumGoods = pricePen + priceBook;
         int discount = sumGoods * 11 / 100;
-        System.out.println("Общую стоимость товаров без скидки = " + sumGoods);
+        System.out.println("Общая стоимость товаров без скидки = " + sumGoods);
         System.out.println("Сумма скидки = " + discount);
         System.out.println("Общая стоимость товаров со скидкой = " + (sumGoods - discount));
 
@@ -50,7 +50,7 @@ public class VariablesTheme {
         System.out.println("\n5.Перестановка значений переменных");
         int number1 = 2;
         int number2 = 5;
-        char temp = 2;
+        int temp = number1;
         System.out.println("с помощью третьей переменной");
         System.out.println("number1 =" + number1);
         System.out.println("number2 =" + number2);
@@ -81,11 +81,11 @@ public class VariablesTheme {
         char at = '@';
         char caret = '^';
         char underscore = '_';
-        System.out.println(35 + " " + lattice);
-        System.out.println(38 + " " + end);
-        System.out.println(64 + " " + at);
-        System.out.println(94 + " " + caret);
-        System.out.println(95 + " " + underscore);
+        System.out.println((int) lattice + " " + lattice);
+        System.out.println((int) end + " " + end);
+        System.out.println((int) at + " " + at);
+        System.out.println((int) caret + " " + caret);
+        System.out.println((int) underscore + " " + underscore);
 
         System.out.println("\n7.Вывод в консоль ASCII-арт Дюка");
         char slash = '/';
@@ -97,20 +97,19 @@ public class VariablesTheme {
         System.out.println("       " + slash + "  " + backslash);
         System.out.println("      " + slash + underscore1 + leftParentheses + " " + rightParentheses
                 + backslash);
-        System.out.println("     " + slash + "   " + "   " + backslash);
+        System.out.println("     " + slash + "      " + backslash);
         System.out.println("    " + slash + underscore1 + underscore1 + underscore1 + underscore1
-                + slash + backslash + underscore1 + underscore1
-                + backslash);
+                + slash + backslash + underscore1 + underscore1+ backslash);
 
         System.out.println("\n8.Вывод количества сотен, десятков и единиц числа");
         int number = 123;
-        System.out.println("Число " + number + " содержит");
-        System.out.println(number / 100 + " Сотню");
-        System.out.println(number % 100 / 10 + " Десятки"); 
-        System.out.println(number % 10 + " Единицы");
         int hundreds = number / 100;
         int tens = number % 100 / 10;
         int ones = number % 10;
+        System.out.println("Число " + number + " содержит");
+        System.out.println(hundreds+ " Сотню");
+        System.out.println(tens + " Десятки"); 
+        System.out.println(ones + " Единицы");
         System.out.println("Сумму его цифр = " + (hundreds + tens + ones));
         System.out.println("Произведение = " + hundreds * tens * ones);
 
