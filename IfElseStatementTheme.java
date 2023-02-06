@@ -28,7 +28,7 @@ public class IfElseStatementTheme {
         } else if(firstNameLetter == 'I') {
             System.out.println("Ты рожден в июле");
         } else {
-            System.out.println("Ты рожден в другие месяцы");
+            System.out.println("Ты рожден в сентябре");
         }
 
         System.out.println("\n2.Поиск max и min числа");
@@ -89,19 +89,15 @@ public class IfElseStatementTheme {
 
         System.out.println("\n5.Определение символа по его коду");
         char recognition = '\u0057';
-        int symbol1 = 92;
-        int symbol2 = 117;
-        int symbol3 = 0;
-        int symbol4 = 57;
-        if( symbol1 == '\\') {
-            System.out.println('\\' + " " + "не буква и не число");
-        } if(symbol2 == 'u') {
-            System.out.println('u' + " " + "маленькая буква");
-        } if(symbol3 == ' ') {
-            System.out.println(' ' + " " + "не буква и не число");
-        } if(symbol4 == '9') {
-            System.out.println('9' + " " + "число");
-        }
+        if(recognition == '\\') {
+            System.out.println(recognition + " " + "не буква и не число");
+        } else if(recognition == 'u') {
+            System.out.println(recognition + " " + "маленькая буква");
+        } else if(recognition == '9') {
+            System.out.println(recognition + " " + "число");
+        } else {
+            System.out.println(recognition + " " + "большая буква");
+	    }
 
         System.out.println("\n6.Подсчет суммы вклада и начисленных банком %");
         int deposit = 300000;
@@ -119,44 +115,36 @@ public class IfElseStatementTheme {
             System.out.println(deposit + (deposit / 100 * 10) + " " + "сумма через год");
         }
 
-        System.out.println("\n 7.Определение оценки по предметам");
+        System.out.println("\n7.Определение оценки по предметам");
         int story = 59;
         int programming = 91;
-        boolean gradeStory2 = (story <= 60);
-        boolean gradeProgramming2 = (programming <= 60);
-        boolean gradeStory3 = (story >= 60 && story <= 73);
-        boolean gradeProgramming3 = (programming >= 60 && programming <= 73);
-        boolean gradeStory4 = (story >= 73 && story <= 91);
-        boolean gradeProgramming4 = (programming >= 73 && programming <= 91);
-        boolean gradeStory5 = (story > 91);
-        boolean gradeProgramming5 = (programming > 91);
         int grade2 = 2;
         int grade3 = 3;
         int grade4 = 4;
         int grade5 = 5;
-        if (gradeStory2) {
+        if (story  <= 60) {
             System.out.println(grade2 + " История");
-        } if(gradeProgramming2) {
-            System.out.println(grade2 + " Программирование");
-        } if(gradeStory3) {
-            System.out.println(grade3 + " История");
-        } if(gradeProgramming3) {
-            System.out.println(grade3 + " Программирование");
-        } if(gradeStory4) {
-            System.out.println(grade4 + " История");
-        } if(gradeProgramming4) {
-            System.out.println(grade4 + " Программирование");
-        } if(gradeStory5) {
-            System.out.println(grade5 + " История");
-        } if(gradeProgramming5) {
-            System.out.println(grade5 + " Программирование");
+            } if(programming <= 60){
+                  System.out.println(grade2 + " Программирование");
+                      } if(story > 60 && story <= 73) {
+                          System.out.println(grade3 + " История");
+                          } if(programming > 60 && programming <= 73){
+                              System.out.println(grade3 + " Программирование");
+                              } if(story > 73 && story <= 91) {
+                                  System.out.println(grade4 + " История");
+                                  } if(programming > 73 && programming <= 91) {
+                                      System.out.println(grade4 + " Программирование");
+                                      } if(story > 91) {
+                                          System.out.println(grade5 + " История");
+                                          } if(programming > 91) {
+                                              System.out.println(grade5 + " Программирование");
         }
         int averageMark = (grade2 + grade4) / 2;
         System.out.println(averageMark + " " + "средний балл оценок по предметам");
         int percent = (story + programming) / 2;
         System.out.println(percent + " " + "средний % по предметам");
 
-        System.out.println("\n 8.Расчет прибыли за год");
+        System.out.println("\n8.Расчет прибыли за год");
         int rentalPrice = 5000;
         int sales = 13000;
         int costPrice = 9000;
@@ -170,7 +158,7 @@ public class IfElseStatementTheme {
             System.out.println("прибыль за год:" + profitYear);
         }
 
-        System.out.println("\n 9.Подсчет количества банкнот");
+        System.out.println("\n9.Подсчет количества банкнот");
         int usd = 567;
         int hundredsUsd = usd / 100;
         int tensUsd = usd % 100 / 10;
@@ -182,17 +170,17 @@ public class IfElseStatementTheme {
         int issuedTens = tensUsd;
         int issuedOnes = onesUsd;
         if(hundredsUsd > atAnAtmHundreds) {
-        issuedhundreds = atAnAtmHundreds;
-        tensUsd += (hundredsUsd - atAnAtmHundreds) * 10;
-        } if(tensUsd > atAnTens) {
-        issuedTens = atAnTens;
-        onesUsd += (tensUsd - atAnTens) * 10;
-        } if(onesUsd > atAnOnes) {
-            System.out.println("банкнот не хватает для выдачи нужной суммы");
-        } else {
-            System.out.println("номиналы банкнот\n" + hundredsUsd + " номиналом сто; "
-                + atAnTens + " номиналом десять; "
-                + onesUsd + " номиналом один." + "\nвыданная сумма " + usd);
+            issuedhundreds = atAnAtmHundreds;
+            tensUsd += (hundredsUsd - atAnAtmHundreds) * 10;
+            } if(tensUsd > atAnTens) {
+                issuedTens = atAnTens;
+                onesUsd += (tensUsd - atAnTens) * 10;
+                } if(onesUsd > atAnOnes) {
+                    System.out.println("банкнот не хватает для выдачи нужной суммы");
+                } else {
+                    System.out.println("номиналы банкнот\n" + hundredsUsd + " номиналом сто; "
+                            + atAnTens + " номиналом десять; "
+                            + onesUsd + " номиналом один." + "\nвыданная сумма " + usd);
         }
     }
 }
