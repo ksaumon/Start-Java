@@ -87,9 +87,8 @@ public class IfElseStatementTheme {
 
         System.out.println("\n5.Определение символа по его коду");
         char someChar = '0';
-       char someChar1 = 's';
         if(someChar >= 'A' || someChar <= 'Z') {
-            System.out.println(someChar1 + " " + "большая буква");
+            System.out.println(someChar + " " + "большая буква");
         } else if((int)someChar > 97 || (int)someChar < 122) {
             System.out.println(someChar + " " + "маленькая буква");
         } else if((int)someChar > 48 || (int)someChar < 57) {
