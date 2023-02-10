@@ -44,7 +44,7 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n3.Проверка числа");
-        int num = 6;
+        int num = 5;
         System.out.println(num);
         if(num == 0) {
             System.out.println("Является нулем");
@@ -52,16 +52,15 @@ public class IfElseStatementTheme {
             System.out.println("нечетное");
         } else {
             System.out.println("четное");
-        }
-        if(num > 0) {
+        } if(num > 0) {
             System.out.println("положительное");
         } else {
             System.out.println("отрицательное");
         }
 
         System.out.println("\n4.Поиск одинаковых цифр в числах");
-        int number1 = 123;
-        int number2 = 323;
+        int number1 = 223;
+        int number2 = 124;
         int hundreds = number1 / 100;
         int tens = number1 % 100 / 10;
         int ones = number1 % 10;
@@ -72,26 +71,21 @@ public class IfElseStatementTheme {
         if(hundreds != hundreds1 && tens != tens1 && ones != ones1) {
             System.out.println("равных цифр нет");
         } else {
-            if(hundreds1 == hundreds & tens == tens1 & ones == ones1) {
-                System.out.println(hundreds1 + " " + hundreds + ";" + tens + " " + tens1
-                        + ";"  + ones + " " + ones1 + "\nравны сотни  равны десятки  равны единицы");
             } if(hundreds1 == hundreds) {
                 System.out.println(hundreds1 + " " + hundreds + "\nравны сотни");
-            } if(ones == ones1) {
-                System.out.println(ones + " " + ones1 + "\nравны единицы");
             } if(tens == tens1) {
                  System.out.println(tens + " " + tens1 + "\nравны десятки ");
+            } if(ones == ones1) {
+                System.out.println(ones + " " + ones1 + "\nравны единицы");
             }
-        }
-        
 
         System.out.println("\n5.Определение символа по его коду");
         char someChar = '0';
         if(someChar >= 'A' || someChar <= 'Z') {
             System.out.println(someChar + " " + "большая буква");
-        } else if(someChar > 'a' || someChar < 'z') {
+        } else if(someChar >= 'a' || someChar <= 'z') {
             System.out.println(someChar + " " + "маленькая буква");
-        } else if((int)someChar > '0' || (int)someChar < '9') {
+        } else if(someChar >= '0' || someChar <= '9') {
             System.out.println(someChar + " " + "число");
         } else{
             System.out.println(someChar + " " + "не буква и не число");
@@ -117,41 +111,31 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n7.Определение оценки по предметам");
-        int story = 59;
-        int programming = 91;
-        int grade2 = 2;
-        int grade3 = 3;
-        int grade4 = 4;
-        int grade5 = 5;
-        int grade = 0;
-        int grade1 = 0;
-        int gradePointAverage1 = (story + programming) / 2;
-        if (story  <= 60) {
-            grade = grade2;
-            System.out.println(grade2 + "история");
-        } if(programming <= 60){
-            grade1 = grade2;
-             System.out.println(grade2 + "программирование");
-        } if(story > 60 & story <= 73) {
-            grade = grade3;
-             System.out.println(grade3 + "история");
-        } if(programming > 60 & programming <= 73){
-            grade1 = grade3;
-             System.out.println(grade3 + "программирование");
-        } if(story > 73 & story <= 91) {
-            grade = grade4;
-             System.out.println(grade4 + "история");
-        } if(programming > 73 & programming <= 91) {
-            grade1 = grade4;
-             System.out.println(grade4 + "программирование");
-        } if(story > 91) {
-            grade = grade5;
-             System.out.println(grade5 + "история");
-        } if(programming > 91) {
-            grade1 = grade5;
-             System.out.println(grade5 + "программирование");
+        int historyPrecentage = 59;
+        int precentageOnProgramming = 91;
+        int gradeHistory = 0;
+        int gradeProgramming = 0;
+        int gradePointAverage1 = (historyPrecentage + precentageOnProgramming) / 2;
+        if (historyPrecentage  <= 60) {
+            gradeHistory = 2;
+        } if(precentageOnProgramming <= 60){
+            gradeProgramming = 2;
+        } if(historyPrecentage > 60 & historyPrecentage <= 73) {
+            gradeHistory = 3;
+        } if(gradeProgramming > 60 & precentageOnProgramming <= 73){
+            gradeProgramming = 3;
+        } if(historyPrecentage > 73 & historyPrecentage <= 91) {
+            gradeHistory = 4;
+        } if(precentageOnProgramming > 73 & precentageOnProgramming <= 91) {
+            gradeProgramming = 4;
+        } if(historyPrecentage > 91) {
+            gradeHistory = 5;
+        } if(precentageOnProgramming > 91) {
+            gradeProgramming = 5;
         }
-        int gradePointAverage = (grade + grade1) / 2;
+        int gradePointAverage = (gradeHistory + gradeProgramming) / 2;
+        System.out.println(gradeHistory + "история");
+         System.out.println(gradeProgramming + "программирование");
         System.out.println(gradePointAverage + " " + "средний бал по предметам");
         System.out.println(gradePointAverage1 + " " + "средний % по предметам");
 
@@ -159,7 +143,7 @@ public class IfElseStatementTheme {
         int rentalPrice = 5000;
         int sales = 13000;
         int costPrice = 9000;
-        int profitYear = ((sales - costPrice) * 12) - (rentalPrice * 12);
+        int profitYear = ((sales - costPrice) - rentalPrice) * 12;
         if(profitYear > 0) {
             System.out.println("прибыль за год: + " + profitYear);
         } else {
