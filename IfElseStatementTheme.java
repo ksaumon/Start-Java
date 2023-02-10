@@ -96,19 +96,23 @@ public class IfElseStatementTheme {
         int annualPercentage5 = (deposit / 100 * 5);
         int annualPercentage7 = (deposit / 100 * 7);
         int annualPercentage10 = (deposit / 100 * 10);
+        int annualProfit = 0;
+        int annualPercentage =0;
         int annualProfit5 = (deposit + annualPercentage5);
         int annualProfit7 = (deposit + annualPercentage7);
         int annualProfit10 = (deposit + annualPercentage10);
         if(deposit < 100000) {
-            System.out.println(deposit + " " + "депозит\n" + annualPercentage5 +
-                 " 5% годовых\n" + annualProfit5 + " " + "сумма через год");
+            annualProfit = annualProfit5;
+            annualPercentage = annualPercentage5;
         } else if(deposit >= 100000 || deposit <= 300000) {
-            System.out.println(deposit + " " + "депозит\n" + annualPercentage7 +
-                 " 7% годовых\n" + annualProfit7 + " " + "сумма через год");
+            annualProfit = annualProfit7;
+            annualPercentage = annualPercentage7;
         } else if(deposit > 300000) {
-            System.out.println(deposit + " " + "депозит\n" + annualPercentage10 +
-                 " 10% годовых\n" + annualProfit10 + " " + "сумма через год");
+            annualProfit = annualProfit10;
+            annualPercentage = annualPercentage10;
         }
+        System.out.println(deposit + " " + "депозит\n" + annualPercentage +
+                 " начисленный %\n" + annualProfit + " " + " итоговую сумму с %");
 
         System.out.println("\n7.Определение оценки по предметам");
         int historyPrecentage = 59;
@@ -134,10 +138,10 @@ public class IfElseStatementTheme {
             gradeProgramming = 5;
         }
         int gradePointAverage = (gradeHistory + gradeProgramming) / 2;
-        System.out.println(gradeHistory + "история");
-         System.out.println(gradeProgramming + "программирование");
-        System.out.println(gradePointAverage + " " + "средний бал по предметам");
-        System.out.println(gradePointAverage1 + " " + "средний % по предметам");
+        System.out.println(gradeHistory + " история");
+         System.out.println(gradeProgramming + " программирование");
+        System.out.println(gradePointAverage + " средний бал по предметам");
+        System.out.println(gradePointAverage1 + " средний % по предметам");
 
         System.out.println("\n8.Расчет прибыли за год");
         int rentalPrice = 5000;
