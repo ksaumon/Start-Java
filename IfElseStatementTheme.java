@@ -52,7 +52,8 @@ public class IfElseStatementTheme {
             System.out.println("нечетное");
         } else {
             System.out.println("четное");
-        } if(num > 0) {
+        }
+        if(num > 0) {
             System.out.println("положительное");
         } else {
             System.out.println("отрицательное");
@@ -73,9 +74,11 @@ public class IfElseStatementTheme {
         } else {
             } if(hundreds1 == hundreds) {
                 System.out.println(hundreds1 + " " + hundreds + "\nравны сотни");
-            } if(tens == tens1) {
+            }
+            if(tens == tens1) {
                  System.out.println(tens + " " + tens1 + "\nравны десятки ");
-            } if(ones == ones1) {
+            }
+            if(ones == ones1) {
                 System.out.println(ones + " " + ones1 + "\nравны единицы");
             }
 
@@ -122,19 +125,26 @@ public class IfElseStatementTheme {
         int gradePointAverage1 = (historyPrecentage + precentageOnProgramming) / 2;
         if (historyPrecentage  <= 60) {
             gradeHistory = 2;
-        } if(precentageOnProgramming <= 60){
+        }
+        if(precentageOnProgramming <= 60){
             gradeProgramming = 2;
-        } if(historyPrecentage > 60 & historyPrecentage <= 73) {
+        }
+        if(historyPrecentage > 60 & historyPrecentage <= 73) {
             gradeHistory = 3;
-        } if(gradeProgramming > 60 & precentageOnProgramming <= 73){
+        }
+        if(gradeProgramming > 60 & precentageOnProgramming <= 73){
             gradeProgramming = 3;
-        } if(historyPrecentage > 73 & historyPrecentage <= 91) {
+        }
+        if(historyPrecentage > 73 & historyPrecentage <= 91) {
             gradeHistory = 4;
-        } if(precentageOnProgramming > 73 & precentageOnProgramming <= 91) {
+        }
+        if(precentageOnProgramming > 73 & precentageOnProgramming <= 91) {
             gradeProgramming = 4;
-        } if(historyPrecentage > 91) {
+        }
+        if(historyPrecentage > 91) {
             gradeHistory = 5;
-        } if(precentageOnProgramming > 91) {
+        }
+        if(precentageOnProgramming > 91) {
             gradeProgramming = 5;
         }
         int gradePointAverage = (gradeHistory + gradeProgramming) / 2;
@@ -168,10 +178,12 @@ public class IfElseStatementTheme {
         if(hundredsUsd > atAnAtmHundreds) {
             issuedhundreds = atAnAtmHundreds;
             tensUsd += (hundredsUsd - atAnAtmHundreds) * 10;
-        } if(tensUsd > atAnTens) {
+        }
+        if(tensUsd > atAnTens) {
                 issuedTens = atAnTens;
                 onesUsd += (tensUsd - atAnTens) * 10;
-        } if(onesUsd > atAnOnes) {
+        }
+        if(onesUsd > atAnOnes) {
                 System.out.println("банкнот не хватает для выдачи нужной суммы");
         } else {
                 System.out.println("номиналы банкнот\n" + hundredsUsd + " номиналом сто; "
