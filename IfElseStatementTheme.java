@@ -89,9 +89,9 @@ public class IfElseStatementTheme {
         char someChar = '0';
         if(someChar >= 'A' || someChar <= 'Z') {
             System.out.println(someChar + " " + "большая буква");
-        } else if((int)someChar > 97 || (int)someChar < 122) {
+        } else if(someChar > 'a' || someChar < 'z') {
             System.out.println(someChar + " " + "маленькая буква");
-        } else if((int)someChar > 48 || (int)someChar < 57) {
+        } else if((int)someChar > '0' || (int)someChar < '9') {
             System.out.println(someChar + " " + "число");
         } else{
             System.out.println(someChar + " " + "не буква и не число");
