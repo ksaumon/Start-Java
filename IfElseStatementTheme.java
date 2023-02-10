@@ -48,19 +48,19 @@ public class IfElseStatementTheme {
         System.out.println(num);
         if(num == 0) {
             System.out.println("Является нулем");
-        } else {
-        if(num % 2 != 0) {
+        } else if(num % 2 != 0) {
             System.out.println("нечетное");
         } else {
             System.out.println("четное");
-        } if(num > 0) {
+        }
+        if(num > 0) {
             System.out.println("положительное");
         } else {
             System.out.println("отрицательное");
         }
-        }
+
         System.out.println("\n4.Поиск одинаковых цифр в числах");
-        int number1 = 323;
+        int number1 = 123;
         int number2 = 323;
         int hundreds = number1 / 100;
         int tens = number1 % 100 / 10;
@@ -72,53 +72,30 @@ public class IfElseStatementTheme {
         if(hundreds != hundreds1 && tens != tens1 && ones != ones1) {
             System.out.println("равных цифр нет");
         } else {
-        if(hundreds1 == hundreds & tens == tens1 & ones == ones1) {
-            System.out.println(hundreds1 + " " + hundreds + ";" + tens + " " + tens1
-                 + ";"  + ones + " " + ones1 + "\nравны сотни  равны десятки  равны единицы");
-        } else if(hundreds1 == hundreds & tens == tens1) {
-            System.out.println(hundreds1 + " " + hundreds + ";" + tens + " " + tens1
-                 + "\nравны сотни  равны десятки");
-        }else if(hundreds1 == hundreds & ones == ones1) {
-            System.out.println(hundreds1 + " " + hundreds + ";" + ones + " "
-                 + ones1 + "\nравны сотни  равны единицы");
-        } else if(tens == tens1 && ones == ones1) {
-            System.out.println(tens + " " + tens1 + ";"  
-                 + ones + " " + ones1 + "\nравны десятки  равны единицы");
-        } else if(tens == tens1) {
-            System.out.println(tens + " " + tens1 + "\nравны десятки");
-        } else if(ones == ones1) {
-            System.out.println(ones + " " + ones1 + "\nравны единицы");
-        } else if(hundreds1 == hundreds) {
-            System.out.println(hundreds1 + " " + hundreds + ";" + "\nравны сотни ");
+            if(hundreds1 == hundreds & tens == tens1 & ones == ones1) {
+                System.out.println(hundreds1 + " " + hundreds + ";" + tens + " " + tens1
+                        + ";"  + ones + " " + ones1 + "\nравны сотни  равны десятки  равны единицы");
+            } if(hundreds1 == hundreds) {
+                System.out.println(hundreds1 + " " + hundreds + "\nравны сотни");
+            } if(ones == ones1) {
+                System.out.println(ones + " " + ones1 + "\nравны единицы");
+            } if(tens == tens1) {
+                 System.out.println(tens + " " + tens1 + "\nравны десятки ");
+            }
         }
-        }
+        
 
         System.out.println("\n5.Определение символа по его коду");
-        char symbolChar = 'a';
-        if(symbolChar == 'Q' || symbolChar == 'W' || symbolChar == 'E' || symbolChar == 'R' ||
-                   symbolChar == 'T' || symbolChar == 'Y' || symbolChar == 'U' ||
-                   symbolChar == 'I' || symbolChar == 'O' || symbolChar == 'P' || symbolChar == 'A' ||
-                   symbolChar == 'S' || symbolChar == 'D' || symbolChar == 'F' || 
-                   symbolChar == 'G' || symbolChar == 'H' || symbolChar == 'J' || 
-                   symbolChar == 'K' || symbolChar == 'L' || symbolChar == 'Z' || symbolChar == 'X' ||
-                   symbolChar == 'C' || symbolChar == 'V' || symbolChar == 'B' || 
-                   symbolChar == 'N' || symbolChar == 'M') {
-            System.out.println(symbolChar + " " + "большая буква");
-        } else if(symbolChar == 'q' || symbolChar == 'w' || symbolChar == 'e' || symbolChar == 'r' ||
-                   symbolChar == 't' || symbolChar == 'y' || symbolChar == 'u' ||
-                   symbolChar == 'i' || symbolChar == 'o' || symbolChar == 'p' || symbolChar == 'a' ||
-                   symbolChar == 's' || symbolChar == 'd' || symbolChar == 'f' || 
-                   symbolChar == 'g' || symbolChar == 'h' || symbolChar == 'j' || 
-                   symbolChar == 'k' || symbolChar == 'l' || symbolChar == 'z' || symbolChar == 'x' ||
-                   symbolChar == 'c' || symbolChar == 'v' || symbolChar == 'b' || 
-                   symbolChar == 'n' || symbolChar == 'm') {
-            System.out.println(symbolChar + " " + "маленькая буква");
-        } else if(symbolChar == '9' || symbolChar == '0' || symbolChar == '1' ||
-                   symbolChar == '2' || symbolChar == '3' || symbolChar == '4' ||
-                   symbolChar == '5' || symbolChar == '6' || symbolChar == '7' || symbolChar == '8') {
-            System.out.println(symbolChar + " " + "число");
+        char someChar = '0';
+       char someChar1 = 's';
+        if(someChar >= 'A' || someChar <= 'Z') {
+            System.out.println(someChar1 + " " + "большая буква");
+        } else if((int)someChar > 97 || (int)someChar < 122) {
+            System.out.println(someChar + " " + "маленькая буква");
+        } else if((int)someChar > 48 || (int)someChar < 57) {
+            System.out.println(someChar + " " + "число");
         } else{
-            System.out.println(symbolChar + " " + "не буква и не число");
+            System.out.println(someChar + " " + "не буква и не число");
         }
 
         System.out.println("\n6.Подсчет суммы вклада и начисленных банком %");
