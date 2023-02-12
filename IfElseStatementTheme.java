@@ -95,59 +95,51 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n6.Подсчет суммы вклада и начисленных банком %");
-        int deposit = 300000;
-        int annualPercentage5 = (deposit / 100 * 5);
-        int annualPercentage7 = (deposit / 100 * 7);
-        int annualPercentage10 = (deposit / 100 * 10);
+        int deposit = 150000;
+        int annualPercentage5 = 5;
+        int annualPercentage7 = 7;
+        int annualPercentage10 = 10;
         int annualProfit = 0;
         int annualPercentage =0;
-        int annualProfit5 = (deposit + annualPercentage5);
-        int annualProfit7 = (deposit + annualPercentage7);
-        int annualProfit10 = (deposit + annualPercentage10);
         if(deposit < 100000) {
-            annualProfit = annualProfit5;
             annualPercentage = annualPercentage5;
         } else if(deposit >= 100000 || deposit <= 300000) {
-            annualProfit = annualProfit7;
             annualPercentage = annualPercentage7;
         } else if(deposit > 300000) {
-            annualProfit = annualProfit10;
             annualPercentage = annualPercentage10;
         }
+        annualPercentage = (deposit / 100 * annualPercentage);
+        annualProfit = (deposit + annualPercentage);
         System.out.println(deposit + " " + "депозит\n" + annualPercentage +
                  " начисленный %\n" + annualProfit + " " + " итоговую сумму с %");
 
         System.out.println("\n7.Определение оценки по предметам");
-        int historyPrecentage = 59;
+        int precentageOnHistory = 59;
         int precentageOnProgramming = 91;
         int gradeHistory = 0;
         int gradeProgramming = 0;
-        int gradePointAverage1 = (historyPrecentage + precentageOnProgramming) / 2;
-        if (historyPrecentage  <= 60) {
+        int gradePointAverage1 = 0;
+        int gradePointAverage = 0;
+        if (precentageOnHistory  <= 60) {
             gradeHistory = 2;
+        } else if(precentageOnHistory > 60 & precentageOnHistory <= 73) {
+            gradeHistory = 3;
+        } else if(precentageOnHistory > 73 & precentageOnHistory <= 91) {
+            gradeHistory = 4;
+        } else if(precentageOnHistory > 91) {
+            gradeHistory = 5;
         }
         if(precentageOnProgramming <= 60){
             gradeProgramming = 2;
-        }
-        if(historyPrecentage > 60 & historyPrecentage <= 73) {
-            gradeHistory = 3;
-        }
-        if(gradeProgramming > 60 & precentageOnProgramming <= 73){
+        } else if(precentageOnProgramming > 60 & precentageOnProgramming <= 73){
             gradeProgramming = 3;
-        }
-        if(historyPrecentage > 73 & historyPrecentage <= 91) {
-            gradeHistory = 4;
-        }
-        if(precentageOnProgramming > 73 & precentageOnProgramming <= 91) {
+        } else if(precentageOnProgramming > 73 & precentageOnProgramming <= 91) {
             gradeProgramming = 4;
-        }
-        if(historyPrecentage > 91) {
-            gradeHistory = 5;
-        }
-        if(precentageOnProgramming > 91) {
+        } else if(precentageOnProgramming > 91) {
             gradeProgramming = 5;
         }
-        int gradePointAverage = (gradeHistory + gradeProgramming) / 2;
+        gradePointAverage1 = (precentageOnHistory + precentageOnProgramming) / 2;
+        gradePointAverage = (gradeHistory + gradeProgramming) / 2;
         System.out.println(gradeHistory + " история");
         System.out.println(gradeProgramming + " программирование");
         System.out.println(gradePointAverage + " средний бал по предметам");
