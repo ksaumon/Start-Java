@@ -83,12 +83,12 @@ public class IfElseStatementTheme {
             }
 
         System.out.println("\n5.Определение символа по его коду");
-        char someChar = '0';
-        if(someChar >= 'A' || someChar <= 'Z') {
+        char someChar = 'a';
+        if(someChar >= 'A' & someChar <= 'Z') {
             System.out.println(someChar + " " + "большая буква");
-        } else if(someChar >= 'a' || someChar <= 'z') {
+        } else if(someChar >= 'a' & someChar <= 'z') {
             System.out.println(someChar + " " + "маленькая буква");
-        } else if(someChar >= '0' || someChar <= '9') {
+        } else if(someChar >= '0' & someChar <= '9') {
             System.out.println(someChar + " " + "число");
         } else{
             System.out.println(someChar + " " + "не буква и не число");
@@ -149,7 +149,7 @@ public class IfElseStatementTheme {
         }
         int gradePointAverage = (gradeHistory + gradeProgramming) / 2;
         System.out.println(gradeHistory + " история");
-         System.out.println(gradeProgramming + " программирование");
+        System.out.println(gradeProgramming + " программирование");
         System.out.println(gradePointAverage + " средний бал по предметам");
         System.out.println(gradePointAverage1 + " средний % по предметам");
 
@@ -180,15 +180,15 @@ public class IfElseStatementTheme {
             tensUsd += (hundredsUsd - atAnAtmHundreds) * 10;
         }
         if(tensUsd > atAnTens) {
-                issuedTens = atAnTens;
-                onesUsd += (tensUsd - atAnTens) * 10;
+            issuedTens = atAnTens;
+            onesUsd += (tensUsd - atAnTens) * 10;
         }
         if(onesUsd > atAnOnes) {
-                System.out.println("банкнот не хватает для выдачи нужной суммы");
+            System.out.println("банкнот не хватает для выдачи нужной суммы");
         } else {
-                System.out.println("номиналы банкнот\n" + hundredsUsd + " номиналом сто; "
-                            + atAnTens + " номиналом десять; "
-                            + onesUsd + " номиналом один." + "\nвыданная сумма " + usd);
+            System.out.println("номиналы банкнот\n" + hundredsUsd + " номиналом сто; "
+                    + atAnTens + " номиналом десять; "
+                    + onesUsd + " номиналом один." + "\nвыданная сумма " + usd);
         }
     }
 }
