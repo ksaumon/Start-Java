@@ -180,6 +180,23 @@ public class  CyclesTheme {
             System.out.println(namber + " число не является счастливым");
         }
 
+        System.out.println("\n 10.Вывод таблицы умножения Пифагора\n");
+        int factor, factor1;
+        System.out.println("   ТАБЛИЦА" + "\t ПИФАГОРА\n");
+        System.out.printf("   |");
+        for(factor = 1 ;factor < 10;factor ++) {
+            System.out.printf(" \t");
+            System.out.printf("\n___|______");
+            System.out.printf("____________________\n");
+            for(factor = 1;factor < 10; factor ++) {
+                System.out.printf("%2d |", factor);
+                for(factor1 = 1;factor1 < 10;factor1 ++) {
+                    System.out.printf("%2d ", factor * factor1);
+                }
+            System.out.printf("\n");
+            }
+        System.out.println();
+        }
     }
 
-  }
+}
