@@ -117,7 +117,7 @@ public class IfElseStatementTheme {
         int precentageOnProgramming = 91;
         int historyGrade = 5;
         int programmingGrade = 5;
-        if (precentageOnHistory  <= 60) {
+        if(precentageOnHistory  <= 60) {
             historyGrade = 2;
         } else if(precentageOnHistory > 60 & precentageOnHistory <= 73) {
             historyGrade = 3;
@@ -163,12 +163,12 @@ public class IfElseStatementTheme {
         if(usd > issuedMax) {
             System.out.println("банкнот не хватает для выдачи нужной суммы");
         } else {
-            if (hundredsUsd > atAnAtmHundreds) {
+            if(hundredsUsd > atAnAtmHundreds) {
                 issuedHundreds = hundredsUsd - atAnAtmHundreds;
                 issuedHundreds = hundredsUsd - issuedHundreds;
                 tensUsd += (hundredsUsd - atAnAtmHundreds) * 10;
             }
-            if (tensUsd > atAnTens) {
+            if(tensUsd > atAnTens) {
                 issuedTens = tensUsd - atAnTens;
                 issuedTens = tensUsd - issuedTens;
                 onesUsd += (tensUsd - issuedTens) * 10;
