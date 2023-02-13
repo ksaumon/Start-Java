@@ -2,7 +2,7 @@ public class IfElseStatementTheme {
     public static void main(String[] args) {
         System.out.println("\n1.Перевод псевдокода на язык Java");
         int age = 21;
-        if (age > 20) {
+        if(age > 20) {
             System.out.println("Ты совершеннолетний");
         } else {
             System.out.println("Ты подросток");
