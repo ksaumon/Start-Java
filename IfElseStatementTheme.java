@@ -99,13 +99,11 @@ public class IfElseStatementTheme {
 
         System.out.println("\n6.Подсчет суммы вклада и начисленных банком %");
         int deposit = 150000;
-        int annualPercentage = 0;
+        int annualPercentage = 10;
         if(deposit < 100000) {
             annualPercentage = 5;
-        } else if(deposit >= 100000 || deposit <= 300000) {
+        } else if(deposit >= 100000 && deposit <= 300000) {
             annualPercentage = 7;
-        } else if(deposit > 300000) {
-            annualPercentage = 10;
         }
         annualPercentage = (deposit / 100 * annualPercentage);
         int annualProfit = (deposit + annualPercentage);
@@ -113,30 +111,30 @@ public class IfElseStatementTheme {
                  " начисленный %\n" + annualProfit + " " + " итоговую сумму с %");
 
         System.out.println("\n7.Определение оценки по предметам");
-        int precentageOnHistory = 59;
-        int precentageOnProgramming = 91;
+        int historyPrecentage = 59;
+        int programmingPrecentage = 91;
         int historyGrade = 5;
         int programmingGrade = 5;
-        if(precentageOnHistory  <= 60) {
+        if(historyPrecentage <= 60) {
             historyGrade = 2;
-        } else if(precentageOnHistory > 60 & precentageOnHistory <= 73) {
+        } else if(historyPrecentage > 60 && historyPrecentage <= 73) {
             historyGrade = 3;
-        } else if(precentageOnHistory > 73 & precentageOnHistory <= 91) {
+        } else if(historyPrecentage > 73 && historyPrecentage <= 91) {
             historyGrade = 4;
         }
-        if(precentageOnProgramming <= 60) {
+        if(programmingPrecentage <= 60) {
             programmingGrade = 2;
-        } else if(precentageOnProgramming > 60 & precentageOnProgramming <= 73) {
+        } else if(programmingPrecentage > 60 && programmingPrecentage <= 73) {
             programmingGrade = 3;
-        } else if(precentageOnProgramming > 73 & precentageOnProgramming <= 91) {
+        } else if(programmingPrecentage > 73 && programmingPrecentage <= 91) {
             programmingGrade = 4;
         }
-        int averageGradePercentage = (precentageOnHistory + precentageOnProgramming) / 2;
+        int averagePercentage = (historyPrecentage + programmingPrecentage) / 2;
         int averageGrade = (historyGrade + programmingGrade) / 2;
         System.out.println(historyGrade + " история");
         System.out.println(programmingGrade + " программирование");
         System.out.println(averageGrade + " средний бал по предметам");
-        System.out.println(averageGradePercentage + " средний % по предметам");
+        System.out.println(averagePercentage + " средний % по предметам");
 
         System.out.println("\n8.Расчет прибыли за год");
         int rentalPrice = 5000;
