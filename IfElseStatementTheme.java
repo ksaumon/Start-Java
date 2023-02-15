@@ -86,12 +86,12 @@ public class IfElseStatementTheme {
         }
 
         System.out.println("\n5.Определение символа по его коду");
-        char someChar = 'a';
-        if(someChar >= 'A' & someChar <= 'Z') {
+        char someChar = 'A';
+        if(someChar >= 'A' && someChar <= 'Z') {
             System.out.println(someChar + " " + "большая буква");
-        } else if(someChar >= 'a' & someChar <= 'z') {
+        } else if(someChar >= 'a' && someChar <= 'z') {
             System.out.println(someChar + " " + "маленькая буква");
-        } else if(someChar >= '0' & someChar <= '9') {
+        } else if(someChar >= '0' && someChar <= '9') {
             System.out.println(someChar + " " + "число");
         } else {
             System.out.println(someChar + " " + "не буква и не число");
