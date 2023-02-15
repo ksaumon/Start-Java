@@ -11,7 +11,7 @@ public class  CyclesTheme {
             } else {
                 oddNumSum += rangeBegin;
             }
-            rangeBegin ++;
+            rangeBegin++;
           } while(rangeBegin <= rangeEnd);
                 System.out.println("в промежутке [-10, 21] сумма четных чисел ="
                         + evenNumSum + " нечетных =" + oddNumSum);
@@ -22,7 +22,7 @@ public class  CyclesTheme {
         int num3 = -1;
         int max = num1;
         int min = num3;
-        for(int num = 10;num >= -1;num --) {
+        for(int num = 10; num >= -1; num--) {
             System.out.print(num + " ");
         }
         System.out.println();
@@ -45,11 +45,11 @@ public class  CyclesTheme {
         int num2_ = 31;
         int num = 1;
         int num_ = (num + 8);
-        for(num = 1;num <= 31;num = num + 2) {
+        for(num = 1; num <= 31; num = num + 2) {
             System.out.printf("%4d", num);
             if(num == num_) {
                 System.out.printf("%n");
-            } else if(num == (num_ + 10)){
+            } else if(num == (num_ + 10)) {
                 System.out.printf("\n");
             } else if(num == num_ + 20) {
                 System.out.printf("\n");
@@ -67,12 +67,12 @@ public class  CyclesTheme {
         int num3_ = 3242592;
         int num_1 = num3_;
         int gua = 0;
-        int odd =0;
+        int odd = 0;
         int even = 0;
         while(num3_ != 0){
             int digit1 = num3_ % 10;
             num3_ = num3_ / 10;
-            if(digit1  ==  2){
+            if(digit1 == 2){
                 gua += 1;
             }
             if(digit1 % 2 == 0) {
@@ -84,10 +84,9 @@ public class  CyclesTheme {
         System.out.println(" число  " + num_1 + " содержит :" + even + " - четных, "
                 + odd + " - нечетных, " + gua + " - количество двоек");
 
-
         System.out.println("\n6.Отображение фигур в консоли\n");
-        for(int star = 0;star < 5;star ++) {
-            for(int ink = 0;ink < 10;ink ++) {
+        for(int star = 0; star < 5; star++) {
+            for(int ink = 0; ink < 10; ink++) {
                 if(ink < 5 - (5 + star)) {
                     System.out.print(" ");
                 } else {
@@ -102,10 +101,10 @@ public class  CyclesTheme {
             int dig = 1;
             while(dig <= lat) {
                 System.out.print(" #");
-                    dig ++;
+                    dig++;
             }
             System.out.println("\n ");
-                lat --;
+                lat--;
         }
         System.out.println("\n");
         int arrow = 0;
@@ -115,7 +114,7 @@ public class  CyclesTheme {
                 int dig = 1;
                 while(dig <= arrow) {
                     System.out.print(" $");
-                        dig ++;
+                        dig++;
            }
                System.out.println("\n ");
                    arrow++;
@@ -124,7 +123,7 @@ public class  CyclesTheme {
                 int dig1 = 2;
                 while(dig1 <= arrow1) {
                     System.out.print(" $");
-                        dig1 ++;
+                        dig1++;
                }
                 System.out.println("\n ");
                     arrow1--;
@@ -134,16 +133,16 @@ public class  CyclesTheme {
         System.out.println("\n7.Отображение ASCII-символов");
         char symbol = 0;
         System.out.println("Dec" + "\tChar");
-        for(int number1 = 1;number1 <= 47;number1 = number1 + 2) {
-            symbol ++;
-            System.out.printf("%3d %8s\n", number1, (symbol ++));
+        for(int number1 = 1; number1 <= 47; number1 = number1 + 2) {
+            symbol++;
+            System.out.printf("%3d %8s\n", number1, (symbol++));
         }
         System.out.println();
         System.out.println("Dec" + "\tChar");
         char symbol1 = 97;
-        for(int number2 = 98;number2 <= 122;number2 = number2 +2){
-            symbol1 ++;
-            System.out.printf("%3d %8s\n", number2, (symbol1 ++));
+        for(int number2 = 98; number2 <= 122; number2 = number2 + 2){
+            symbol1++;
+            System.out.printf("%3d %8s\n", number2, (symbol1++));
         }
 
         System.out.println("\n8.Проверка, является ли число палиндромом");
@@ -154,7 +153,8 @@ public class  CyclesTheme {
             int digit = numX % 10;
             numX1 = numX1 * 10 + digit;
             numX = numX / 10;
-        } if (numX1 == numX2 ) {
+        }
+        if(numX1 == numX2) {
                 System.out.println("Число " + numX2 + " является палиндромом");
         } else {
                 System.out.println("Число " + numX2 + " не является палиндромом");
@@ -170,7 +170,7 @@ public class  CyclesTheme {
         int num_6 = namber / 1 % 10;
         int sumNum = (num_1_ + num_2 + num_3);
         int sumNum1 = (num_4 + num_5 + num_6);
-        if (sumNum == sumNum1) {
+        if(sumNum == sumNum1) {
             System.out.print("Сумма цифр " + num_1_ + "" + num_2 + "" + num_3 + "="
                     + sumNum + "; Сумма цифр " + num_4 + "" + num_5 + "" + num_6 + "=" + sumNum1 + "\n");
             System.out.println(namber + " число является счастливым");
@@ -183,15 +183,15 @@ public class  CyclesTheme {
         System.out.println("\n 10.Вывод таблицы умножения Пифагора\n");
         int factor, factor1;
         System.out.println("    ТАБЛИЦА" + "    ПИФАГОРА\n");
-        System.out.printf("   |");
-        for(factor = 2;factor < 10;factor ++) {
+        System.out.print("   |");
+        for(factor = 2; factor < 10; factor++) {
             System.out.printf("%2d ", factor);
         }
         System.out.printf("\n___|___");
         System.out.printf("____________________\n");
-        for(factor = 2;factor < 10; factor ++) {
+        for(factor = 2; factor < 10; factor++) {
             System.out.printf("%2d |", factor);
-            for(factor1 = 2;factor1 < 10;factor1 ++) {
+            for(factor1 = 2; factor1 < 10; factor1++) {
                 System.out.printf("%2d ", factor * factor1);
             }
         System.out.printf("\n");
