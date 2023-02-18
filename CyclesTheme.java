@@ -27,12 +27,12 @@ public class CyclesTheme {
         } else {
             min = num1;
         }
-        if (num2 > num3 && num2 > num1) {
+        if(num2 > num3 && num2 > num1) {
             max = num2;
         } else {
             min = num2;
         }
-        if (num3 > num2 && num3 > num1) {
+        if(num3 > num2 && num3 > num1) {
             max = num3;
         } else {
             min = num3;
@@ -59,20 +59,17 @@ public class CyclesTheme {
         int crsNum1 = 31;
         int num, quantity;
         int ziro = 0;
-        for (num = 1, quantity = num; num <= crsNum1 && quantity <= 5; num = num + 2 , quantity++) {
-                if (quantity == 5) {
+        for(num = 1, quantity = num; num <= crsNum1 && quantity <= 5; num = num + 2 , quantity++) {
+                if(quantity == 5) {
                     System.out.printf("%4d", num);
                     System.out.println();
                     quantity = 0;
-
                 } else {
                     System.out.printf("%4d", num);
-
                 }
-
-            }for (quantity = quantity; quantity <= 5; quantity++) {
+            }
+            for(quantity = quantity; quantity <= 5; quantity++) {
                 System.out.printf("%4d", ziro);
-            
         }
         System.out.println();
 
@@ -154,7 +151,7 @@ public class CyclesTheme {
         System.out.println();
         System.out.println("Dec" + "\tChar");
         char someChar1 = 97;
-        for(int scrNum5 = 98; scrNum5 <= 122; scrNum5 = scrNum5 + 2){
+        for(int scrNum5 = 98; scrNum5 <= 122; scrNum5 = scrNum5 + 2) {
             someChar1++;
             System.out.printf("%3d %8s\n", scrNum5, (someChar1++));
         }
