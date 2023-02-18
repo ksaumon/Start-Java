@@ -17,83 +17,73 @@ public class CyclesTheme {
                         + sumEvenNums + " нечетных =" + sumOddNums);
 
         System.out.println("\n2.Вывод чисел в интервале (min и max) в порядке убывания");
-       int num1 = 10;
+        int num1 = 10;
         int num2 = 5;
-        int num3 = -1;
-        int max = 0;
-        int min = 0;
-        if(num1 > num2 && num1 > num3) {
+        int num3 = - 1;
+        int max = 10;
+        int min = -1;
+        if(num1 > num2) {
             max = num1;
-        } else {
-            min = num1;
         }
         if(num2 > num3 && num2 > num1) {
             max = num2;
         } else {
             min = num2;
         }
-        if(num3 > num2 && num3 > num1) {
-            max = num3;
-        } else {
+        if(num3 < num2) {
             min = num3;
         }
-        for(int num = max -1; num > min; num--) {
+        for(int num = max; num > min; num--) {
             System.out.print(num + " ");
         }
-        System.out.println();
 
-
-        System.out.println("\n3.Вывод реверсивного числа и суммы его цифр");
+        System.out.println("\n" + "\n3.Вывод реверсивного числа и суммы его цифр");
         int num0 = 1234;
         int sum = 0;
         while(num0 > 0) {
             int digit = num0 % 10;
             sum += digit;
             num0 /= 10;
-            System.out.printf(digit + "");
+            System.out.print(digit + "");
         }
         System.out.println(" исходное число в обратном порядке");
         System.out.println(sum + " сумма его цифр");
 
         System.out.println("\n4.Вывод чисел на консоль в несколько строк");
-        int crsNum1 = 31;
+        int crsNum = 30;
         int num, quantity;
-        int ziro = 0;
-        for(num = 1, quantity = num; num <= crsNum1 && quantity <= 5; num = num + 2 , quantity++) {
-                if(quantity == 5) {
-                    System.out.printf("%4d", num);
-                    System.out.println();
-                    quantity = 0;
-                } else {
-                    System.out.printf("%4d", num);
-                }
+        for (num = 1, quantity = num; num <= crsNum && quantity <= 5; num += 2, quantity++) {
+            System.out.printf("%4d", num);
+            if (quantity == 5) {
+                System.out.printf("\n");
+                quantity = 0;
             }
-            for(quantity = quantity; quantity <= 5; quantity++) {
-                System.out.printf("%4d", ziro);
+        }
+        for (quantity = quantity; quantity <= 5; quantity++) {
+            if (quantity >= 2 ) {
+                System.out.printf("%4d", 0);
+            } else {
+                break;
+            }
         }
         System.out.println();
 
         System.out.println("\n5.Проверка количества двоек на четность/нечетность");
-        int srcNum3 = 3242592;
-        int copyNum3 = srcNum3;
-        int countEven = 0;
-        int countTwo = 0;
-        int countOdd = 0;
-        while(srcNum3 != 0) {
-            int digit1 = srcNum3 % 10;
-            srcNum3 /= 10;
-            if (digit1 % 2 == 0 || digit1 == 2) {
-                countEven += 1;
-                countTwo += 1;
-            } else {
-                countOdd += 1;
+          int srcNum2 = 1242592;
+        int copyNum = srcNum2;
+        int two = 0;
+        while(srcNum2 != 0) {
+            int digit1 = srcNum2 % 10;
+            srcNum2 /= 10;
+            if (digit1 == 2) {
+                two += 1;
             }
         }
-        int two = countTwo;
-        int odd = countOdd;
-        int even = countEven;
-        System.out.println(" число  " + copyNum3 + " содержит :" + even + " - четных, "
-                + odd + " - нечетных, " + two + " - количество двоек");
+        if (two % 2 == 0) {
+            System.out.println("число  " + copyNum + " содержит :" + two + " (четное) - количество двоек");
+        } else {
+            System.out.println("число  " + copyNum + " содержит :" + two + " (нечетное) - количество двоек");
+        }
 
         System.out.println("\n6.Отображение фигур в консоли\n");
         for(int star = 0; star < 5; star++) {
