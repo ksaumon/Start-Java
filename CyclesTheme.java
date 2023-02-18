@@ -69,12 +69,12 @@ public class CyclesTheme {
         System.out.println();
 
         System.out.println("\n5.Проверка количества двоек на четность/нечетность");
-          int srcNum2 = 1242592;
-        int copyNum = srcNum2;
+          int srcNum1 = 1242592;
+        int copyNum = srcNum1;
         int two = 0;
-        while(srcNum2 != 0) {
-            int digit1 = srcNum2 % 10;
-            srcNum2 /= 10;
+        while(srcNum1 != 0) {
+            int digit1 = srcNum1 % 10;
+            srcNum1 /= 10;
             if (digit1 == 2) {
                 two += 1;
             }
@@ -134,16 +134,16 @@ public class CyclesTheme {
         System.out.println("\n7.Отображение ASCII-символов");
         char someChar = 0;
         System.out.println("Dec" + "\tChar");
-        for(int scrNum4 = 1; scrNum4 <= 47; scrNum4 = scrNum4 + 2) {
+        for(int scrNum2 = 1; scrNum2 <= 47; scrNum2 = scrNum2 + 2) {
             someChar++;
-            System.out.printf("%3d %8s\n", scrNum4, (someChar++));
+            System.out.printf("%3d %8s\n", scrNum2, (someChar++));
         }
         System.out.println();
         System.out.println("Dec" + "\tChar");
         char someChar1 = 97;
-        for(int scrNum5 = 98; scrNum5 <= 122; scrNum5 = scrNum5 + 2) {
+        for(int scrNum3 = 98; scrNum3 <= 122; scrNum3 = scrNum3 + 2) {
             someChar1++;
-            System.out.printf("%3d %8s\n", scrNum5, (someChar1++));
+            System.out.printf("%3d %8s\n", scrNum3, (someChar1++));
         }
 
         System.out.println("\n8.Проверка, является ли число палиндромом");
@@ -162,23 +162,23 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9.Определение, является ли число счастливым");
-        int scrNum6 = 123321;
-        int numHappy1 = scrNum6 / 100000;
-        int numHappy2 = scrNum6 / 10000 % 10;
-        int numHappy3 = scrNum6 / 1000 % 10;
-        int numHappy4 = scrNum6 / 100 % 10;
-        int numHappy5 = scrNum6 / 10 % 10;
-        int numHappy6 = scrNum6 / 1 % 10;
-        int sumNum = (numHappy1 + numHappy2 + numHappy3);
-        int sumNum1 = (numHappy4 + numHappy5 + numHappy6);
+        int scrNum4 = 123321;
+        int numHappy = scrNum4 / 100000;
+        int numHappy1 = scrNum4 / 10000 % 10;
+        int numHappy2 = scrNum4 / 1000 % 10;
+        int numHappy3 = scrNum4 / 100 % 10;
+        int numHappy4 = scrNum4 / 10 % 10;
+        int numHappy5 = scrNum4 / 1 % 10;
+        int sumNum = (numHappy + numHappy1 + numHappy2);
+        int sumNum1 = (numHappy3 + numHappy4 + numHappy5);
         if(sumNum == sumNum1) {
-            System.out.print("Сумма цифр " + numHappy1 + "" + numHappy2 + "" + numHappy3 + "="
-                    + sumNum + "; Сумма цифр " + numHappy4 + "" + numHappy5 + "" + numHappy6 + "=" + sumNum1 + "\n");
-            System.out.println(scrNum6 + " число является счастливым");
+            System.out.print("Сумма цифр " + numHappy + "" + numHappy1 + "" + numHappy2 + "="
+                    + sumNum + "; Сумма цифр " + numHappy3 + "" + numHappy4 + "" + numHappy5 + "=" + sumNum1 + "\n");
+            System.out.println(scrNum4 + " число является счастливым");
         } else {
-            System.out.print("Сумма цифр " + numHappy1 + "" + numHappy2 + "" + numHappy3 + "="
-                    + sumNum + "; Сумма цифр " + numHappy4 + "" + numHappy5 + "" + numHappy6 + "=" + sumNum1 + "\n");
-            System.out.println(scrNum6 + " число не является счастливым");
+            System.out.print("Сумма цифр " + numHappy + "" + numHappy1 + "" + numHappy2 + "="
+                    + sumNum + "; Сумма цифр " + numHappy3 + "" + numHappy4 + "" + numHappy5 + "=" + sumNum1 + "\n");
+            System.out.println(scrNum4 + " число не является счастливым");
         }
 
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
