@@ -20,11 +20,11 @@ public class CyclesTheme {
         int num = 10;
         int num1 = 5;
         int num2 = -1;
-        int max = num--;
-        int min = num2 + 1; // при использовании сокращении в виде ++ 0 не выводиться
+        int max = num - 1;
+        int min = num2;
         if(num1 > num2 && num1 > num) {
             max = num1;
-        } else {
+        } else if(num1 < num2 && num1 < num){
             min = num1;
         }
         for(int num3 = max; num3 > min; num3--) {
