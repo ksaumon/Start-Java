@@ -3,7 +3,7 @@ public class CyclesTheme {
         System.out.println("\n1.Подсчет суммы четных и нечетных чисел");
         int sumEvenNums = 0;
         int sumOddNums = 0;
-        int rangeBegin = - 10;
+        int rangeBegin = -10;
         int rangeEnd = 21;
         do {
             if(rangeBegin % 2 == 0) {
@@ -12,138 +12,126 @@ public class CyclesTheme {
                 sumOddNums += rangeBegin;
             }
             rangeBegin++;
-          } while(rangeBegin <= rangeEnd);
-                System.out.println("в промежутке [-10, 21] сумма четных чисел ="
-                        + sumEvenNums + " нечетных =" + sumOddNums);
+        } while(rangeBegin <= rangeEnd);
+        System.out.println("в промежутке [-10, 21] сумма четных чисел = "
+                + sumEvenNums + " нечетных = " + sumOddNums);
 
         System.out.println("\n2.Вывод чисел в интервале (min и max) в порядке убывания");
-        int num1 = 10;
-        int num2 = 5;
-        int num3 = - 1;
-        int max = 10;
-        int min = -1;
-        if(num1 > num2) {
+        int num = 10;
+        int num1 = 5;
+        int num2 = -1;
+        int max = num--;
+        int min = num2 + 1; // при использовании сокращении в виде ++ 0 не выводиться
+        if(num1 > num2 && num1 > num) {
             max = num1;
-        }
-        if(num2 > num3 && num2 > num1) {
-            max = num2;
         } else {
-            min = num2;
+            min = num1;
         }
-        if(num3 < num2) {
-            min = num3;
-        }
-        for(int num = max; num > min; num--) {
-            System.out.print(num + " ");
+        for(int num3 = max; num3 > min; num3--) {
+            System.out.print(num3 + " ");
         }
 
         System.out.println("\n" + "\n3.Вывод реверсивного числа и суммы его цифр");
-        int num0 = 1234;
+        int num4 = 1234;
         int sum = 0;
-        while(num0 > 0) {
-            int digit = num0 % 10;
+        while(num4 > 0) {
+            int digit = num4 % 10;
             sum += digit;
-            num0 /= 10;
+            num4 /= 10;
             System.out.print(digit + "");
         }
         System.out.println(" исходное число в обратном порядке");
         System.out.println(sum + " сумма его цифр");
 
         System.out.println("\n4.Вывод чисел на консоль в несколько строк");
-        int crsNum = 30;
-        int num, quantity;
-        for (num = 1, quantity = num; num <= crsNum && quantity <= 5; num += 2, quantity++) {
-            System.out.printf("%4d", num);
-            if (quantity == 5) {
-                System.out.printf("\n");
-                quantity = 0;
+        int srcNum = 24;
+        int count = 0;
+        for(int i = 1; i < srcNum; i += 2) {
+            System.out.printf("%4d", i);
+            count++;
+            while(count == 5) {
+                System.out.println("");
+                count = 0;
             }
         }
-        for (quantity = quantity; quantity <= 5; quantity++) {
-            if (quantity >= 2 ) {
-                System.out.printf("%4d", 0);
-            } else {
-                break;
-            }
+        for(int i = count; i < 5; i++) {
+            System.out.printf("%4d", 0);
         }
-        System.out.println();
 
-        System.out.println("\n5.Проверка количества двоек на четность/нечетность");
-          int srcNum1 = 1242592;
-        int copyNum = srcNum1;
-        int two = 0;
-        while(srcNum1 != 0) {
-            int digit1 = srcNum1 % 10;
+        System.out.println("\n" + "\n5.Проверка количества двоек на четность/нечетность");
+        int srcNum1 = 1242592;
+        int copyNum1 = srcNum1;
+        int countTwos = 0;
+        while(srcNum1 > 0) {
+            int digit = srcNum1 % 10;
             srcNum1 /= 10;
-            if (digit1 == 2) {
-                two += 1;
+            if (digit == 2) {
+                countTwos ++;
             }
         }
-        if (two % 2 == 0) {
-            System.out.println("число  " + copyNum + " содержит :" + two + " (четное) - количество двоек");
+        if (countTwos % 2 == 0) {
+            System.out.println("число  " + copyNum1 + " содержит :" + countTwos + " (четное) - количество двоек");
         } else {
-            System.out.println("число  " + copyNum + " содержит :" + two + " (нечетное) - количество двоек");
+            System.out.println("число  " + copyNum1 + " содержит :" + countTwos + " (нечетное) - количество двоек");
         }
 
         System.out.println("\n6.Отображение фигур в консоли\n");
-        for(int star = 0; star < 5; star++) {
-            for(int space = 0; space < 10; space++) {
-                if(space < 5 - (5 + star)) {
+        for(int i = 0; i < 5; i++) {
+            for(int j = 0; j < 10; j++) {
+                if(j < 5 - (5 + i)) {
                     System.out.print(" ");
                 } else {
-                System.out.print("*");
+                    System.out.print("*");
                 }
             }
             System.out.println("\n");
         }
-            System.out.println("\n");
-            int lattice = 5;
+        System.out.println();
+        int lattice = 5;
         while(lattice >= 1) {
-            int dig = 1;
-            while(dig <= lattice) {
+            int digit = 1;
+            while(digit <= lattice) {
                 System.out.print(" #");
-                    dig++;
+                digit++;
             }
             System.out.println("\n ");
-                lattice--;
+            lattice--;
         }
-        System.out.println("\n");
         int dollar = 0;
         int dollar1 = 3;
         do {
             while(dollar <= 3) {
-                int dig = 1;
-                while(dig <= dollar) {
+                int digit = 1;
+                while(digit <= dollar) {
                     System.out.print(" $");
-                        dig++;
-           }
-               System.out.println("\n ");
-                   dollar++;
-           }
-            while(dollar1 >= 1) {
-                int dig1 = 2;
-                while(dig1 <= dollar1) {
-                    System.out.print(" $");
-                        dig1++;
-               }
+                    digit++;
+                }
                 System.out.println("\n ");
-                    dollar1--;
-           }
-           } while(dollar == 3);
+                dollar++;
+            }
+            while(dollar1 >= 1) {
+                int digit = 2;
+                while(digit <= dollar1) {
+                    System.out.print(" $");
+                    digit++;
+                }
+                System.out.println("\n ");
+                dollar1--;
+            }
+        } while(dollar == 3);
 
         System.out.println("\n7.Отображение ASCII-символов");
         char someChar = 0;
         System.out.println("Dec" + "\tChar");
-        for(int scrNum2 = 1; scrNum2 <= 47; scrNum2 = scrNum2 + 2) {
+        for(int srcNum2 = 1; srcNum2 <= 47; srcNum2 = srcNum2 + 2) {
             someChar++;
-            System.out.printf("%3d %8s\n", scrNum2, (someChar++));
+            System.out.printf("%3d %8s\n", srcNum2, (someChar++));
         }
-        System.out.println();
-        System.out.println("Dec" + "\tChar");
+        System.out.println("\n" + "Dec" + "\tChar");
         char someChar1 = 97;
-        for(int scrNum3 = 98; scrNum3 <= 122; scrNum3 = scrNum3 + 2) {
+        for(int srcNum3 = 98; srcNum3 <= 122; srcNum3 = srcNum3 + 2) {
             someChar1++;
-            System.out.printf("%3d %8s\n", scrNum3, (someChar1++));
+            System.out.printf("%3d %8s\n", srcNum3, (someChar1++));
         }
 
         System.out.println("\n8.Проверка, является ли число палиндромом");
@@ -162,38 +150,38 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9.Определение, является ли число счастливым");
-        int scrNum4 = 123321;
-        int numHappy = scrNum4 / 100000;
-        int numHappy1 = scrNum4 / 10000 % 10;
-        int numHappy2 = scrNum4 / 1000 % 10;
-        int numHappy3 = scrNum4 / 100 % 10;
-        int numHappy4 = scrNum4 / 10 % 10;
-        int numHappy5 = scrNum4 / 1 % 10;
+        int srcNum4 = 123321;
+        int numHappy = srcNum4 / 100000;
+        int numHappy1 = srcNum4 / 10000 % 10;
+        int numHappy2 = srcNum4 / 1000 % 10;
+        int numHappy3 = srcNum4 / 100 % 10;
+        int numHappy4 = srcNum4 / 10 % 10;
+        int numHappy5 = srcNum4 / 1 % 10;
         int sumNum = (numHappy + numHappy1 + numHappy2);
         int sumNum1 = (numHappy3 + numHappy4 + numHappy5);
         if(sumNum == sumNum1) {
-            System.out.print("Сумма цифр " + numHappy + "" + numHappy1 + "" + numHappy2 + "="
-                    + sumNum + "; Сумма цифр " + numHappy3 + "" + numHappy4 + "" + numHappy5 + "=" + sumNum1 + "\n");
-            System.out.println(scrNum4 + " число является счастливым");
+            System.out.print("Сумма цифр " + numHappy + "" + numHappy1 + "" + numHappy2 + " = "
+                    + sumNum + "; Сумма цифр " + numHappy3 + "" + numHappy4 + "" + numHappy5 + " = " + sumNum1 + "\n");
+            System.out.println(srcNum4 + " число является счастливым");
         } else {
-            System.out.print("Сумма цифр " + numHappy + "" + numHappy1 + "" + numHappy2 + "="
-                    + sumNum + "; Сумма цифр " + numHappy3 + "" + numHappy4 + "" + numHappy5 + "=" + sumNum1 + "\n");
-            System.out.println(scrNum4 + " число не является счастливым");
+            System.out.print("Сумма цифр " + numHappy + "" + numHappy1 + "" + numHappy2 + " = "
+                    + sumNum + "; Сумма цифр " + numHappy3 + "" + numHappy4 + "" + numHappy5 + " = " + sumNum1 + "\n");
+            System.out.println(srcNum4 + " число не является счастливым");
         }
 
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
-        int factor, factor1;
+        int i, j;
         System.out.println("    ТАБЛИЦА" + "    ПИФАГОРА\n");
         System.out.print("   |");
-        for(factor = 2; factor < 10; factor++) {
-            System.out.printf("%2d ", factor);
+        for(i = 2; i < 10; i++) {
+            System.out.printf("%2d ", i);
         }
         System.out.printf("\n___|___");
         System.out.printf("____________________\n");
-        for(factor = 2; factor < 10; factor++) {
-            System.out.printf("%2d |", factor);
-            for(factor1 = 2; factor1 < 10; factor1++) {
-                System.out.printf("%2d ", factor * factor1);
+        for(i = 2; i < 10; i++) {
+            System.out.printf("%2d |", i);
+            for(j = 2; j < 10; j++) {
+                System.out.printf("%2d ", i * j);
             }
         System.out.printf("\n");
         }
