@@ -135,18 +135,18 @@ public class CyclesTheme {
         }
 
         System.out.println("\n8.Проверка, является ли число палиндромом");
-        int numX = 1234321;
-        int numX1 = 0;
-        int numX2 = numX;
-        while(numX != 0) {
-            int digit = numX % 10;
-            numX1 = numX1 * 10 + digit;
-            numX = numX / 10;
+        int num5 = 1234321;
+        int num6 = 0;
+        int num7 = num5;
+        while(num5 != 0) {
+            int digit = num5 % 10;
+            num6 = num6 * 10 + digit;
+            num5 = num5 / 10;
         }
-        if(numX1 == numX2) {
-                System.out.println("Число " + numX2 + " является палиндромом");
+        if(num6 == num7) {
+                System.out.println("Число " + num7 + " является палиндромом");
         } else {
-                System.out.println("Число " + numX2 + " не является палиндромом");
+                System.out.println("Число " + num7 + " не является палиндромом");
         }
 
         System.out.println("\n9.Определение, является ли число счастливым");
