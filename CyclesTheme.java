@@ -20,7 +20,7 @@ public class CyclesTheme {
         int num = 10;
         int num1 = 5;
         int num2 = -1;
-        int max = num - 1;
+        int max = --num;
         int min = num2;
         if(num1 > num2 && num1 > num) {
             max = num1;
@@ -120,7 +120,7 @@ public class CyclesTheme {
             }
         } while(dollar == 3);
 
-        System.out.println("\n7.Отображение ASCII-символов");
+        System.out.println("7.Отображение ASCII-символов");
         char someChar = 0;
         System.out.println("Dec" + "\tChar");
         for(int srcNum2 = 1; srcNum2 <= 47; srcNum2 = srcNum2 + 2) {
