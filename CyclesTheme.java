@@ -156,7 +156,7 @@ public class CyclesTheme {
         int digitThousands = 0;
         int digitTensThousands = 0;
         int digitOnesHundredThousands = 0;
-        for (int i = num7; i > 0; i /= 10) {
+        for(int i = num7; i > 0; i /= 10) {
             int digit = i % 10;
             if(i == num7) {
                 digitOnes = digit;
@@ -172,20 +172,19 @@ public class CyclesTheme {
                 digitOnesHundredThousands = digit;
             }
         }
-            int sumNum = (digitOnes + digitTens + digitHundreds);
-            int sumNum1 = (digitThousands + digitTensThousands + digitOnesHundredThousands);
-            if(sumNum == sumNum1) {
-                System.out.print("Сумма цифр " + digitOnes + "" + digitTens + "" + digitHundreds + " = "
-                        + sumNum + "; Сумма цифр " + digitThousands + "" + digitTensThousands + ""
-                        + digitOnesHundredThousands + " = " + sumNum1 + "\n");
-                System.out.println(num7 + " число является счастливым");
-            } else {
-                System.out.print("Сумма цифр " + digitOnes + "" + digitTens + "" + digitHundreds + " = "
-                        + sumNum + "; Сумма цифр " + digitThousands + "" + digitTensThousands + ""
-                        + digitOnesHundredThousands + " = " + sumNum1 + "\n");
-                System.out.println(num7 + " число не является счастливым");
-            }
-
+        int sumNum = (digitOnes + digitTens + digitHundreds);
+        int sumNum1 = (digitThousands + digitTensThousands + digitOnesHundredThousands);
+        if(sumNum == sumNum1) {
+            System.out.print("Сумма цифр " + digitOnes + "" + digitTens + "" + digitHundreds + " = "
+                    + sumNum + "; Сумма цифр " + digitThousands + "" + digitTensThousands + ""
+                    + digitOnesHundredThousands + " = " + sumNum1 + "\n");
+            System.out.println(num7 + " число является счастливым");
+        } else {
+            System.out.print("Сумма цифр " + digitOnes + "" + digitTens + "" + digitHundreds + " = "
+                    + sumNum + "; Сумма цифр " + digitThousands + "" + digitTensThousands + ""
+                    + digitOnesHundredThousands + " = " + sumNum1 + "\n");
+            System.out.println(num7 + " число не является счастливым");
+        }
 
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
         System.out.println("    ТАБЛИЦА" + "    ПИФАГОРА\n");
