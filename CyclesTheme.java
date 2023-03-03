@@ -122,6 +122,30 @@ public class CyclesTheme {
             countLines--;
         } while(countColumns <= countLines);
         System.out.println();
+        // int countLines = 5;
+        //int countColumns = 0;
+        //do {
+            //countColumns++;
+            //do {
+                //System.out.print("$");
+                //countColumns++;
+                //if (countColumns+3==countLines) {
+                    //System.out.println();
+                    //countColumns++;
+                //}else if(countColumns==countLines) {
+                    //System.out.println();
+                    //countColumns++;
+                //}
+            //}while (countColumns <countLines);
+            //if (countColumns==countLines){
+                //countColumns++;
+            //}
+            //countColumns=0;
+            //countLines--;
+            //if (countLines==2){
+                //countLines--;
+            //}
+        //} while(countColumns <countLines);
 
         System.out.println("\n7.Отображение ASCII-символов");
          System.out.println("Dec" + "\tChar");
@@ -135,14 +159,14 @@ public class CyclesTheme {
 
         System.out.println("\n8.Проверка, является ли число палиндромом");
         int num6 = 1234321;
-        int countNum = 0;
+        int reverseNum6 = 0;
         int copyNum6 = num6;
         while(num6 != 0) {
             int digit = num6 % 10;
-            countNum = countNum * 10 + digit;
+            reverseNum6 = reverseNum6 * 10 + digit;
             num6 /= 10;
         }
-        if(countNum == copyNum6) {
+        if(reverseNum6 == copyNum6) {
             System.out.println("Число " + copyNum6 + " является палиндромом");
         } else {
             System.out.println("Число " + copyNum6 + " не является палиндромом");
