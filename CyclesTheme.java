@@ -209,6 +209,48 @@ public class CyclesTheme {
                     + digitOnesHundredThousands + " = " + sumNum1 + "\n");
             System.out.println(num7 + " число не является счастливым");
         }
+        //int num7 = 123321;
+        //int digit1 = 0;
+        //int digit2 = 0;
+        //int digit3 = 0;
+        //int digit4 = 0;
+        //int digit5 = 0;
+        //int digit6 = 0;
+        //int sum = 0;
+        //int sum1 = 0;
+        //for(int i = num7; i > 0; i /= 10) {
+            //int digit = i % 10;
+            //if (i == num7) {
+                //digit1 = digit;
+            //} else if (i == num7 / 10) {
+                //digit2 = digit;
+            //} else if (i == num7 / 100) {
+                //digit3 = digit;
+            //} else if (i == num7 / 1000) {
+                //digit4 = digit;
+            //} else if (i == num7 / 10000) {
+                //digit5 = digit;
+            //} else if (i == num7 / 100000) {
+                //digit6 = digit;
+            //}
+        //}
+        //sum = (digit1 + digit2 + digit3);
+        //sum1 = (digit4 + digit5 + digit6);
+        //if (sum != sum1){
+                //System.out.println(num7 + " число не является счастливым");
+        //} else {
+            //if(sum == sum1) {
+                //System.out.print("Сумма цифр " + digit1 + "" + digit2 + "" + digit3 + " = "
+                        //+ sum + "; Сумма цифр " + digit4 + "" + digit5 + ""
+                        //+ digit6 + " = " + sum1 + "\n");
+                //System.out.println(num7 + " число является счастливым");
+            //} else {
+                //System.out.print("Сумма цифр " + digit1 + "" + digit2 + "" + digit3 + " = "
+                        //+ sum + "; Сумма цифр " + digit4 + "" + digit5 + ""
+                        //+ digit6 + " = " + sum1 + "\n");
+                //System.out.println(num7 + " число не является счастливым");
+            //}
+        //}
 
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
         System.out.println("    ТАБЛИЦА" + "    ПИФАГОРА\n");
