@@ -141,24 +141,24 @@ public class CyclesTheme {
 
         System.out.println("\n9.Определение, является ли число счастливым");
         int num7 = 123321;
-        int digit2 = num7 / 1000;
-        int digit3 = num7 % 1000;
+        int digit = num7 / 1000;
+        int digit1 = num7 % 1000;
         int sumNum = 0;
         int sumNum1 = 0;
-        for(int i = digit2; i > 0; i /= 10) {
-            int digit = i % 10;
-            sumNum += digit;
+        for(int i = digit; i > 0; i /= 10) {
+            int digit2 = i % 10;
+            sumNum += digit2;
         }
-        for(int i = digit3; i > 0; i /= 10) {
-            int digit1 = i % 10;
-            sumNum1 += digit1;
+        for(int i = digit1; i > 0; i /= 10) {
+            int digit3 = i % 10;
+            sumNum1 += digit3;
         }
         if(sumNum != sumNum1) {
             System.out.println(num7 + " число не является счастливым");
         } else {
             if(sumNum == sumNum1) {
-                System.out.print("Сумма цифр " + digit2 + " = "
-                        + sumNum + "; Сумма цифр " + digit3 + " = " + sumNum1 + "\n");
+                System.out.print("Сумма цифр " + digit + " = "
+                        + sumNum + "; Сумма цифр " + digit1 + " = " + sumNum1 + "\n");
                 System.out.println(num7 + " число является счастливым");
             }
         }
