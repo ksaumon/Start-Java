@@ -103,49 +103,16 @@ public class CyclesTheme {
         } while(countColumns < countLines);
         System.out.println();
 
-        countLines = 14;
-        countColumns = 0;
-         do {
-            System.out.print("$");
-            countColumns++;
-            if(countColumns == 1) {
-                System.out.println();
-            } else if(countColumns == 3) {
-                System.out.println();
-            } else if (countColumns == 6) {
-                System.out.println();
-            } else if (countColumns == 8) {
-                System.out.println();
-                countColumns=6;
-                countLines= 8;
-            }
-            countLines--;
-        } while(countColumns <= countLines);
-        System.out.println();
-        // int countLines = 5;
-        //int countColumns = 0;
-        //do {
-            //countColumns++;
-            //do {
-                //System.out.print("$");
-                //countColumns++;
-                //if (countColumns+3==countLines) {
-                    //System.out.println();
-                    //countColumns++;
-                //}else if(countColumns==countLines) {
-                    //System.out.println();
-                    //countColumns++;
-                //}
-            //}while (countColumns <countLines);
-            //if (countColumns==countLines){
-                //countColumns++;
-            //}
-            //countColumns=0;
-            //countLines--;
-            //if (countLines==2){
-                //countLines--;
-            //}
-        //} while(countColumns <countLines);
+        countLines = 1;
+        do {
+            countColumns = 1;
+            do {
+                System.out.print("$");
+                countColumns++;
+            } while(countColumns <= countLines && countColumns <= 6 - countLines);
+            System.out.println();
+            countLines++;
+        } while(countLines <= 5);
 
         System.out.println("\n7.Отображение ASCII-символов");
          System.out.println("Dec" + "\tChar");
@@ -173,84 +140,28 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9.Определение, является ли число счастливым");
-        int num7 = 423321;
-        int digitOnes = 0;
-        int digitTens = 0;
-        int digitHundreds = 0;
-        int digitThousands = 0;
-        int digitTensThousands = 0;
-        int digitOnesHundredThousands = 0;
-        for(int i = num7; i > 0; i /= 10) {
+        int num7 = 123321;
+        int digit2 = num7 / 1000;
+        int digit3 = num7 % 1000;
+        int sumNum = 0;
+        int sumNum1 = 0;
+        for(int i = digit2; i > 0; i /= 10) {
             int digit = i % 10;
-            if(i == num7) {
-                digitOnes = digit;
-            } else if(i == num7 / 10) {
-                digitTens = digit;
-            } else if(i == num7 / 100) {
-                digitHundreds = digit;
-            } else if(i == num7 / 1000) {
-                digitThousands = digit;
-            } else if(i == num7 / 10000) {
-                digitTensThousands = digit;
-            } else if(i == num7 / 100000) {
-                digitOnesHundredThousands = digit;
+            sumNum += digit;
+        }
+        for(int i = digit3; i > 0; i /= 10) {
+            int digit1 = i % 10;
+            sumNum1 += digit1;
+        }
+        if(sumNum != sumNum1) {
+            System.out.println(num7 + " число не является счастливым");
+        } else {
+            if(sumNum == sumNum1) {
+                System.out.print("Сумма цифр " + digit2 + " = "
+                        + sumNum + "; Сумма цифр " + digit3 + " = " + sumNum1 + "\n");
+                System.out.println(num7 + " число является счастливым");
             }
         }
-        int sumNum = (digitOnes + digitTens + digitHundreds);
-        int sumNum1 = (digitThousands + digitTensThousands + digitOnesHundredThousands);
-        if(sumNum == sumNum1) {
-            System.out.print("Сумма цифр " + digitOnes + "" + digitTens + "" + digitHundreds + " = "
-                    + sumNum + "; Сумма цифр " + digitThousands + "" + digitTensThousands + ""
-                    + digitOnesHundredThousands + " = " + sumNum1 + "\n");
-            System.out.println(num7 + " число является счастливым");
-        } else {
-            System.out.print("Сумма цифр " + digitOnes + "" + digitTens + "" + digitHundreds + " = "
-                    + sumNum + "; Сумма цифр " + digitThousands + "" + digitTensThousands + ""
-                    + digitOnesHundredThousands + " = " + sumNum1 + "\n");
-            System.out.println(num7 + " число не является счастливым");
-        }
-        //int num7 = 123321;
-        //int digit1 = 0;
-        //int digit2 = 0;
-        //int digit3 = 0;
-        //int digit4 = 0;
-        //int digit5 = 0;
-        //int digit6 = 0;
-        //int sum = 0;
-        //int sum1 = 0;
-        //for(int i = num7; i > 0; i /= 10) {
-            //int digit = i % 10;
-            //if (i == num7) {
-                //digit1 = digit;
-            //} else if (i == num7 / 10) {
-                //digit2 = digit;
-            //} else if (i == num7 / 100) {
-                //digit3 = digit;
-            //} else if (i == num7 / 1000) {
-                //digit4 = digit;
-            //} else if (i == num7 / 10000) {
-                //digit5 = digit;
-            //} else if (i == num7 / 100000) {
-                //digit6 = digit;
-            //}
-        //}
-        //sum = (digit1 + digit2 + digit3);
-        //sum1 = (digit4 + digit5 + digit6);
-        //if (sum != sum1){
-                //System.out.println(num7 + " число не является счастливым");
-        //} else {
-            //if(sum == sum1) {
-                //System.out.print("Сумма цифр " + digit1 + "" + digit2 + "" + digit3 + " = "
-                        //+ sum + "; Сумма цифр " + digit4 + "" + digit5 + ""
-                        //+ digit6 + " = " + sum1 + "\n");
-                //System.out.println(num7 + " число является счастливым");
-            //} else {
-                //System.out.print("Сумма цифр " + digit1 + "" + digit2 + "" + digit3 + " = "
-                        //+ sum + "; Сумма цифр " + digit4 + "" + digit5 + ""
-                        //+ digit6 + " = " + sum1 + "\n");
-                //System.out.println(num7 + " число не является счастливым");
-            //}
-        //}
 
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
         System.out.println("    ТАБЛИЦА" + "    ПИФАГОРА\n");
