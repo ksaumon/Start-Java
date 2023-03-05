@@ -26,7 +26,7 @@ public class CyclesTheme {
             max = num1;
         }
         if(num > max) {
-             max = num;
+            max = num;
         }
         if(num2 < min) {
             min = num2;
@@ -141,39 +141,36 @@ public class CyclesTheme {
 
         System.out.println("\n9.Определение, является ли число счастливым");
         int num7 = 123321;
-        int digit = num7 / 1000;
-        int digit1 = num7 % 1000;
-        int sumNum = 0;
-        int sumNum1 = 0;
-        for(int i = digit; i > 0; i /= 10) {
-            int digit2 = i % 10;
-            sumNum += digit2;
+        int leftHalfNum7 = num7 / 1000;
+        int rightHalfNum7 = num7 % 1000;
+        int sumLeftHalf = 0;
+        int sumRightHalf = 0;
+        int i,j;
+        for(i = leftHalfNum7, j = rightHalfNum7; i > 0 & j > 0; j /= 10, i /=10) {
+            int digit = i % 10;
+            sumLeftHalf += digit;
+            int digit1 = j % 10;
+            sumRightHalf += digit1;
         }
-        for(int i = digit1; i > 0; i /= 10) {
-            int digit3 = i % 10;
-            sumNum1 += digit3;
-        }
-        if(sumNum != sumNum1) {
+        if(sumLeftHalf != sumRightHalf) {
             System.out.println(num7 + " число не является счастливым");
         } else {
-            if(sumNum == sumNum1) {
-                System.out.print("Сумма цифр " + digit + " = "
-                        + sumNum + "; Сумма цифр " + digit1 + " = " + sumNum1 + "\n");
-                System.out.println(num7 + " число является счастливым");
-            }
+            System.out.print("Сумма цифр " + leftHalfNum7 + " = "
+                    + sumLeftHalf + "; Сумма цифр " + rightHalfNum7 + " = " + sumRightHalf + "\n");
+            System.out.println(num7 + " число является счастливым");
         }
 
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
         System.out.println("    ТАБЛИЦА" + "    ПИФАГОРА\n");
         System.out.print("   |");
-        for(int i = 2; i < 10; i++) {
+        for(i = 2; i < 10; i++) {
             System.out.printf("%2d ", i);
         }
         System.out.printf("\n___|___");
         System.out.printf("____________________\n");
-        for(int i = 2; i < 10; i++) {
+        for(i = 2; i < 10; i++) {
             System.out.printf("%2d |", i);
-            for(int j = 2; j < 10; j++) {
+            for(j = 2; j < 10; j++) {
                 System.out.printf("%2d ", i * j);
             }
             System.out.println();
