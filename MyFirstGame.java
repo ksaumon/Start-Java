@@ -19,7 +19,7 @@ public class MyFirstGame {
                     System.out.println("число " + playerNumber + " меньше того, что загадал компьютер.");
                     playerNumber = playerNumber + 2;
                 }
-            } while (playerNumber != unknownNumber);
+            } while(playerNumber != unknownNumber);
             System.out.println("число " + playerNumber + " загадал компьютер. \nВы победили!");
         }
     }
