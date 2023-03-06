@@ -140,21 +140,21 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9.Определение, является ли число счастливым");
-         int num7 = 123321;
+        int num7 = 423321;
         int leftHalfNum7 = num7 / 1000;
         int rightHalfNum7 = num7 % 1000;
         int sumLeftHalf = 0;
         int sumRightHalf = 0;
-        int j = rightHalfNum7;
+        int copyRightHalfNum7 = rightHalfNum7;
         for(int i = leftHalfNum7; i > 0; i /=10) {
             int digit = i % 10;
             sumLeftHalf += digit;
-            int digit1 = j%10;
+            int digit1 = copyRightHalfNum7 % 10;
             sumRightHalf += digit1;
-            if (j == rightHalfNum7 ) {
-                j = rightHalfNum7 /10;
-            } else if(j == rightHalfNum7 / 10) {
-                j = rightHalfNum7 / 100;
+            if(copyRightHalfNum7 == rightHalfNum7 ) {
+                copyRightHalfNum7 = rightHalfNum7 / 10;
+            } else if(copyRightHalfNum7 == rightHalfNum7 / 10) {
+                copyRightHalfNum7 = rightHalfNum7 / 100;
             }
         }
         if(sumLeftHalf != sumRightHalf) {
@@ -168,14 +168,14 @@ public class CyclesTheme {
         System.out.println("\n10.Вывод таблицы умножения Пифагора\n");
         System.out.println("    ТАБЛИЦА" + "    ПИФАГОРА\n");
         System.out.print("   |");
-        for(i = 2; i < 10; i++) {
+        for(int i = 2; i < 10; i++) {
             System.out.printf("%2d ", i);
         }
         System.out.printf("\n___|___");
         System.out.printf("____________________\n");
-        for(i = 2; i < 10; i++) {
+        for(int i = 2; i < 10; i++) {
             System.out.printf("%2d |", i);
-            for(j = 2; j < 10; j++) {
+            for(int j = 2; j < 10; j++) {
                 System.out.printf("%2d ", i * j);
             }
             System.out.println();
