@@ -140,17 +140,22 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9.Определение, является ли число счастливым");
-        int num7 = 123321;
+         int num7 = 123321;
         int leftHalfNum7 = num7 / 1000;
         int rightHalfNum7 = num7 % 1000;
         int sumLeftHalf = 0;
         int sumRightHalf = 0;
-        int i,j;
-        for(i = leftHalfNum7, j = rightHalfNum7; i > 0 & j > 0; j /= 10, i /=10) {
+        int j = rightHalfNum7;
+        for(int i = leftHalfNum7; i > 0; i /=10) {
             int digit = i % 10;
             sumLeftHalf += digit;
-            int digit1 = j % 10;
+            int digit1 = j%10;
             sumRightHalf += digit1;
+            if (j == rightHalfNum7 ) {
+                j = rightHalfNum7 /10;
+            } else if(j == rightHalfNum7 / 10) {
+                j = rightHalfNum7 / 100;
+            }
         }
         if(sumLeftHalf != sumRightHalf) {
             System.out.println(num7 + " число не является счастливым");
