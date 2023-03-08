@@ -1,6 +1,6 @@
 public class Calculator {
     public static void main(String[] args) {
-         int num = 50;
+        int num = 50;
         int num1 = 5;
         char sign = '%';
         int result = 0;
