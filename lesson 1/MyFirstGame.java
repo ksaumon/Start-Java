@@ -4,7 +4,7 @@ public class MyFirstGame {
         int playerNumber = 100;
         int startRange = 1;
         int endRange = 100;
-        if (playerNumber < startRange || playerNumber > endRange
+        if(playerNumber < startRange || playerNumber > endRange
                     || unknownNumber < startRange || unknownNumber > endRange) {
             System.out.println("Число не входит в полуинтервал ( 0 - 100]");
         } else {
