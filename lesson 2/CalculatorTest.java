@@ -17,11 +17,6 @@ public class CalculatorTest {
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]:");
                 word = scanner.nextLine();
-                if(word.equals("no")) {
-                    break;
-                } else if(!(word.equals("no")) && !(word.equals("yes"))) {
-                    System.out.println("Вы ввели недопустимое значение.");
-                }
             } while(!(word.equals("no")) && !(word.equals("yes")));
         } while(word.equals("yes"));
     }
