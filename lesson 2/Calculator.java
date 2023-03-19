@@ -3,9 +3,6 @@ public class Calculator {
     private int num1;
     private char sign;
     private int result;
-    private String word;
-    private String word1;
-    private String word2;
 
     public int getNum() {
         return num;
@@ -39,31 +36,7 @@ public class Calculator {
         this.result = result;
     }
 
-    public String getWord() {
-        return word;
-    }
-
-    public void setWord(String word) {
-        this.word = word;
-    }
-
-    public String getWord1() {
-        return word1;
-    }
-
-    public void setWord1(String word1) {
-        this.word1 = word1;
-    }
-
-    public String getWord2() {
-        return word2;
-    }
-
-    public void setWord2(String word2) {
-        this.word2 = word2;
-    }
-
-    public void signDefinition() {
+    public void definitionSign() {
         switch (sign) {
             case '+':
                 result = num + num1;
