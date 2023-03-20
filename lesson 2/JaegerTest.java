@@ -54,6 +54,7 @@ public class JaegerTest {
         }
     }
 }
+
 class Jaeger1 {
     private String modelName;
     private String mark;
@@ -141,8 +142,8 @@ class Jaeger2 {
     int armor;
     int numberPilots;
 
-    public Jaeger2( String modelName, String mark, float height, float weight,
-                    int strength, int armor, int numberPilots ) {
+    public Jaeger2(String modelName, String mark, float height, float weight,
+                           int strength, int armor, int numberPilots ) {
         this.modelName = modelName;
         this.mark = mark;
         this.height = height;
