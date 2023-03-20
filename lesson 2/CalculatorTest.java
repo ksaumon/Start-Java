@@ -12,7 +12,7 @@ public class CalculatorTest {
             calculator.setSign(scanner.next().charAt(0));
             System.out.print("Введите второе число:");
             calculator.setNum1(scanner.nextInt());
-            calculator.definitionSign();
+            calculator. calculate();
             scanner.nextLine();
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]:");
