@@ -1,7 +1,6 @@
 public class Jaeger {
     private String modelName;
     private String mark;
-    private String origin;
     private float height;
     private float weight;
     private int strength;
@@ -22,14 +21,6 @@ public class Jaeger {
 
     public void setMark(String mark) {
         this.mark = mark;
-    }
-
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(String origin) {
-        this.origin = origin;
     }
 
     public float getHeight() {
