@@ -168,5 +168,4 @@ class Jaeger2 {
     public void attack() {
         System.out.println("damage");
     }
-
 }
