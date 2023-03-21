@@ -54,7 +54,7 @@ class Jaeger1 {
         return modelName;
     }
 
-    public void setModelName( String modelName ) {
+    public void setModelName(String modelName) {
         this.modelName = modelName;
     }
 
@@ -62,7 +62,7 @@ class Jaeger1 {
         return mark;
     }
 
-    public void setMark( String mark ) {
+    public void setMark(String mark) {
         this.mark = mark;
     }
 
@@ -70,7 +70,7 @@ class Jaeger1 {
         return height;
     }
 
-    public void setHeight( float height ) {
+    public void setHeight(float height) {
         this.height = height;
     }
 
@@ -78,7 +78,7 @@ class Jaeger1 {
         return weight;
     }
 
-    public void setWeight( float weight ) {
+    public void setWeight(float weight) {
         this.weight = weight;
     }
 
@@ -86,7 +86,7 @@ class Jaeger1 {
         return strength;
     }
 
-    public void setStrength( int strength ) {
+    public void setStrength(int strength) {
         this.strength = strength;
     }
 
@@ -94,7 +94,7 @@ class Jaeger1 {
         return armor;
     }
 
-    public void setArmor( int armor ) {
+    public void setArmor(int armor) {
         this.armor = armor;
     }
 
@@ -102,7 +102,7 @@ class Jaeger1 {
         return numberPilots;
     }
 
-    public void setNumberPilots( int numberPilots ) {
+    public void setNumberPilots(int numberPilots) {
         this.numberPilots = numberPilots;
     }
 
@@ -129,7 +129,7 @@ class Jaeger2 {
     int numberPilots;
 
     public Jaeger2(String modelName, String mark, float height, float weight,
-                           int strength, int armor, int numberPilots ) {
+                           int strength, int armor, int numberPilots) {
         this.modelName = modelName;
         this.mark = mark;
         this.height = height;
