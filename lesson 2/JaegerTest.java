@@ -31,27 +31,13 @@ public class JaegerTest {
         jaeger2.attack();
         jaeger2.block();
         System.out.println("Схожие характеристики роботов :");
-        if(jaeger1.getModelName() == jaeger2.modelName) {
-            System.out.println("Названия робота ");
-        }
-        if(jaeger1.getMark() == jaeger2.mark) {
-            System.out.println("Модель ");
-        }
-        if(jaeger1.getHeight() == jaeger2.height) {
-            System.out.println("Высота ");
-        }
-        if(jaeger1.getWeight() == jaeger2.weight) {
-            System.out.println("Вес ");
-        }
-        if(jaeger1.getStrength() == jaeger2.strength) {
-            System.out.println("Сила ");
-        }
-        if(jaeger1.getArmor() == jaeger2.armor) {
-            System.out.println("Броня ");
-        }
-        if(jaeger1.getNumberPilots() == jaeger2.numberPilots) {
-            System.out.println("Количество пилотов ");
-        }
+        System.out.println("Сила ");
+        System.out.println("Броня ");
+        System.out.println("Количество пилотов ");
+        System.out.println("Схожие действия роботов :");
+        jaeger2.move();
+        System.out.println(jaeger2.drift());
+        jaeger2.attack();
     }
 }
 
