@@ -1,4 +1,4 @@
- class GuessNumber {
+public class GuessNumber {
     private int startRange = 1;
     private int endRange = 100;
     private int unknownNumber;

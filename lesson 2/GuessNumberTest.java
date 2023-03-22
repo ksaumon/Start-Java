@@ -14,11 +14,11 @@ public class GuessNumberTest {
             Player player2 = new Player(scanner.nextLine());
             guessNumber.setUnknownNumber(rand.nextInt(100) + 1);
             do {
-            System.out.print("Введите число:");
-            guessNumber.setPlayerNumber(scanner.nextInt());
-            guessNumber.draw();
-            scanner.nextLine();
-            }while (guessNumber.getPlayerNumber() != guessNumber.getUnknownNumber());
+                System.out.print("Введите число:");
+                guessNumber.setPlayerNumber(scanner.nextInt());
+                guessNumber.draw();
+                scanner.nextLine();
+            } while (guessNumber.getPlayerNumber() != guessNumber.getUnknownNumber());
             System.out.println("число " + guessNumber.getPlayerNumber() + " загадал компьютер. \nВы победили!");
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]:");
