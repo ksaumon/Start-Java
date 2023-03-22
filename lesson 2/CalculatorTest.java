@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class CalculatorTest {
     public static void main(String[] args) {
-        String word;
+        String actionChoice;
         Calculator calculator = new Calculator();
         Scanner scanner = new Scanner(System.in);
         do {
@@ -12,12 +12,12 @@ public class CalculatorTest {
             calculator.setSign(scanner.next().charAt(0));
             System.out.print("Введите второе число:");
             calculator.setNum1(scanner.nextInt());
-            calculator. calculate();
+            calculator.calculate();
             scanner.nextLine();
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]:");
-                word = scanner.nextLine();
-            } while(!(word.equals("no")) && !(word.equals("yes")));
-        } while(word.equals("yes"));
+                actionChoice = scanner.nextLine();
+            } while(!(actionChoice.equals("no")) && !(actionChoice.equals("yes")));
+        } while(actionChoice.equals("yes"));
     }
 }

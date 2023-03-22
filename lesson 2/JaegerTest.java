@@ -18,6 +18,7 @@ public class JaegerTest {
         jaeger.move();
         System.out.println(jaeger.drift());
         jaeger.attack();
+
         Jaeger jaeger1 = new Jaeger("Crimson Typhoon", "Mark-4", 250, 1722, 8, 6, 3);
         System.out.println("Название робота " + jaeger1.getModelName());
         System.out.println("Модель " + jaeger1.getMark());

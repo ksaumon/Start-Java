@@ -9,6 +9,17 @@ public class Jaeger {
 
     public Jaeger() {}
 
+    public Jaeger(String modelName, String mark, float height, float weight,
+            int strength, int armor, int numberPilots) {
+        this.modelName = modelName;
+        this.mark = mark;
+        this.height = height;
+        this.weight = weight;
+        this.strength = strength;
+        this.armor = armor;
+        this.numberPilots = numberPilots;
+    }
+
     public String getModelName() {
         return modelName;
     }
@@ -79,16 +90,5 @@ public class Jaeger {
 
     public void block() {
         System.out.println("block damage");
-    }
-
-    public Jaeger(String modelName, String mark, float height, float weight,
-                           int strength, int armor, int numberPilots) {
-        this.modelName = modelName;
-        this.mark = mark;
-        this.height = height;
-        this.weight = weight;
-        this.strength = strength;
-        this.armor = armor;
-        this.numberPilots = numberPilots;
     }
 }

@@ -16,7 +16,7 @@ public class Calculator {
         this.sign = sign;
     }
 
-    public void  calculate() {
+    public void calculate() {
         switch (sign) {
             case '+':
                 result = num + num1;
