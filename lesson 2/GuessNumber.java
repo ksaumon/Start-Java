@@ -2,23 +2,16 @@ public class GuessNumber {
     private int startRange = 1;
     private int endRange = 100;
     private int unknownNumber;
-    private int playerNumber;
-    Player playerName1;
-    Player playerName2;
+    Player player = new Player();
+    String Player1;
+    String Player2;
 
-    public GuessNumber() {}
-
-    public GuessNumber(Player playerName1, Player playerName2){
-        this.playerName1 = playerName1;
-        this.playerName2 = playerName2;
+    {
+        Player1 = player.getPlayerName1();
     }
 
-    public int getPlayerNumber() {
-        return playerNumber;
-    }
-
-    public void setPlayerNumber(int playerNumber) {
-        this.playerNumber = playerNumber;
+    {
+        Player2 = player.getPlayerName2();
     }
 
     public int getUnknownNumber() {
@@ -29,20 +22,21 @@ public class GuessNumber {
         this.unknownNumber = unknownNumber;
     }
 
-    public void draw() {
-        if(playerNumber < startRange || playerNumber > endRange){
+    public void start() {
+        if(((player.getPlayerNumber1() < startRange) || (player.getPlayerNumber2() < startRange))
+                || ((player.getPlayerNumber1() > endRange) || (player.getPlayerNumber2() > endRange))) {
             System.out.println("Число не входит в полуинтервал ( 0 - 100]");
         } else {
             do {
-                if(playerNumber > unknownNumber) {
-                    System.out.println("число " + playerNumber + " больше того, что загадал компьютер.");
+                if((player.getPlayerNumber1() > unknownNumber) || (player.getPlayerNumber2() > unknownNumber)) {
+                    System.out.println("число " + player.getPlayerNumber1() + "" + player.getPlayerNumber2()  + " больше того, что загадал компьютер.");
                     break;
                 }
-                if(playerNumber < unknownNumber) {
-                    System.out.println("число " + playerNumber + " меньше того, что загадал компьютер.");
+                if((player.getPlayerNumber1() < unknownNumber) || (player.getPlayerNumber2() < unknownNumber)) {
+                    System.out.println("число " + player.getPlayerNumber1() + "" + player.getPlayerNumber2() + " меньше того, что загадал компьютер.");
                     break;
                 }
-            } while(playerNumber != unknownNumber);
+            } while((player.getPlayerNumber1() != unknownNumber) || (player.getPlayerNumber2() != unknownNumber));
         }
     }
  }
