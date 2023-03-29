@@ -23,7 +23,7 @@ public class GuessNumberTest {
                 player2.setPlayerNumber2(scanner.nextInt());
                 guessNumber.start();
                 scanner.nextLine();
-            } while (player1.getPlayerNumber1() != guessNumber.getUnknownNumber()
+            } while(player1.getPlayerNumber1() != guessNumber.getUnknownNumber()
                     || player2.getPlayerNumber2() != guessNumber.getUnknownNumber());
                 System.out.println("число " + guessNumber.getUnknownNumber() + " загадал компьютер. \nВы победили!");
             do {
