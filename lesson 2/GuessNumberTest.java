@@ -3,26 +3,23 @@ import java.util.Scanner;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
-        int unknownNumber;
-        String actionChoice;
-        String player;
+        String option;
         Random rand = new Random();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите имя игрок 1:");
-        player = scanner.nextLine();
-        Player player1 = new Player(player);
+        String name = scanner.nextLine();
+        Player player1 = new Player(name);
         System.out.print("Введите имя игрок 2:");
-        player = scanner.nextLine();
-        Player player2 = new Player(player);
+        name = scanner.nextLine();
+        Player player2 = new Player(name);
         do {
-            unknownNumber = rand.nextInt(100) + 1;
-            GuessNumber guessNumber = new GuessNumber(player1, player2, unknownNumber, scanner);
+            GuessNumber guessNumber = new GuessNumber(player1, player2, rand, scanner);
             guessNumber.start();
             scanner.nextLine();
             do {
                 System.out.print("Хотите продолжить игру? [yes/no]:");
-                actionChoice = scanner.nextLine();
-            } while(!actionChoice.equals("no") && !actionChoice.equals("yes"));
-        } while(actionChoice.equals("yes"));
+                option = scanner.nextLine();
+            } while(!option.equals("no") && !option.equals("yes"));
+        } while(option.equals("yes"));
     }
 }
