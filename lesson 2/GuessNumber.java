@@ -18,10 +18,10 @@ public class GuessNumber {
 
     public void start() {
         int unknownNumber = rand.nextInt(100) + 1;
-        determinateWinner(unknownNumber);
+        defineWinner(unknownNumber);
     }
 
-    public void determinateWinner(int unknownNumber) {
+    public void defineWinner(int unknownNumber) {
         do {
             System.out.print("Введите число игрок 1:");
             player1.setNumber(scanner.nextInt());
