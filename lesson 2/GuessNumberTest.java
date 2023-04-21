@@ -3,10 +3,10 @@ import java.util.Scanner;
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Введите имя игрок 1:");
+        System.out.print("Игрок 1, введите имя: ");
         String name = scanner.nextLine();
         Player player1 = new Player(name);
-        System.out.print("Введите имя игрок 2:");
+        System.out.print("Игрок 2, введите имя: ");
         name = scanner.nextLine();
         Player player2 = new Player(name);
         String option;
