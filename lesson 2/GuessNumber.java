@@ -18,9 +18,7 @@ public class GuessNumber {
 
     public void start() {
         int unknownNumber = rand.nextInt(100) + 1;
-        do {
         defineWinner(unknownNumber);
-        } while(player1.getNumber() == player2.getNumber());
     }
 
     public void defineWinner(int unknownNumber) {
@@ -30,14 +28,16 @@ public class GuessNumber {
             if(player1.getNumber() < startRange || player1.getNumber() > endRange) {
                 System.out.println(player1.getNumber() + "Число не входит в полуинтервал ( 0 - 100]");
             } else {
-                if(player1.getNumber() > unknownNumber) {
-                    System.out.println("число " + player1.getNumber() + " больше того, что загадал компьютер.");
-                } else if(player1.getNumber() < unknownNumber) {
-                    System.out.println("число " + player1.getNumber() + " меньше того, что загадал компьютер.");
-                } else if(player1.getNumber() == unknownNumber) {
+                if(player1.getNumber() == unknownNumber) {
                     System.out.println("число " + unknownNumber +
                             " загадал компьютер. Игрок " + player1.getName() + " вы победили!");
                     break;
+                }
+                if(player1.getNumber() > unknownNumber) {
+                    System.out.println("число " + player1.getNumber() + " больше того, что загадал компьютер.");
+                }
+                if(player1.getNumber() < unknownNumber) {
+                    System.out.println("число " + player1.getNumber() + " меньше того, что загадал компьютер.");
                 }
             }
             System.out.print("Игрок " + player2.getName() + ", введите число: ");
@@ -45,16 +45,18 @@ public class GuessNumber {
             if(player2.getNumber() < startRange || player2.getNumber() > endRange) {
                 System.out.println(player2.getNumber() + "Число не входит в полуинтервал ( 0 - 100]");
             } else {
-                if(player2.getNumber() < unknownNumber) {
-                    System.out.println("число " + player2.getNumber() + " меньше того, что загадал компьютер.");
-                } else if(player2.getNumber() > unknownNumber) {
-                    System.out.println("число " + player2.getNumber() + " больше того, что загадал компьютер.");
-                } else if(player2.getNumber() == unknownNumber) {
+                if(player2.getNumber() == unknownNumber) {
                     System.out.println("число " + unknownNumber +
                             " загадал компьютер. Игрок " + player2.getName() + " вы победили!");
                     break;
                 }
+                if(player2.getNumber() < unknownNumber) {
+                    System.out.println("число " + player2.getNumber() + " меньше того, что загадал компьютер.");
+                }
+                if(player2.getNumber() > unknownNumber) {
+                    System.out.println("число " + player2.getNumber() + " больше того, что загадал компьютер.");
+                }
             }
-        } while(player1.getNumber() != player2.getNumber());
+        } while(true);
     }
 }
