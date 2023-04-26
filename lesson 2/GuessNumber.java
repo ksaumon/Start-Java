@@ -7,16 +7,15 @@ public class GuessNumber {
     private Player player1;
     private Player player2;
     private Scanner scanner;
-    Random rand = new Random();
 
     public GuessNumber(Player player1, Player player2, Scanner scanner) {
         this.player1 = player1;
         this.player2 = player2;
-        this.rand = rand;
         this.scanner = scanner;
     }
 
     public void start() {
+        Random rand = new Random();
         int unknownNumber = rand.nextInt(100) + 1;
         defineWinner(unknownNumber);
     }
@@ -35,11 +34,11 @@ public class GuessNumber {
                 }
                 if(player1.getNumber() > unknownNumber) {
                     System.out.println("число " + player1.getNumber() + " больше того, что загадал компьютер.");
-                }
-                if(player1.getNumber() < unknownNumber) {
+                } else {
                     System.out.println("число " + player1.getNumber() + " меньше того, что загадал компьютер.");
                 }
             }
+
             System.out.print("Игрок " + player2.getName() + ", введите число: ");
             player2.setNumber(scanner.nextInt());
             if(player2.getNumber() < startRange || player2.getNumber() > endRange) {
@@ -52,8 +51,7 @@ public class GuessNumber {
                 }
                 if(player2.getNumber() < unknownNumber) {
                     System.out.println("число " + player2.getNumber() + " меньше того, что загадал компьютер.");
-                }
-                if(player2.getNumber() > unknownNumber) {
+                } else {
                     System.out.println("число " + player2.getNumber() + " больше того, что загадал компьютер.");
                 }
             }
