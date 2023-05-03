@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.base;
+
 public class VariablesTheme {
     public static void main(String[] args) {
         System.out.println("\n1.Вывод значений переменных на консоль");

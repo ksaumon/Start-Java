@@ -1,3 +1,5 @@
+package com.startjava.lesson_1.Final;
+
 public class MyFirstGame {
     public static void main(String[] args) {
         int unknownNumber = 20;
