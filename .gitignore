@@ -1,5 +1,5 @@
 # Default ignored files
 /out/
 /.class
-options
-optionsj
+calculator/options
+calculator/optionsj
