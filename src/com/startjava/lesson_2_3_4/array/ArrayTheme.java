@@ -21,6 +21,14 @@ public class ArrayTheme {
 
         public static void mult() {
             System.out.println("2.Вывод произведения элементов массива");
+            int[] num = new int[10];
+            for (int i = 0; i < num.length ; i++) {
+                num[i] += i;
+            }
+                int sum = 0;
+                sum = num[1] * num[2] * num[3] * num[4] * num[5] * num[6] * num[7] * num[8];
+            System.out.print(num[1] + "*" + num[2] + "*" + num[3] + "*" + num[4] + "*" + num[5]
+                    + "*" + num[6] + "*" + num[7] + "*" + num[8] + "=" + sum);
         }
 
 }
