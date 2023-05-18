@@ -5,6 +5,7 @@ public class ArrayTheme {
        rev();
        System.out.println();
        mult();
+        System.out.println();
        delete();
     }
 
