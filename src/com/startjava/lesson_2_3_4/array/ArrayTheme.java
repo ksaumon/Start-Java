@@ -11,6 +11,7 @@ public class ArrayTheme {
         System.out.println();
         nunbersGeneration();
     }
+
     public static void rev() {
         System.out.println("1.Реверс значений массива");
         int[] arr= {2, 1, 3, 5, 4, 7, 6};
@@ -32,7 +33,6 @@ public class ArrayTheme {
             arr[i] += i;
             sum = (i > 0) ? (arr[1] * arr[2] * arr[3] * arr[4] * arr[5] * arr[6] * arr[7] * arr[8]) : (i = 0);
         }
-
         System.out.print(arr[1] + "*" + arr[2] + "*" + arr[3] + "*" + arr[4] + "*" + arr[5]
                 + "*" + arr[6] + "*" + arr[7] + "*" + arr[8] + "=" + sum + "\n");
         System.out.print(arr[0] + " в масcиве под индексом 0; " + arr[9] + " в масcиве под индексом 9");
@@ -72,8 +72,8 @@ public class ArrayTheme {
         }
         System.out.println();
         System.out.println("Количество обнуленных ячеек " + zero);
-
     }
+
     public static void reverseLadder() {
         System.out.println("4.Вывод элементов массива лесенкой в обратном порядке");
         int countSymbol = 0;
@@ -93,6 +93,7 @@ public class ArrayTheme {
             i = arr.length;
         }
     }
+
     public static void nunbersGeneration() {
         System.out.println("5.Генерация уникальных чисел");
         double[] arr = new double[30];
