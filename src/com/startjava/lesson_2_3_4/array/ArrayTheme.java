@@ -11,11 +11,13 @@ public class ArrayTheme {
         reverseLadder();
         System.out.println();
         nunbersGeneration();
+        System.out.println();
+        copying();
     }
 
     public static void rev() {
         System.out.println("1.Реверс значений массива");
-        int[] arr= {2, 1, 3, 5, 4, 7, 6};
+        int[] arr = {2, 1, 3, 5, 4, 7, 6};
         for(int num1: arr) {
             System.out.print(num1 + " ");
         }
@@ -115,5 +117,9 @@ public class ArrayTheme {
             }
             System.out.printf("%5.0f", arr[i]);
         }
+    }
+
+    public static void copying() {
+        String [] arr = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
     }
 }
