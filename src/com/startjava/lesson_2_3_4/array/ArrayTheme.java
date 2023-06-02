@@ -1,125 +1,132 @@
 package com.startjava.lesson_2_3_4.array;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class ArrayTheme {
-    public static void main(String[] args) {
-        rev();
-        System.out.println();
-        mult();
-        System.out.println();
-        delete();
-        System.out.println();
+
+    public static void main( String[] args) {
+        revArrayValues();
+        outputMultiplyArrValues();
+        deleteArrValues();
         reverseLadder();
-        System.out.println();
         nunbersGeneration();
-        System.out.println();
-        copying();
     }
 
-    public static void rev() {
+    public static void revArrayValues() {
         System.out.println("1.Реверс значений массива");
-        int[] arr = {2, 1, 3, 5, 4, 7, 6};
-        for(int num1: arr) {
-            System.out.print(num1 + " ");
+        int[] intArr = {2, 1, 3, 5, 4, 7, 6};
+        for(int num: intArr) {
+            System.out.print(num + " ");
         }
-        System.out.println();
-        for(int i = arr.length - 1; i >= 0; i--) {
-            System.out.print(arr[i] + " ");
-        }
-        System.out.println();
-    }
-
-    public static void mult() {
-        System.out.println("2.Вывод произведения элементов массива");
-        int sum = 0;
-        int[] arr = new int[10];
-        for(int i = 0; i < arr.length; i++) {
-            arr[i] += i;
-            sum = (i > 0) ? (arr[1] * arr[2] * arr[3] * arr[4] * arr[5] * arr[6] * arr[7] * arr[8]) : (i = 0);
-        }
-        System.out.print(arr[1] + "*" + arr[2] + "*" + arr[3] + "*" + arr[4] + "*" + arr[5]
-                + "*" + arr[6] + "*" + arr[7] + "*" + arr[8] + "=" + sum + "\n");
-        System.out.print(arr[0] + " в масcиве под индексом 0; " + arr[9] + " в масcиве под индексом 9");
+            System.out.println();
+            int rev = intArr.length;
+            for (int i = 0; i < rev / 2; i++) {
+                int temp = intArr[rev - i - 1];
+                intArr[rev - i - 1] = intArr[i];
+                intArr[i] = temp;
+            }
+            for (int i = 0; i < intArr.length; i++) {
+                System.out.print(intArr[i] + " ");
+            }
         System.out.println();
     }
 
-    public static void delete() {
-        System.out.println("3.Удаление элементов массива");
-        double[] arr = new double[15];
+
+    public static void outputMultiplyArrValues() {
+        System.out.println("\n2.Вывод произведения элементов массива");
+        int multiplyArrValues = 1;
+        int[] intArr = new int[10];
+        for(int i = 1; i < intArr.length; i++) {
+            intArr[i] = i;
+            multiplyArrValues *= intArr[i];
+            if (i == intArr.length -1) {
+                System.out.print(intArr[i]);
+            } else {
+                System.out.print(intArr[i] + "*");
+            }
+        }
+        System.out.print("=" + multiplyArrValues + "\n");
+    }
+
+    public static void deleteArrValues() {
+        System.out.println("\n3.Удаление элементов массива");
+        double[] doubleArr = new double[15];
         int zero = 0;
-        double middle = arr.length / 2;
+        double middle = doubleArr.length / 2;
         double middleCell = 0;
         System.out.println("Исходный массив");
-        for(int i = 0; i < arr.length; i++) {
-            arr[i] = Math.random();
+        for(int i = 0; i < doubleArr.length; i++) {
+            doubleArr[i] = Math.random();
             if(middle == i - 1) {
                 System.out.println();
             }
             if(middle == i ) {
-                middleCell = arr[i -1];
+                middleCell = doubleArr[i -1];
             }
-            System.out.printf("%8.3f", arr[i]);
+            arrayOutput(i, doubleArr);
         }
         System.out.println("\nИзмененный массив");
-        for(double arr1: arr) {
-            arr[(int) arr1] = arr1;
-            if(middleCell < arr1) {
-                arr1 = 0;
+        for( double i: doubleArr) {
+            doubleArr[(int) i] = i;
+            if(middleCell < i) {
+               doubleArr[(int) i] = 0;
                 zero++;
-            } else {
-                arr[(int) arr1] = arr1;
             }
-            if(arr[(int) middle + 1] == arr1) {
+            if(doubleArr[(int) middle + 1] == i) {
                 System.out.println();
             }
-            System.out.printf("%8.3f", arr1);
+            arrayOutput((int) i, doubleArr);
         }
         System.out.println();
-        System.out.println("Количество обнуленных ячеек " + zero);
+        System.out.println("Количество обнуленных ячеек " + zero + "\n");
     }
 
     public static void reverseLadder() {
         System.out.println("4.Вывод элементов массива лесенкой в обратном порядке");
         int countSymbol = 0;
-        char[] arr = new char[26];
+        char[] charArr = new char[26];
         for(char i = 65; i < 91; i++) {
-            arr[i - 65] = i;
+            charArr[i - 65] = i;
         }
-        for(int i = arr.length - 1; i >= countSymbol; i--) {
+        for(int i = charArr.length - 1; i >= countSymbol; i--) {
             for(int j = 0; j <= countSymbol; j++) {
                 if(j <= countSymbol) {
-                    System.out.print(arr[(char) i ]);
+                    System.out.print(charArr[(char) i ]);
                     i--;
                 }
             }
             System.out.println();
             countSymbol++;
-            i = arr.length;
+            i = charArr.length;
         }
+        System.out.println();
     }
 
     public static void nunbersGeneration() {
         System.out.println("5.Генерация уникальных чисел");
-        double[] arr = new double[30];
-        int transfer = arr.length / 3;
+        double[] doubleArr = new double[30];
+        int transfer = doubleArr.length / 3;
         int i,j;
-        for(i = 0;i < arr.length; i++) {
-            arr[i] = 60 + Math.round (Math.random() * 39);
+        for(i = 0;i < doubleArr.length; i++) {
+            doubleArr[i] = 60 + Math.round (Math.random() * 39);
             for(j = 0; j < i; j++) {
-                if(arr[i] == arr[j]) {
+                if(doubleArr[i] == doubleArr[j]) {
                     i--;
                 }
             }
         }
-        for (i = 0; i < arr.length; i++) {
+        for (i = 0; i < doubleArr.length; i++) {
             if (transfer == i) {
                 transfer = transfer + transfer;
                 System.out.println();
             }
-            System.out.printf("%5.0f", arr[i]);
+            System.out.printf("%5.0f", doubleArr[i]);
         }
+        System.out.println();
     }
 
-    public static void copying() {
-        String [] arr = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+    static void arrayOutput(int i, double doubleArr[]) {
+        System.out.printf("%8.3f", doubleArr[i]);
     }
 }
