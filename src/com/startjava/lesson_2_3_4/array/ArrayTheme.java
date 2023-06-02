@@ -11,6 +11,7 @@ public class ArrayTheme {
         deleteArrValues();
         reverseLadder();
         nunbersGeneration();
+        copyLines();
     }
 
     public static void revArrayValues() {
@@ -19,16 +20,16 @@ public class ArrayTheme {
         for(int num: intArr) {
             System.out.print(num + " ");
         }
-            System.out.println();
-            int rev = intArr.length;
-            for (int i = 0; i < rev / 2; i++) {
-                int temp = intArr[rev - i - 1];
-                intArr[rev - i - 1] = intArr[i];
-                intArr[i] = temp;
-            }
-            for (int i = 0; i < intArr.length; i++) {
-                System.out.print(intArr[i] + " ");
-            }
+        System.out.println();
+        int rev = intArr.length;
+        for (int i = 0; i < rev / 2; i++) {
+            int temp = intArr[rev - i - 1];
+            intArr[rev - i - 1] = intArr[i];
+            intArr[i] = temp;
+        }
+        for (int i = 0; i < intArr.length; i++) {
+            System.out.print(intArr[i] + " ");
+        }
         System.out.println();
     }
 
@@ -123,6 +124,22 @@ public class ArrayTheme {
             }
             System.out.printf("%5.0f", doubleArr[i]);
         }
+        System.out.println();
+    }
+
+    public static void copyLines() {
+        System.out.print("\n6.Копирование не пустых строк");
+        String[] arr = new String[]{"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        String[] arr1 = new String[arr.length];
+        //System.arraycopy(arr, 0, arr1, 0, arr.length);
+        for (int i = 0; i < arr.length; i++) {
+          // arr[i] = String.valueOf(i);
+            if ( !arr[i].equals("") && !arr[i].equals("  ")) {
+              //  System.arraycopy(arr, !arr[i].equals(""), 0, arr1.length);
+                System.out.println(Arrays.deepToString(arr1));
+            }
+        }
+            System.out.println(Arrays.deepToString(arr));
         System.out.println();
     }
 
