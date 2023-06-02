@@ -6,11 +6,11 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main( String[] args) {
-        revArrayValues();
-        outputMultiplyArrValues();
-        deleteArrValues();
-        reverseLadder();
-        nunbersGeneration();
+//        revArrayValues();
+//        outputMultiplyArrValues();
+//        deleteArrValues();
+//        reverseLadder();
+//        nunbersGeneration();
         copyLines();
     }
 
@@ -128,18 +128,26 @@ public class ArrayTheme {
     }
 
     public static void copyLines() {
-        System.out.print("\n6.Копирование не пустых строк");
-        String[] arr = new String[]{"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        String[] arr1 = new String[arr.length];
-        //System.arraycopy(arr, 0, arr1, 0, arr.length);
-        for (int i = 0; i < arr.length; i++) {
-          // arr[i] = String.valueOf(i);
-            if ( !arr[i].equals("") && !arr[i].equals("  ")) {
-              //  System.arraycopy(arr, !arr[i].equals(""), 0, arr1.length);
-                System.out.println(Arrays.deepToString(arr1));
+        System.out.println("\n6.Копирование не пустых строк");
+        String[] stringArr = new String[]{"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        int arrayLength = 0;
+        for (int i = 0; i < stringArr.length; i++) {
+            if (!stringArr[i].equals("") && !stringArr[i].equals("    ")) {
+                arrayLength++;
             }
         }
-            System.out.println(Arrays.deepToString(arr));
+        System.out.print(arrayLength);
+            System.out.println("\n" + Arrays.deepToString(stringArr));
+        String[] stringArr1 = new String[arrayLength];
+        int filledCell = 0;
+        for (int i = 0; i < arrayLength; i++) {
+            stringArr1[i] = stringArr[i];
+            if (!stringArr[i].equals("") && !stringArr[i].equals("    ")) {
+                filledCell++;
+                System.arraycopy(stringArr, filledCell, stringArr1, 0, arrayLength);
+            }
+        }
+        //System.out.println("\n" + Arrays.deepToString(stringArr1));
         System.out.println();
     }
 
