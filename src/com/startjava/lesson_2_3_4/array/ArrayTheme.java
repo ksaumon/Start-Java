@@ -6,12 +6,12 @@ import java.util.Arrays;
 public class ArrayTheme {
 
     public static void main( String[] args) {
-//        revArrayValues();
-//        outputMultiplyArrValues();
-//        deleteArrValues();
-//        reverseLadder();
-//        nunbersGeneration();
-        copyLines();
+        revArrayValues();
+        outputMultiplyArrValues();
+        deleteArrValues();
+        reverseLadder();
+        nunbersGeneration();
+     //   copyLines();
     }
 
     public static void revArrayValues() {
@@ -124,30 +124,6 @@ public class ArrayTheme {
             }
             System.out.printf("%5.0f", doubleArr[i]);
         }
-        System.out.println();
-    }
-
-    public static void copyLines() {
-        System.out.println("\n6.Копирование не пустых строк");
-        String[] stringArr = new String[]{"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
-        int arrayLength = 0;
-        for (int i = 0; i < stringArr.length; i++) {
-            if (!stringArr[i].equals("") && !stringArr[i].equals("    ")) {
-                arrayLength++;
-            }
-        }
-        System.out.print(arrayLength);
-            System.out.println("\n" + Arrays.deepToString(stringArr));
-        String[] stringArr1 = new String[arrayLength];
-        int filledCell = 0;
-        for (int i = 0; i < arrayLength; i++) {
-            stringArr1[i] = stringArr[i];
-            if (!stringArr[i].equals("") && !stringArr[i].equals("    ")) {
-                filledCell++;
-                System.arraycopy(stringArr, filledCell, stringArr1, 0, arrayLength);
-            }
-        }
-        //System.out.println("\n" + Arrays.deepToString(stringArr1));
         System.out.println();
     }
 
