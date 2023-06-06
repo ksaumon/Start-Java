@@ -45,7 +45,7 @@ public class ArrayTheme {
             }
         }
         System.out.print(" = " + result + "\n");
-        System.out.print(multipliers[0] + " в масcиве под индексом 0; " + multipliers[9] + " в масcиве под индексом 9\n");
+        System.out.print(multipliers[0] + "в масcиве под индексом 0; " + multipliers[9] + "в масcиве под индексом 9\n");
     }
 
     public static void deleteArrValues() {
@@ -136,7 +136,7 @@ public class ArrayTheme {
         System.out.println();
     }
 
-    static void randomDoublesOutput(double[] randomDoubles ) {
+    static void randomDoublesOutput(double[] randomDoubles) {
         for(int i = 0; i < randomDoubles.length; i++) {
             if(i % 8 == 0) {
                 System.out.println();
