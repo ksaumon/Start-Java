@@ -3,7 +3,6 @@ package com.startjava.lesson_2_3_4.array;
 import java.util.Arrays;
 
 public class ArrayTheme {
-
     public static void main(String[] args) {
         reverseArrayValues();
         outputMultiplyArrValues();
@@ -146,7 +145,7 @@ public class ArrayTheme {
         }
     }
 
-    public static void intArrOutput(int[] intArr) {
+    static void intArrOutput(int[] intArr) {
         for(int i = 0; i < intArr.length; i++) {
             System.out.print(intArr[i] + " ");
         }
