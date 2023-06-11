@@ -4,57 +4,57 @@ import java.util.Arrays;
 
 public class ArrayTheme {
     public static void main(String[] args) {
-        reverseArrayValues();
+        reverseArrValues();
         outputMultiplyArrValues();
         deleteArrValues();
         reverseLadder();
-        numbersGeneration();
+        generateNumbers();
         copyLines();
     }
 
-    public static void reverseArrayValues() {
+    public static void reverseArrValues() {
         System.out.println("1.Реверс значений массива");
         int[] intArr = {2, 1, 3, 5, 4, 7, 6};
         int len = intArr.length;
-        intArrOutput(intArr, len);
+        intArrOutput(intArr);
         System.out.println();
         for (int i = 0; i < len; i++) {
             int temp = intArr[i];
-            intArr[i] = --len | intArr[len];
+            intArr[i] = intArr[--len];
             intArr[len] = temp;
         }
-        intArrOutput(intArr, len + len + 1);
+        intArrOutput(intArr);
         System.out.println();
     }
 
     public static void outputMultiplyArrValues() {
         System.out.println("\n2.Вывод произведения элементов массива");
-        int result = 1;
         int[] multipliers = new int[10];
         int len = multipliers.length;
         for(int i = 0; i < len; i++) {
             multipliers[i] = i;
         }
+        int result = 1;
         for(int i = 1; i < len - 1; i++) {
             result *= multipliers[i];
-            String outputMultiply = i == (len - 2) ? "" : " * ";
+            String outputMultiply = i == (len - 2) ? " = " + result : " * ";
                 System.out.print(multipliers[i] + outputMultiply);
         }
-        System.out.print(" = " + result + "\n");
-        System.out.print(multipliers[0] + "в масcиве под индексом 0; " + multipliers[9] + "в масcиве под индексом 9\n");
+        System.out.print("\n" + multipliers[0] + " в масcиве под индексом 0; "
+                + multipliers[9] + " в масcиве под индексом 9\n");
     }
 
     public static void deleteArrValues() {
         System.out.println("\n3.Удаление элементов массива");
         double[] randomDoubles = new double[15];
-        System.out.println("Исходный массив");
+        System.out.println("\nИсходный массив");
         int len = randomDoubles.length;
         for(int i = 0; i < len; i++) {
             randomDoubles[i] = Math.random();
         }
-        double middleCellValue = randomDoubles[len / 2];
-        randomDoublesOutput(randomDoubles, len);
+        randomDoublesOutput(randomDoubles);
         System.out.println("\nИзмененный массив");
+        double middleCellValue = randomDoubles[len / 2];
         int zero = 0;
         for(int i = 0; i < len; i++) {
             if(randomDoubles[i] > middleCellValue) {
@@ -62,7 +62,7 @@ public class ArrayTheme {
                 zero++;
             }
         }
-        randomDoublesOutput(randomDoubles, len);
+        randomDoublesOutput(randomDoubles);
         System.out.println("\nКоличество обнуленных ячеек " + zero + "\n");
     }
 
@@ -87,26 +87,29 @@ public class ArrayTheme {
         }
     }
 
-    public static void numbersGeneration() {
+    public static void generateNumbers() {
         System.out.println("\n5.Генерация уникальных чисел");
-        double[] doubleNumbersArr = new double[30];
-        int len = doubleNumbersArr.length;
-        int i,j;
-        for(i = 0;i < len; i++) {
-            doubleNumbersArr[i] = 60 + Math.round (Math.random() * 39);
-            for(j = 0; j < i; j++) {
-                if(doubleNumbersArr[i] == doubleNumbersArr[j]) {
-                    i--;
+        double[] uniqueNumbers = new double[30];
+        int len = uniqueNumbers.length;
+        long rondomNumbers;
+        for(int i = 0; i < len; i++) {
+            rondomNumbers = 60 + Math.round(Math.random() * 39);
+            for(int j = 0; j < i; j++) {
+                if (rondomNumbers == uniqueNumbers[j]) {
+                    rondomNumbers = 60 + Math.round(Math.random() * 39);
+                    j = -1;
                 }
             }
+            uniqueNumbers[i] = rondomNumbers;
         }
+        sortUniqueNumbers(uniqueNumbers);
         int transfer = len / 3;
-        for(i = 0; i < len; i++) {
+        for(int i = 0; i < len; i++) {
             if (transfer == i) {
                 transfer = transfer + transfer;
                 System.out.println();
             }
-            System.out.printf("%5.0f", doubleNumbersArr[i]);
+            System.out.printf("%5.0f", uniqueNumbers[i]);
         }
         System.out.println();
     }
@@ -136,18 +139,39 @@ public class ArrayTheme {
         System.out.println();
     }
 
-    static void randomDoublesOutput(double[] randomDoubles, int len) {
+    static void randomDoublesOutput(double[] randomDoubles) {
+        int len = randomDoubles.length;
         for(int i = 0; i < len; i++) {
-            if(i % 8 == 0) {
+            if(i % 8 == 0 & i != 0) {
                 System.out.println();
             }
             System.out.printf("%8.3f", randomDoubles[i]);
         }
+        System.out.println();
     }
 
-    static void intArrOutput(int[] intArr, int len) {
+    static void intArrOutput(int[] intArr) {
+        int len = intArr.length;
         for(int i = 0; i < len; i++) {
             System.out.print(intArr[i] + " ");
+        }
+    }
+    static void sortUniqueNumbers(double[] uniqueNumbers) {
+        int len = uniqueNumbers.length;
+        for(int i = 0; i < len; i++) {
+            double minNumbers = uniqueNumbers[i];
+            int min_i = i;
+            for(int j = i + 1; j < len; j++) {
+                if (uniqueNumbers[j] < minNumbers) {
+                    minNumbers = uniqueNumbers[j];
+                    min_i = j;
+                }
+            }
+            if (i != min_i) {
+                double temp = uniqueNumbers[i];
+                uniqueNumbers[i] = uniqueNumbers[min_i];
+                uniqueNumbers[min_i] = temp;
+            }
         }
     }
 }
