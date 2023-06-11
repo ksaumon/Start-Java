@@ -95,7 +95,7 @@ public class ArrayTheme {
         for(int i = 0; i < len; i++) {
             rondomNumbers = 60 + Math.round(Math.random() * 39);
             for(int j = 0; j < i; j++) {
-                if (rondomNumbers == uniqueNumbers[j]) {
+                if(rondomNumbers == uniqueNumbers[j]) {
                     rondomNumbers = 60 + Math.round(Math.random() * 39);
                     j = -1;
                 }
@@ -105,7 +105,7 @@ public class ArrayTheme {
         sortUniqueNumbers(uniqueNumbers);
         int transfer = len / 3;
         for(int i = 0; i < len; i++) {
-            if (transfer == i) {
+            if(transfer == i) {
                 transfer = transfer + transfer;
                 System.out.println();
             }
