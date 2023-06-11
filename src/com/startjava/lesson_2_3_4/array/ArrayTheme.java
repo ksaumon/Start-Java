@@ -156,18 +156,19 @@ public class ArrayTheme {
             System.out.print(intArr[i] + " ");
         }
     }
+
     static void sortUniqueNumbers(double[] uniqueNumbers) {
         int len = uniqueNumbers.length;
         for(int i = 0; i < len; i++) {
             double minNumbers = uniqueNumbers[i];
             int min_i = i;
             for(int j = i + 1; j < len; j++) {
-                if (uniqueNumbers[j] < minNumbers) {
+                if(uniqueNumbers[j] < minNumbers) {
                     minNumbers = uniqueNumbers[j];
                     min_i = j;
                 }
             }
-            if (i != min_i) {
+            if(i != min_i) {
                 double temp = uniqueNumbers[i];
                 uniqueNumbers[i] = uniqueNumbers[min_i];
                 uniqueNumbers[min_i] = temp;
