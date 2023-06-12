@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class ArrayTheme {
     public static void main(String[] args) {
-//        reverseArrValues();
-//        outputMultiplyArrValues();
-//        deleteArrValues();
-//        reverseLadder();
-//        generateNumbers();
+        reverseArrValues();
+        outputMultiplyArrValues();
+        deleteArrValues();
+        reverseLadder();
+        generateNumbers();
         copyLines();
     }
 
