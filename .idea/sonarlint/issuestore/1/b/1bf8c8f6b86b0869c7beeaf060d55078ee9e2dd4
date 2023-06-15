@@ -1,0 +1,18 @@
+
+g
+java:S1192!"LDefine a constant instead of duplicating this literal "Ñ‡Ğ¸ÑĞ»Ğ¾ " 6 times.(òÇìùùÿÿÿÿ
+s	java:S135"YReduce the total number of break and continue statements in this loop to use at most one.(ü§è½ùÿÿÿÿ
+9
+java:S2119"Save and re-use this "Random".(šŸ«íøÿÿÿÿ
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(ëáü
+S	java:S106"9Replace this use of System.out or System.err by a logger.(ó‰Õùÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(òáÿ¾
+S	java:S106!"9Replace this use of System.out or System.err by a logger.(òÇìùùÿÿÿÿ
+N	java:S106&"9Replace this use of System.out or System.err by a logger.(¥ÁşÉ
+N	java:S106("9Replace this use of System.out or System.err by a logger.(’£ğ´
+S	java:S106,"9Replace this use of System.out or System.err by a logger.(ôêèñüÿÿÿÿ
+N	java:S106/"9Replace this use of System.out or System.err by a logger.(²‡·´
+S	java:S1062"9Replace this use of System.out or System.err by a logger.(òÇìùùÿÿÿÿ
+S	java:S1067"9Replace this use of System.out or System.err by a logger.(³ÿ»øÿÿÿÿ
+S	java:S1069"9Replace this use of System.out or System.err by a logger.(·Ïöçûÿÿÿÿ

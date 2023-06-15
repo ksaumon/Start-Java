@@ -1,0 +1,16 @@
+
+{
+java:S4144"YUpdate this method so that its implementation is not identical to "getGender" on line 10.(±×œÍıÿÿÿÿ8ÔäŠ€‚1
+t
+java:S1450"WRemove the "nickName" field and declare it as a local variable in the relevant methods.(ë·õ8ÔäŠ€‚1
+j
+java:S4275"HRefactor this getter so that it actually refers to the field "nickName".(±×œÍıÿÿÿÿ8ÙäŠ€‚1
+Z	java:S106("9Replace this use of System.out or System.err by a logger.(Ìı”üÿÿÿÿ8ÛäŠ€‚1
+Z	java:S106+"9Replace this use of System.out or System.err by a logger.(íìüÿÿÿÿ8ÛäŠ€‚1
+Z	java:S1068"9Replace this use of System.out or System.err by a logger.(¤Îó¡üÿÿÿÿ8ÜäŠ€‚1
+Z	java:S106<"9Replace this use of System.out or System.err by a logger.(ÏÑºÓıÿÿÿÿ8ÜäŠ€‚1
+U	java:S106@"9Replace this use of System.out or System.err by a logger.( ç®8İäŠ€‚1
+Z	java:S106D"9Replace this use of System.out or System.err by a logger.(™êëÃüÿÿÿÿ8İäŠ€‚1
+U	java:S106H"9Replace this use of System.out or System.err by a logger.(ÙÇÿº8İäŠ€‚1
+I
+java:S1068",Remove this unused "nickName" private field.(ë·õ8ŞäŠ€‚1
