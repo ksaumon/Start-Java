@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class ArrayTheme {
     public static void main(String[] args) {
-//        reverseArrValues();
-//        outputMultiplyArrValues();
-//        deleteArrValues();
-//        reverseLadder();
-//        generateUniqueNumbers();
+        reverseArrValues();
+        outputMultiplyArrValues();
+        deleteArrValues();
+        reverseLadder();
+        generateUniqueNumbers();
         copyLines();
     }
 
@@ -119,7 +119,7 @@ public class ArrayTheme {
 
     public static void copyLines() {
         System.out.println("\n6.Копирование не пустых строк");
-        String[] srcStrings = {"FF", "G", ""};
+        String[] srcStrings = {"    ", "AA", "", "BBB", "CC", "D", " ", "E", "FF", "G"};
         int countNonEmptyStrings = 0;
         int len = srcStrings.length;
         for(String str : srcStrings) {
@@ -136,7 +136,7 @@ public class ArrayTheme {
             if(srcStrings[j].isBlank() || strNonEmpty) {
                 if(j != 0) {
                     srcElem = j - strCounter;
-                    if (strNonEmpty) {
+                    if(strNonEmpty) {
                         strCounter++;
                     }
                     System.arraycopy(srcStrings, srcElem, nonEmptyStrings, destElem, strCounter);
@@ -153,13 +153,13 @@ public class ArrayTheme {
 
     static void print(String[] srcStrings, String[] nonEmptyStrings) {
         int len = srcStrings.length;
-        for (int i = 0; i < len; i++) {
-            System.out.print("'" + srcStrings[i] + "'");
+        for(int i = 0; i < len; i++) {
+            System.out.print("'" + srcStrings[i] + "',");
         }
         System.out.println();
         int len1 = nonEmptyStrings.length;
-        for (int i = 0; i < len1; i++) {
-            System.out.print("'" + nonEmptyStrings[i] + "'");
+        for(int i = 0; i < len1; i++) {
+            System.out.print("'" + nonEmptyStrings[i] + "',");
         }
     }
 
