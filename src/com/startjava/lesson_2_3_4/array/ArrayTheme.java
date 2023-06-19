@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class ArrayTheme {
     public static void main(String[] args) {
-        reverseArrValues();
-        outputMultiplyArrValues();
-        deleteArrValues();
-        reverseLadder();
-        generateUniqueNumbers();
+//        reverseArrValues();
+//        outputMultiplyArrValues();
+//        deleteArrValues();
+//        reverseLadder();
+//        generateUniqueNumbers();
         copyLines();
     }
 
@@ -16,14 +16,14 @@ public class ArrayTheme {
         System.out.println("1.Реверс значений массива");
         int[] intArr = {2, 1, 3, 5, 4, 7, 6};
         int len = intArr.length;
-        intArrOutput(intArr);
+        print(intArr);
         System.out.println();
         for (int i = 0; i < len; i++) {
             int temp = intArr[i];
             intArr[i] = intArr[--len];
             intArr[len] = temp;
         }
-        intArrOutput(intArr);
+        print(intArr);
         System.out.println();
     }
 
@@ -52,7 +52,7 @@ public class ArrayTheme {
         for(int i = 0; i < len; i++) {
             randomDoubles[i] = Math.random();
         }
-        randomDoublesOutput(randomDoubles);
+        print(randomDoubles);
         System.out.println("\nИзмененный массив");
         double middleCellValue = randomDoubles[len / 2];
         int zero = 0;
@@ -62,7 +62,7 @@ public class ArrayTheme {
                 zero++;
             }
         }
-        randomDoublesOutput(randomDoubles);
+        print(randomDoubles);
         System.out.println("\nКоличество обнуленных ячеек " + zero + "\n");
     }
 
@@ -91,9 +91,19 @@ public class ArrayTheme {
         System.out.println("\n5.Генерация уникальных чисел");
         double[] uniqueNumbers = new double[30];
         int len = uniqueNumbers.length;
-        int randomNumbers = (int) (60 + Math.round(Math.random() * 39));;
+        int randomNumbers;
         for(int i = 0; i < len; i++) {
-            random(randomNumbers, i, uniqueNumbers);
+            randomNumbers = (int) (60 + (Math.random() * 40));
+            if(i == 0) {
+                uniqueNumbers[i] = randomNumbers;
+            }
+            for(int j = 0; j < i; j++) {
+                if(randomNumbers == uniqueNumbers[j]) {
+                    i = 0;
+                } else {
+                    uniqueNumbers[i] = randomNumbers;
+                }
+            }
         }
         sortUniqueNumbers(uniqueNumbers);
         int transfer = len / 3;
@@ -109,11 +119,11 @@ public class ArrayTheme {
 
     public static void copyLines() {
         System.out.println("\n6.Копирование не пустых строк");
-        String[] srcStrings = {"    ", "AA", "", "BBB", "CC", "D", "    ", "E", "FF", "G", ""};
+        String[] srcStrings = {"FF", "G", ""};
         int countNonEmptyStrings = 0;
         int len = srcStrings.length;
-        for(int i = 0; i < len; i++) {
-            if(!srcStrings[i].isBlank()) {
+        for(String str : srcStrings) {
+            if(!str.isBlank()) {
                 countNonEmptyStrings++;
             }
         }
@@ -121,38 +131,39 @@ public class ArrayTheme {
         int srcElem = 0;
         int destElem = 0;
         int strCounter = 0;
-        for(int i = 0; i < len; i++) {
-            if(srcStrings[i].isBlank()) {
-                if(strCounter != 0) {
-                    srcElem = i - strCounter;
+        for(int j = 0; j < len; j++) {
+            boolean strNonEmpty = j == len - 1 && !srcStrings[j].isBlank();
+            if(srcStrings[j].isBlank() || strNonEmpty) {
+                if(j != 0) {
+                    srcElem = j - strCounter;
+                    if (strNonEmpty) {
+                        strCounter++;
+                    }
                     System.arraycopy(srcStrings, srcElem, nonEmptyStrings, destElem, strCounter);
                     destElem += strCounter;
                     strCounter = 0;
                 }
             } else {
                 strCounter++;
-                if(i == len - 1) {
-                    System.arraycopy(srcStrings, i, nonEmptyStrings, destElem, strCounter);
-                }
             }
         }
-        copyLinesOutput(srcStrings, nonEmptyStrings);
+        print(srcStrings, nonEmptyStrings);
         System.out.println();
     }
 
-    static void copyLinesOutput(String[] srcStrings, String[] nonEmptyStrings) {
+    static void print(String[] srcStrings, String[] nonEmptyStrings) {
         int len = srcStrings.length;
         for (int i = 0; i < len; i++) {
-            System.out.printf("%3.1s", srcStrings[i]);
+            System.out.print("'" + srcStrings[i] + "'");
         }
         System.out.println();
         int len1 = nonEmptyStrings.length;
         for (int i = 0; i < len1; i++) {
-            System.out.printf("%3.1s", nonEmptyStrings[i]);
+            System.out.print("'" + nonEmptyStrings[i] + "'");
         }
     }
 
-    static void randomDoublesOutput(double[] randomDoubles) {
+    static void print(double[] randomDoubles) {
         int len = randomDoubles.length;
         for(int i = 0; i < len; i++) {
             if(i % 8 == 0 & i != 0) {
@@ -163,7 +174,7 @@ public class ArrayTheme {
         System.out.println();
     }
 
-    static void intArrOutput(int[] intArr) {
+    static void print(int[] intArr) {
         int len = intArr.length;
         for(int i = 0; i < len; i++) {
             System.out.print(intArr[i] + " ");
@@ -187,15 +198,5 @@ public class ArrayTheme {
                 uniqueNumbers[min] = temp;
             }
         }
-    }
-
-    static void random(int randomNumbers, int i, double[] uniqueNumbers) {
-       for(int j = 0; j < i; j++) {
-           if(randomNumbers == uniqueNumbers[j]) {
-               randomNumbers = (int) (60 + Math.round(Math.random() * 39));
-               j = -1;
-           }
-       }
-       uniqueNumbers[i] = randomNumbers;
     }
 }
