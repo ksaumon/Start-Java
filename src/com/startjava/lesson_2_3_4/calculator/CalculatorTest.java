@@ -15,7 +15,7 @@ public class CalculatorTest {
                 System.out.print("Введите математическое выражение: ");
                 str = scanner.nextLine();
                 calculate();
-                if( result != result % 2) {
+                if(result != result % 2) {
                     System.out.println((int) result);
                 } else {
                     System.out.printf("%1.3f \n", result);
