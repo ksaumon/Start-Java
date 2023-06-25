@@ -1,5 +1,6 @@
 package com.startjava.lesson_2_3_4.calculator;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 public class CalculatorTest {
@@ -8,23 +9,20 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         String option = "yes";
         do {
-            if("yes".equals(option)) {
+            if ("yes".equals(option)) {
                 System.out.print("Введите математическое выражение: ");
                 str = scanner.nextLine();
-                print();
+                double result = Calculator.calculate();
+                if (result % 1 == 0) {
+                    System.out.println((int) result);
+                } else {
+                    System.out.printf("%1.3f \n", result);
+                }
+//                String choiceRecordingForm = ((result % 1) == 0) ? String.format("%1.0f", result) : String.format("%1.3f", result);
+//                System.out.println(choiceRecordingForm);
             }
             System.out.print("Хотите продолжить вычисления? [yes/no]:");
             option = scanner.nextLine();
-        } while(!"no".equals(option));
-    }
-
-    static double print() {
-        double result = Calculator.calculate();
-        if(result % 2 == 0) {
-            System.out.println((int) result);
-        } else {
-            System.out.printf("%1.3f \n", result);
-        }
-        return result;
+        } while (!"no".equals(option));
     }
 }
