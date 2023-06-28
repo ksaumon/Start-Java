@@ -7,11 +7,15 @@ public class Calculator {
 
     public static double calculate(String data) {
         try {
-            checkNumber(data);
-        } catch(RuntimeException e) {
+            validNumbers(data);
+        } catch(NumberFormatException e) {
+            System.out.println("Числа должны быть целыми!");
+            return -0.1;
+        } catch (RuntimeException e) {
+            System.out.println("Числа должны быть положительными!");
             return -0.1;
         }
-        double result = switch(sign) {
+        return switch(sign) {
             case '+' -> Math.addExact(num, num1);
             case '-' -> Math.subtractExact(num, num1);
             case '*' -> Math.multiplyExact(num, num1);
@@ -20,21 +24,15 @@ public class Calculator {
             case '^' -> Math.pow(num, num1);
             default -> {yield -0.1;}
         };
-        return result;
     }
 
-    public static void checkNumber(String data) {
+    private static void validNumbers(String data) {
         String[] elements = data.split(" ");
-        double num2 = Integer.parseInt(elements[0]);
-        double num3 = Integer.parseInt(elements[2]);
-        if(num2 % 1 != 0 || num3 % 1 != 0) {
-            throw new RuntimeException("Числа не соответствуют требованиям!");
-        }
         num = Integer.parseInt(elements[0]);
         sign = elements[1].charAt(0);
         num1 = Integer.parseInt(elements[2]);
-        if(num < 0 || num1 < 0) {
-            throw new RuntimeException("Числа не соответствуют требованиям!");
+        if(num < 1 || num1 < 1) {
+            throw new RuntimeException("Числа должны быть положительными!");
         }
     }
 }

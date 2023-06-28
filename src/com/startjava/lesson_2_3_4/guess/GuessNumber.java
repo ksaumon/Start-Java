@@ -23,47 +23,50 @@ public class GuessNumber {
     }
 
     public void defineWinner(int unknownNumber) {
-        byte player1Attempts = 0;
-        byte player2Attempts = 0;
+        int player1Attempts = 0;
+        int player2Attempts = 0;
+        System.out.println("У каждого игрока по 10 попыток");
         do {
             while (player1Attempts < 10 || player2Attempts < 10) {
                 System.out.print("Игрок " + player1.getName() + ", введите число: ");
                 player1.setNumber(scanner.nextInt());
-                if (player1.getNumber()[player1Attempts] < startRange
-                        || player1.getNumber()[player1Attempts] > endRange) {
-                    System.out.println(player1.getNumber()[player1Attempts] + "Число не входит в полуинтервал ( 0 - 100]");
+                if (player1.getNumber() < startRange
+                        || player1.getNumber() > endRange) {
+                    System.out.println(player1.getNumber() + "Число не входит в полуинтервал ( 0 - 100]");
                 } else {
-                    if (player1.getNumber()[player1Attempts] == unknownNumber) {
+                    if (player1.getNumber() == unknownNumber) {
                         System.out.println("число " + unknownNumber +
                                 " загадал компьютер. Игрок " + player1.getName() + " вы победили!" + player1Attempts +
                                 " попытки");
+                       // player1.print(n);
                         break;
                     }
-                    if (player1.getNumber()[player1Attempts] > unknownNumber) {
-                        System.out.println("число " + player1.getNumber()[player1Attempts] + " больше того, что загадал компьютер.");
+                    if (player1.getNumber() > unknownNumber) {
+                        System.out.println("число " + player1.getNumber() + " больше того, что загадал компьютер.");
                         player1Attempts++;
                     } else {
-                        System.out.println("число " + player1.getNumber()[player1Attempts] + " меньше того, что загадал компьютер.");
+                        System.out.println("число " + player1.getNumber() + " меньше того, что загадал компьютер.");
                         player1Attempts++;
                     }
                 }
 
                 System.out.print("Игрок " + player2.getName() + ", введите число: ");
                 player2.setNumber(scanner.nextInt());
-                if (player2.getNumber()[player2Attempts] < startRange || player2.getNumber()[player2Attempts] > endRange) {
-                    System.out.println(player2.getNumber()[player2Attempts] + "Число не входит в полуинтервал ( 0 - 100]");
+                if (player2.getNumber() < startRange || player2.getNumber() > endRange) {
+                    System.out.println(player2.getNumber() + "Число не входит в полуинтервал ( 0 - 100]");
                 } else {
-                    if (player2.getNumber()[player2Attempts] == unknownNumber) {
+                    if (player2.getNumber() == unknownNumber) {
                         System.out.println("число " + unknownNumber +
                                 " загадал компьютер. Игрок " + player2.getName() + " вы победили!" + player2Attempts +
                                 " попытки");
+                        //player1.print();
                         break;
                     }
-                    if (player2.getNumber()[player2Attempts] < unknownNumber) {
-                        System.out.println("число " + player2.getNumber()[player2Attempts] + " меньше того, что загадал компьютер.");
+                    if (player2.getNumber() < unknownNumber) {
+                        System.out.println("число " + player2.getNumber() + " меньше того, что загадал компьютер.");
                         player2Attempts++;
                     } else {
-                        System.out.println("число " + player2.getNumber()[player2Attempts] + " больше того, что загадал компьютер.");
+                        System.out.println("число " + player2.getNumber() + " больше того, что загадал компьютер.");
                         player2Attempts++;
                     }
                 }

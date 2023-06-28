@@ -3,7 +3,7 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 
 public class Player {
-    private int[] number;
+    private int number;
     private String name;
 
     public Player(String name) {
@@ -15,14 +15,24 @@ public class Player {
     }
 
     public void setNumber(int number) {
-        this.number = new int[]{number};
+        int[] number1 = new int[20];
+        for (int i = 0; i < number; i++) {
+            number1[i] = i;
+            number1[i] = number;
+            i = number;
+        }
+            this.number = number;
      }
 
-    public int[] getNumber() {
-        int o = 0;
-        if (number[0] == 0) {
-            o = number[0 + 1];
+    public int getNumber() {
+
+        return number;
+    }
+
+    public void print(int[] number1) {
+        for (int i = 0; i < number1.length; i++) {
+            number1[i] = i;
+            System.out.println(number1[i]);
         }
-        return Arrays.copyOf(number,number.length - o);
     }
 }

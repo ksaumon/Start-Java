@@ -26,8 +26,7 @@ public class CalculatorTest {
     }
 
     public static void print(double result) {
-        String choiceRecordingForm = result % 1 == 0 ? String.format("%1.0f", result)
-                : String.format("%1.3f", result);
-        System.out.println(choiceRecordingForm);
+        String choiceRecordingForm = (result % 1 == 0) ? ("%1.0f", result) : ("%1.3f", result);
+        System.out.printf(choiceRecordingForm);
     }
 }
