@@ -11,19 +11,23 @@ public class CalculatorTest {
             do {
                 if("yes".equals(option)) {
                     System.out.print("Введите математическое выражение: ");
-                    String str = scanner.nextLine();
-                    result = Calculator.calculate(str);
+                    String data = scanner.nextLine();
+                    result = Calculator.calculate(data);
                     if(result == -0.1) {
-                        System.out.println("Введины некоректные данные");
+                        System.out.println("Введены некорректные данные");
                     } else {
-                        String choiceRecordingForm = result % 1 == 0 ? String.format("%1.0f", result)
-                                : String.format("%1.3f", result);
-                        System.out.println(choiceRecordingForm);
+                        print(result);
                     }
                 }
             } while(result == -0.1);
             System.out.print("Хотите продолжить вычисления? [yes/no]:");
             option = scanner.nextLine();
         } while(!"no".equals(option));
+    }
+
+    public static void print(double result) {
+        String choiceRecordingForm = result % 1 == 0 ? String.format("%1.0f", result)
+                : String.format("%1.3f", result);
+        System.out.println(choiceRecordingForm);
     }
 }
