@@ -5,9 +5,9 @@ public class Calculator {
     private static int num1;
     private static char sign;
 
-    public static double calculate(String data) {
+    public static double calculate(String mathExpression) {
         try {
-            validNumbers(data);
+            validNumbers(mathExpression);
         } catch(NumberFormatException e) {
             System.out.println("Числа должны быть целыми!");
             return -0.1;

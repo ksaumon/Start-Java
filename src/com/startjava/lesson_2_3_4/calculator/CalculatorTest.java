@@ -11,8 +11,8 @@ public class CalculatorTest {
             do {
                 if("yes".equals(option)) {
                     System.out.print("Введите математическое выражение: ");
-                    String data = scanner.nextLine();
-                    result = Calculator.calculate(data);
+                    String mathExpression = scanner.nextLine();
+                    result = Calculator.calculate(mathExpression);
                     if(result == -0.1) {
                         System.out.println("Введены некорректные данные");
                     } else {
@@ -26,7 +26,6 @@ public class CalculatorTest {
     }
 
     public static void print(double result) {
-        String choiceRecordingForm = (result % 1 == 0) ? ("%1.0f", result) : ("%1.3f", result);
-        System.out.printf(choiceRecordingForm);
+        System.out.printf((result % 1 == 0) ? "%1.0f%n" : "%1.3f%n", result);
     }
 }
