@@ -1,6 +1,10 @@
 package com.startjava.lesson_2_3_4.guess;
 
+import java.util.Arrays;
 import java.util.Scanner;
+
+import static com.startjava.lesson_2_3_4.guess.Player.player1Attempts;
+import static com.startjava.lesson_2_3_4.guess.Player.player2Attempts;
 
 public class GuessNumberTest {
     public static void main(String[] args) {
@@ -18,10 +22,18 @@ public class GuessNumberTest {
                 Player.player1Attempts = 0;
                 Player.player2Attempts = 0;
                 guessNumber.start();
+                reset(player1,player2);
                 scanner.nextLine();
             }
             System.out.print("Хотите продолжить игру? [yes/no]:");
             option = scanner.nextLine();
         } while(!"no".equals(option));
+    }
+
+    public static void reset( Player player1, Player player2) {
+        Arrays.fill(player1.numbers, 0, player1.step, 0);
+        Arrays.fill(player2.numbers, 0, player2.step, 0);
+        player1.step = 0;
+        player2.step = 0;
     }
 }

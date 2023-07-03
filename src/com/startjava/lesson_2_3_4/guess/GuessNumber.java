@@ -42,13 +42,10 @@ public class GuessNumber {
                         printWinner(player1, player2);
                         break;
                     }
-                    if(player1.getNumber() > unknownNumber) {
-                        System.out.println("число " + player1.getNumber() + " больше того, что загадал компьютер.");
+                    String number = "число " + player1.getNumber();
+                    System.out.println(player1.getNumber() > unknownNumber ? number + " больше того, что" +
+                            "загадал компьютер." : number + " меньше того, что загадал компьютер.");
                         player1Attempts++;
-                    } else {
-                        System.out.println("число " + player1.getNumber() + " меньше того, что загадал компьютер.");
-                        player1Attempts++;
-                    }
                 }
 
                 System.out.print("Игрок " + player2.getName() + ", введите число: ");
@@ -58,19 +55,16 @@ public class GuessNumber {
                     System.out.println(player2.getNumber() + "Число не входит в полуинтервал ( 0 - 100]");
                 } else {
                     if(player2.getNumber() == unknownNumber) {
-                        System.out.println("число " + unknownNumber +
-                                " загадал компьютер. Игрок " + player2.getName() + " вы победили!" + player2Attempts +
-                                " попытки");
+                        System.out.println("число " + unknownNumber + " загадал компьютер. Игрок " + player2.getName()
+                                + " вы победили!" + player2Attempts + " попытки");
                         printWinner(player1, player2);
                         break;
                     }
-                    if(player2.getNumber() < unknownNumber) {
-                        System.out.println("число " + player2.getNumber() + " меньше того, что загадал компьютер.");
+                    String number = "число " + player2.getNumber();
+                    System.out.println(player2.getNumber() > unknownNumber  ? number + " больше того, что" +
+                            "загадал компьютер." : number + " меньше того, что загадал компьютер.");
                         player2Attempts++;
-                    } else {
-                        System.out.println("число " + player2.getNumber() + " больше того, что загадал компьютер.");
-                        player2Attempts++;
-                    }
+
                 }
             }
             if (player1Attempts == 10) {
@@ -85,14 +79,10 @@ public class GuessNumber {
         }
     }
 
-    public void printWinner( Player player1, Player player2) {
+    public static void printWinner( Player player1, Player player2) {
         player1.print(player1.numbers, player1.step);
         player2.print(player2.numbers, player2.step);
         player1Attempts = 11;
         player2Attempts = 11;
-        Arrays.fill(player1.numbers, 0, player1.step, 0);
-        Arrays.fill(player2.numbers, 0, player2.step, 0);
-        player1.step = 0;
-        player2.step = 0;
     }
 }
