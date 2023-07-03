@@ -16,8 +16,6 @@ public class GuessNumberTest {
         String option = "yes";
         do {
             if("yes".equals(option)) {
-                Player.player1Attempts = 0;
-                Player.player2Attempts = 0;
                 guessNumber.start();
                 reset(player1,player2);
                 scanner.nextLine();
@@ -30,6 +28,8 @@ public class GuessNumberTest {
     public static void reset( Player player1, Player player2) {
         Arrays.fill(player1.numbers, 0, player1.step, 0);
         Arrays.fill(player2.numbers, 0, player2.step, 0);
+        Player.player1Attempts = 0;
+        Player.player2Attempts = 0;
         player1.step = 0;
         player2.step = 0;
     }
