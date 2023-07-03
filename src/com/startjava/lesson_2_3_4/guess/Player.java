@@ -3,7 +3,10 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 
 public class Player {
-    private int number;
+    int[] numbers = new int[10];
+    static int player1Attempts = 0;
+    static int player2Attempts = 0;
+    int step;
     private String name;
 
     public Player(String name) {
@@ -14,25 +17,20 @@ public class Player {
         return name;
     }
 
-    public void setNumber(int number) {
-        int[] number1 = new int[20];
-        for (int i = 0; i < number; i++) {
-            number1[i] = i;
-            number1[i] = number;
-            i = number;
+    public void setNumber( int number) {
+        if (player2Attempts != 0) {
+            step++;
         }
-            this.number = number;
-     }
-
-    public int getNumber() {
-
-        return number;
+        numbers[step] = number;
     }
 
-    public void print(int[] number1) {
-        for (int i = 0; i < number1.length; i++) {
-            number1[i] = i;
-            System.out.println(number1[i]);
-        }
+    public int getNumber() {
+        return  numbers[step];
+    }
+
+
+    public static void print(int[] numbers, int step) {
+        int[] numbers1 = Arrays.copyOf(numbers, step + 1);
+        System.out.println(Arrays.toString(numbers1));
     }
 }
