@@ -53,7 +53,7 @@ public class GuessNumber {
                     if(player2.getNumber() == unknownNumber) {
                         System.out.println("число " + unknownNumber + " загадал компьютер. Игрок " + player2.getName()
                                 + " вы победили!" + Player.player2Attempts + " попытки");
-                        Player.player1Attempts++;
+                        Player.player2Attempts++;
                         printWinner(player1, player2);
                         break;
                     }
