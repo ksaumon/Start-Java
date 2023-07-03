@@ -28,7 +28,6 @@ public class Player {
         return  numbers[step];
     }
 
-
     public static void print(int[] numbers, int step) {
         int[] numbers1 = Arrays.copyOf(numbers, step + 1);
         System.out.println(Arrays.toString(numbers1));

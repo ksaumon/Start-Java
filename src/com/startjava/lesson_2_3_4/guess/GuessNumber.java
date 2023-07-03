@@ -24,8 +24,8 @@ public class GuessNumber {
 
     public void defineWinner(int unknownNumber) {
         System.out.println("У каждого игрока по 10 попыток");
-        while (true){
-            while (Player.player1Attempts < 10 || Player.player2Attempts < 10) {
+        while(true){
+            while(Player.player1Attempts < 10 || Player.player2Attempts < 10) {
                 System.out.print("Игрок " + player1.getName() + ", введите число: ");
                 player1.setNumber(scanner.nextInt());
                 if(player1.getNumber() < startRange || player1.getNumber() > endRange) {
@@ -41,12 +41,11 @@ public class GuessNumber {
                     String number = "число " + player1.getNumber();
                     System.out.println(player1.getNumber() > unknownNumber ? number + " больше того, что" +
                             "загадал компьютер." : number + " меньше того, что загадал компьютер.");
-                       Player.player1Attempts++;
+                    Player.player1Attempts++;
                 }
 
                 System.out.print("Игрок " + player2.getName() + ", введите число: ");
-
-            player2.setNumber(scanner.nextInt());
+                player2.setNumber(scanner.nextInt());
                 if(player2.getNumber() < startRange || player2.getNumber() > endRange) {
                     System.out.println(player2.getNumber() + "Число не входит в полуинтервал ( 0 - 100]");
                 } else {
@@ -60,10 +59,10 @@ public class GuessNumber {
                     String number = "число " + player2.getNumber();
                     System.out.println(player2.getNumber() > unknownNumber  ? number + " больше того, что" +
                             "загадал компьютер." : number + " меньше того, что загадал компьютер.");
-                        Player.player2Attempts++;
-
+                    Player.player2Attempts++;
                 }
             }
+
             if (Player.player1Attempts == 10) {
                 System.out.println("У " + player1.getName() + " закончились попытки");
                 break;
