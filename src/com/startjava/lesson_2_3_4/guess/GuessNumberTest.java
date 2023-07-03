@@ -3,9 +3,6 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static com.startjava.lesson_2_3_4.guess.Player.player1Attempts;
-import static com.startjava.lesson_2_3_4.guess.Player.player2Attempts;
-
 public class GuessNumberTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
