@@ -6,7 +6,9 @@ public class Player {
     int[] numbers = new int[10];
     static int player1Attempts = 0;
     static int player2Attempts = 0;
+    static int player3Attempts = 0;
     int step;
+    int number1;
     private String name;
 
     public Player(String name) {
@@ -17,11 +19,16 @@ public class Player {
         return name;
     }
 
-    public void setNumber( int number) {
-        if (player2Attempts != 0) {
-            step++;
+    public void setNumber(int number) {
+        number1 = number;
+        if(number < GuessNumber.startRange || number > GuessNumber.endRange) {
+            System.out.println(number + "Число не входит в полуинтервал ( 0 - 100]");
+        } else {
+            if (player3Attempts != 0) {
+                step++;
+            }
+            numbers[step] = number;
         }
-        numbers[step] = number;
     }
 
     public int getNumber() {
