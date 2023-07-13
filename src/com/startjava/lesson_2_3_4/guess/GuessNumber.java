@@ -1,19 +1,18 @@
 package com.startjava.lesson_2_3_4.guess;
 
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util. Random;
 
 public class GuessNumber {
-    public static int startRange = 1;
-    public static int endRange = 100;
-    private Player player1;
-    private Player player2;
-    private Player player3;
-
-    public GuessNumber(Player...player) {
-        player1 = player[0];
-        player2 = player[1];
-        player3 = player[2];
+    Player[] players = new Player[3];
+    public Player changePlayers;
+    public static final int startRange = 1;
+    public static final int endRange = 100;
+    public GuessNumber(Player player1, Player player2, Player player3) {
+        players[0] = player1;
+        players[1] = player2;
+        players[2] = player3;
     }
 
     public void start() {
@@ -26,83 +25,75 @@ public class GuessNumber {
         Scanner scanner = new Scanner(System.in);
         System.out.println("У каждого игрока по 10 попыток");
         while(true) {
-            while (Player.player1Attempts < 10 || Player.player2Attempts < 10 || Player.player3Attempts < 10) {
-                player1(player1, player2, player3, unknownNumber, scanner);
-                if(player1.getNumber() == unknownNumber) {break;}
-                player2(player1, player2, player3, unknownNumber, scanner);
-                if(player2.getNumber() == unknownNumber) {break;}
-                player3(player1, player2, player3, unknownNumber, scanner);
-                if(player3.getNumber() == unknownNumber) {break;}
+            while(players[0].getAttempt() < 10 || players[1].getAttempt() < 10 || players[2].getAttempt() < 10) {
+                changePlayers = players[0];
+                player(unknownNumber, scanner);
+                if(players[0].numbers[players[0].getAttempt() - 1] == unknownNumber) {
+                    printWinner(players[0], players[1], players[2]);
+                    reset();
+                    break;
+                }
+                changePlayers = players[1];
+                player(unknownNumber, scanner);
+                if(players[1].numbers[players[1].getAttempt() - 1] == unknownNumber) {
+                    printWinner(players[0], players[1], players[2]);
+                    reset();
+                    break;
+                }
+                changePlayers = players[2];
+                player(unknownNumber, scanner);
+                if(players[2].numbers[players[2].getAttempt() - 1] == unknownNumber) {
+                    printWinner(players[0], players[1], players[2]);
+                    reset();
+                    break;
+                }
             }
-            if(Player.player1Attempts == 10) {
-                System.out.println("У " + player1.getName() + " закончились попытки");
-                break;
-            }
-            if(Player.player2Attempts == 10) {
-                System.out.println("У " + player2.getName() + " закончились попытки");
+            if(changePlayers.getAttempt() == 10) {
+                System.out.println("У " + changePlayers.getName() + " игрока закончились попытки");
                 break;
             }
             break;
         }
     }
 
-    public static void printWinner(Player player1, Player player2, Player player3) {
-        player1.print(player1.numbers, player1.step);
-        player2.print(player2.numbers, player2.step);
-        player2.print(player3.numbers, player3.step);
-        Player.player1Attempts = 11;
-        Player.player2Attempts = 11;
-        Player.player3Attempts = 11;
+    public void printWinner(Player player1, Player player2, Player player3) {
+        player1.print(player1.numbers, player1.getAttempt());
+        player2.print(player2.numbers, player2.getAttempt());
+        player2.print(player3.numbers, player3.getAttempt());
+        player1.setAttempt(10);
+        player2.setAttempt(10);
+        player3.setAttempt(10);
     }
 
-    public static void player1(Player player1, Player player2, Player player3, int unknownNumber, Scanner scanner) {
-        do {
-            System.out.print("Игрок " + player1.getName() + ", введите число: ");
-            player1.setNumber(scanner.nextInt());
-        } while(player1.number1 < startRange || player1.number1 > endRange);
-        Player.player1Attempts++;
-        if(player1.getNumber() == unknownNumber) {
-            System.out.println("число " + unknownNumber + " загадал компьютер. Игрок " + player1.getName()
-                    + " вы победили!" + Player.player1Attempts + " попытки");
-            printWinner(player1, player2, player3);
-        } else {
-            String number = "число " + player1.getNumber();
-            System.out.println(player1.getNumber() > unknownNumber ? number + " больше того, что" +
-                    "загадал компьютер." : number + " меньше того, что загадал компьютер.");
+    public void player(int unknownNumber, Scanner scanner) {
+        while (true) {
+            do {
+                System.out.print("Игрок " + changePlayers.getName() + ", введите число: ");
+                changePlayers.setNumber(scanner.nextInt());
+            } while(changePlayers.numbers[changePlayers.getAttempt() - 1]
+                    < startRange || changePlayers.numbers[changePlayers.getAttempt() - 1] > endRange);
+            if(changePlayers.numbers[changePlayers.getAttempt() - 1] == unknownNumber) {
+                System.out.println("число " + unknownNumber + " загадал компьютер. Игрок " +
+                        changePlayers.getName() + " вы победили!" +
+                        changePlayers.getAttempt() + " попытки");
+                break;
+            } else {
+                System.out.println(changePlayers.numbers[changePlayers.getAttempt() - 1]
+                        > unknownNumber ? changePlayers.numbers[changePlayers.getAttempt() - 1]
+                        + " больше того, что " + "загадал компьютер."
+                        : changePlayers.numbers[changePlayers.getAttempt() - 1]
+                        + " меньше того, что загадал компьютер.");
+                break;
+            }
         }
     }
 
-    public static void player2(Player player1, Player player2,Player player3, int unknownNumber, Scanner scanner) {
-        do {
-            System.out.print("Игрок " + player2.getName() + ", введите число: ");
-            player2.setNumber(scanner.nextInt());
-        } while(player2.number1 < startRange || player2.number1 > endRange);
-        Player.player2Attempts++;
-        if(player2.getNumber() == unknownNumber) {
-            System.out.println("число " + unknownNumber + " загадал компьютер. Игрок " + player2.getName()
-                    + " вы победили!" + Player.player2Attempts + " попытки");
-            printWinner(player1, player2, player3);
-        } else {
-            String number1 = "число " + player2.getNumber();
-            System.out.println(player2.getNumber() > unknownNumber ? number1 + " больше того, что" +
-                    "загадал компьютер." : number1 + " меньше того, что загадал компьютер.");
-        }
-    }
-
-    public static void player3(Player player1, Player player2,Player player3, int unknownNumber, Scanner scanner) {
-        do {
-            System.out.print("Игрок " + player3.getName() + ", введите число: ");
-            player3.setNumber(scanner.nextInt());
-        } while(player3.number1 < startRange || player3.number1 > endRange);
-        Player.player3Attempts++;
-        if(player3.getNumber() == unknownNumber) {
-            System.out.println("число " + unknownNumber + " загадал компьютер. Игрок " + player3.getName()
-                    + " вы победили!" + Player.player3Attempts + " попытки");
-            printWinner(player1, player2, player3);
-        } else {
-            String number2 = "число " + player3.getNumber();
-            System.out.println(player2.getNumber() > unknownNumber ? number2 + " больше того, что" +
-                    "загадал компьютер." : number2 + " меньше того, что загадал компьютер.");
-        }
+    public void reset() {
+        Arrays.fill(players[0].numbers, 0, players[0].getAttempt(), 0);
+        Arrays.fill(players[1].numbers, 0, players[1].getAttempt(), 0);
+        Arrays.fill(players[2].numbers, 0, players[2].getAttempt(), 0);
+        players[0].setAttempt(0);
+        players[1].setAttempt(0);
+        players[2].setAttempt(0);
     }
 }
