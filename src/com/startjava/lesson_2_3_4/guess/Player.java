@@ -1,6 +1,5 @@
 package com.startjava.lesson_2_3_4.guess;
 
-
 public class Player {
     public static final int PLAYER_NUMBER = 11;
     private int[] numbers = new int[PLAYER_NUMBER];
