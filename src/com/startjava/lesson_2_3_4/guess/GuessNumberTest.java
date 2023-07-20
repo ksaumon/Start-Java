@@ -3,16 +3,17 @@ package com.startjava.lesson_2_3_4.guess;
 import java.util.Scanner;
 
 public class GuessNumberTest {
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Player player1 = new Player(createPlayer(scanner));
         Player player2 = new Player(createPlayer(scanner));
         Player player3 = new Player(createPlayer(scanner));
-        GuessNumber guessNumber = new GuessNumber(player1,player2,player3);
+        GuessNumber game = new GuessNumber(player1, player2, player3);
         String option = "yes";
         do {
             if("yes".equals(option)) {
-                guessNumber.start();
+                game.start();
             }
             System.out.print("Хотите продолжить игру? [yes/no]:");
             option = scanner.nextLine();

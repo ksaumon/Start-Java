@@ -1,18 +1,12 @@
 package com.startjava.lesson_2_3_4.guess;
 
+import java.util.Arrays;
+
 public class Player {
-    public static final int PLAYER_NUMBER = 11;
-    private int[] numbers = new int[PLAYER_NUMBER];
+    public static final int CAPACITY = 10;
+    private int[] numbers = new int[CAPACITY];
     private String name;
     private int attempt;
-
-    public Player( String name ) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 
     public int getNumber() {
         return numbers[attempt - 1];
@@ -22,18 +16,27 @@ public class Player {
         return numbers;
     }
 
-    public void addNumber(int number) {
-        while(number < GuessNumber.START_RANGE || number > GuessNumber.END_RANGE) {
-            break;
-        }
-        numbers[attempt] = number;
-        if(attempt == 10) {
-            attempt = 0;
-            numbers[attempt] = number;
-            attempt++;
+    public int addNumber(int number) {
+        if(number < GuessNumber.START_RANGE || number > GuessNumber.END_RANGE) {
+            return number;
         } else {
-            attempt++;
+        numbers[attempt] = number;
+        attempt++;
         }
+        return number;
+    }
+
+    public void reset() {
+        Arrays.fill(getNumbers(), 0);
+        attempt = 0;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Player(String name) {
+        this.name = name;
     }
 
     public int countAttempts() {
