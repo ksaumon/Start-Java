@@ -19,10 +19,9 @@ public class Player {
     public int addNumber(int number) {
         if(number < GuessNumber.START_RANGE || number > GuessNumber.END_RANGE) {
             return number;
-        } else {
+        }
         numbers[attempt] = number;
         attempt++;
-        }
         return number;
     }
 
