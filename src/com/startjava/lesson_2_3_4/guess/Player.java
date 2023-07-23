@@ -9,11 +9,12 @@ public class Player {
     private int attempt;
 
     public int getNumber() {
-        return numbers[attempt - 1];
+        return numbers[attempt - GuessNumber.START_RANGE];
     }
 
     public int[] getNumbers() {
-        return numbers;
+        int[] numbers1 = Arrays.copyOf(numbers, attempt);
+        return numbers1;
     }
 
     public int addNumber(int number) {
@@ -26,7 +27,7 @@ public class Player {
     }
 
     public void reset() {
-        Arrays.fill(getNumbers(), 0);
+        Arrays.fill(numbers, 0, attempt, 0);
         attempt = 0;
     }
 

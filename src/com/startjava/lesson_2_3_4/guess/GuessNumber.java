@@ -15,6 +15,7 @@ public class GuessNumber {
         players[0] = player1;
         players[1] = player2;
         players[2] = player3;
+        makeThrow();
     }
 
     public void start() {
@@ -78,11 +79,22 @@ public class GuessNumber {
 
     public void print() {
         for(int i = 0; i < QUANTITY_PLAYERS; i++) {
-            int[] numbers1 = Arrays.copyOf(players[i].getNumbers(), players[i].countAttempts());
-            for(int j = 0; j < numbers1.length; j++) {
-                System.out.printf(numbers1[j] + " ");
+            for(int j = 0; j < players[i].getNumbers().length; j++) {
+                System.out.printf(players[i].getNumbers()[j] + " ");
             }
             System.out.println();
+        }
+    }
+
+    public void makeThrow() {
+        Random rand = new Random();
+        for (int i = 0; i < QUANTITY_PLAYERS; i++) {
+            for (int j = QUANTITY_PLAYERS - START_RANGE; j > 0; j--) {
+                int randomIndex = rand.nextInt(j + START_RANGE);
+                Player temp = players[j];
+                players[j] = players[randomIndex];
+                players[randomIndex] = temp;
+            }
         }
     }
 }
