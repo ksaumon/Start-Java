@@ -7,9 +7,21 @@ public class Player {
     private int[] numbers = new int[CAPACITY];
     private String name;
     private int attempt;
+    private int score;
+
+    public boolean addNumber(int number) {
+        boolean number1 = false;
+        if(number < GuessNumber.START_RANGE || number > GuessNumber.END_RANGE) {
+            return number1;
+        }
+        numbers[attempt] = number;
+        attempt++;
+        number1 = true;
+        return number1;
+    }
 
     public int getNumber() {
-        return numbers[attempt - GuessNumber.START_RANGE];
+        return numbers[attempt - 1];
     }
 
     public int[] getNumbers() {
@@ -17,29 +29,27 @@ public class Player {
         return numbers1;
     }
 
-    public int addNumber(int number) {
-        if(number < GuessNumber.START_RANGE || number > GuessNumber.END_RANGE) {
-            return number;
-        }
-        numbers[attempt] = number;
-        attempt++;
-        return number;
-    }
-
-    public void reset() {
-        Arrays.fill(numbers, 0, attempt, 0);
-        attempt = 0;
+    public Player(String name) {
+        this.name = name;
     }
 
     public String getName() {
         return name;
     }
-
-    public Player(String name) {
-        this.name = name;
+    public int getAttempts() {
+        return attempt;
     }
 
-    public int countAttempts() {
-        return attempt;
+    public void upScore() {
+         score++;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void reset() {
+        Arrays.fill(numbers, 0, attempt, 0);
+        attempt = 0;
     }
 }
