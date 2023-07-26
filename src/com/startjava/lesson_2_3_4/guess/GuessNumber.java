@@ -34,9 +34,18 @@ public class GuessNumber {
 
     public void start() {
         Random rand = new Random();
-        int unknownNumber = rand.nextInt(3) + 1;
+        int unknownNumber = rand.nextInt(END_RANGE) + 1;
         defineWinner(unknownNumber);
         fineWinner();
+    }
+
+    public void fineWinner() {
+        for (int i = 0; i < QUANTITY_PLAYERS; i++) {
+            if (players[i].getScore() >= 2) {
+                System.out.println("Игрок" + players[i].getName() + "победил по результату 3 раундов");
+                System.exit(0);
+            }
+        }
     }
 
     public void defineWinner(int unknownNumber) {
@@ -67,15 +76,6 @@ public class GuessNumber {
                 }
             }
             break;
-        }
-    }
-
-    public void fineWinner() {
-        for (int i = 0; i < QUANTITY_PLAYERS; i++) {
-            if (players[i].getScore() >= 2) {
-                System.out.println("Игрок" + players[i].getName() + "победил по результату 3 раундов");
-                System.exit(0);
-            }
         }
     }
 

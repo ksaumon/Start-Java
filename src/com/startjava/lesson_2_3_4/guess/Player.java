@@ -6,8 +6,8 @@ public class Player {
     public static final int CAPACITY = 10;
     private int[] numbers = new int[CAPACITY];
     private String name;
-    private int attempt;
     private int score;
+    private int attempt;
 
     public boolean addNumber(int number) {
         boolean number1 = false;
@@ -36,9 +36,6 @@ public class Player {
     public String getName() {
         return name;
     }
-    public int getAttempts() {
-        return attempt;
-    }
 
     public void upScore() {
          score++;
@@ -46,6 +43,10 @@ public class Player {
 
     public int getScore() {
         return score;
+    }
+
+    public int getAttempts() {
+        return attempt;
     }
 
     public void reset() {
