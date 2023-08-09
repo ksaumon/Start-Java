@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Random;
 
 public class GuessNumber {
-    public static final int QUANTITY_PLAYERS = 3;
+    private static final int QUANTITY_PLAYERS = 3;
     public static final int START_RANGE = 1;
     public static final int END_RANGE = 100;
     private Player[] players = new Player[QUANTITY_PLAYERS];
@@ -17,7 +17,7 @@ public class GuessNumber {
         castLots();
     }
 
-    public void castLots() {
+    private void castLots() {
         Random rand = new Random();
         for(int i = QUANTITY_PLAYERS - 1; i > 0; i--) {
             int randomIndex;
@@ -33,23 +33,13 @@ public class GuessNumber {
     }
 
     public void start() {
+        defineWinner();
+    }
+
+    private void defineWinner() {
         Random rand = new Random();
-        int unknownNumber = rand.nextInt(END_RANGE) + 1;
-        defineWinner(unknownNumber);
-        fineWinner();
-    }
-
-    public void fineWinner() {
-        for (int i = 0; i < QUANTITY_PLAYERS; i++) {
-            if (players[i].getScore() >= 2) {
-                System.out.println("Игрок" + players[i].getName() + "победил по результату 3 раундов");
-                System.exit(0);
-            }
-        }
-    }
-
-    public void defineWinner(int unknownNumber) {
-        boolean winner = false;
+        int unknownNumber = rand.nextInt(100) + 1;
+        boolean winner = true;
         Player currentPlayer = null;
         Scanner scanner = new Scanner(System.in);
         System.out.println("У каждого игрока по 10 попыток");
@@ -58,54 +48,74 @@ public class GuessNumber {
                 for(int i = 0; i < QUANTITY_PLAYERS; i++) {
                     currentPlayer = players[i];
                     winner = isGuessed(unknownNumber, scanner, currentPlayer);
-                    if(winner == true) {
-                        print();
+                    if(winner) {
                         break;
                     }
-                    if(currentPlayer.getAttempts() == Player.CAPACITY) {
+                    if(currentPlayer.getAttempt() == Player.CAPACITY) {
                         System.out.println("У " + currentPlayer.getName() + " игрока закончились попытки");
-                        break;
                     }
                 }
-            } while(winner != true && currentPlayer.getAttempts() != Player.CAPACITY);
-            if(currentPlayer.getAttempts() == Player.CAPACITY) {
-                currentPlayer.reset();
-            } else {
-                for(int i = 0; i < QUANTITY_PLAYERS; i++) {
-                    players[i].reset();
-                }
+            } while(!winner && currentPlayer.getAttempt() != Player.CAPACITY);
+            print();
+            for(int i = 0; i < QUANTITY_PLAYERS; i++) {
+                players[i].reset();
             }
             break;
         }
     }
 
-    public void print() {
-        for (int i = 0; i < 3; i++) {
-            for (int element : players[i].getNumbers()) {
-                System.out.print(element + " ");
-            }
-            System.out.println();
-        }
-    }
-
-    public boolean isGuessed(int unknownNumber, Scanner scanner, Player currentPlayer) {
+    private boolean isGuessed(int unknownNumber, Scanner scanner, Player currentPlayer) {
         boolean move;
             do {
                 System.out.print("Игрок " + currentPlayer.getName() + ", введите число: ");
                 move = currentPlayer.addNumber(scanner.nextInt());
-                if(move == false) {
+                if(!move) {
                     System.out.println("Данное число не входит в полуинтервал (0 - 100]");
                 }
-            } while(move == false);
+            } while(!move);
             if(currentPlayer.getNumber() == unknownNumber) {
                 System.out.println("число " + unknownNumber + " загадал компьютер. Игрок " +
                         currentPlayer.getName() + " вы победили!" +
-                        currentPlayer.getAttempts() + " попытки");
+                        currentPlayer.getAttempt() + " попытки");
                 currentPlayer.upScore();
             } else {
                 String choice = (currentPlayer.getNumber() > unknownNumber) ? " больше " : " меньше ";
                 System.out.println(currentPlayer.getNumber() + choice + "того, что загадал компьютер.");
             }
         return (currentPlayer.getNumber() == unknownNumber);
+    }
+
+    private void print() {
+        for(int i = 0; i < QUANTITY_PLAYERS; i++) {
+            for(int number : players[i].getNumbers()) {
+                System.out.print(number + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public void fineWinner() {
+        int winnerIndex = 0;
+        int maxScore = 0;
+        for(int i = 0; i < QUANTITY_PLAYERS; i++) {
+            if(players[i].getScore() > maxScore) {
+                maxScore = players[i].getScore();
+                players[winnerIndex] = players[i];
+            }
+        }
+        int winnerCount = 0;
+        for(int i = 0; i < QUANTITY_PLAYERS; i++) {
+            if(players[i].getScore() == maxScore) {
+                winnerCount++;
+            }
+        }
+        if(winnerCount >= 2) {
+            System.out.println("по результату 3 раундов ничья");
+        } else {
+            System.out.println("Игрок " + players[winnerIndex].getName() + " победил по результату 3 раундов");
+        }
+        for(int i = 0; i < QUANTITY_PLAYERS; i++) {
+            players[i].resetScore();
+        }
     }
 }

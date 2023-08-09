@@ -10,10 +10,16 @@ public class GuessNumberTest {
         Player player2 = new Player(createPlayer(scanner));
         Player player3 = new Player(createPlayer(scanner));
         GuessNumber game = new GuessNumber(player1, player2, player3);
+        int round = 0;
         String option = "yes";
         do {
             if("yes".equals(option)) {
                 game.start();
+                round++;
+                if(round == 3) {
+                    game.fineWinner();
+                    round = 0;
+                }
             }
             System.out.print("Хотите продолжить игру? [yes/no]:");
             option = scanner.nextLine();
