@@ -1,14 +1,15 @@
 package com.startjava.graduation.bookshelf;
 
+
 import java.util.Scanner;
 
 public class Bookshelf {
     public static final int CAPACITY = 10;
-    private String[] books = new String[CAPACITY];
+    private Book[] books = new Book[CAPACITY];
     Scanner scanner = new Scanner(System.in);
-    Book book = new Book();
     private int numberBooks;
     private int numberShelves;
+    private String name;
 
     public int getNumberBooks() {
         return numberBooks;
@@ -18,28 +19,28 @@ public class Bookshelf {
         return CAPACITY - numberShelves;
     }
 
-    public void book() {
-
-    }
-
-    public void saveBooks() {
+    public void saveBooks(Book book) {
+        if (numberBooks > 0) {
+            books[numberBooks] = new Book();
+        } else {
+            books[numberBooks] = book;
+        }
         System.out.println("Введите автора");
+        scanner.nextLine();
         book.setAuthor(scanner.nextLine());
         System.out.println("Введите название книги");
         book.setName(scanner.nextLine());
         System.out.println("Введите год издания");
         book.setYearsPublishing(scanner.nextInt());
-        books[numberBooks] = book.line();
         numberBooks++;
         printBookshelf();
     }
 
     public void findBooks() {
         System.out.println("Введите название книги");
-        scanner.nextLine();
         String findNameBook = scanner.nextLine();
         for (int i = 0; i < books.length; i++) {
-            if (books[i] == findNameBook) {
+            if (books[i].getName().equals(findNameBook)) {
                 System.out.println("Данная книга найдена" + books[numberBooks]);
                 break;
             }
@@ -52,7 +53,7 @@ public class Bookshelf {
         scanner.nextLine();
         String findNameBook = scanner.nextLine();
         for (int i = 0; i < books.length; i++) {
-            if (books[i].bgetName == findNameBook) {
+            if (books[i].getName().equals(findNameBook)) {
                 books[i] = null;
             } else {
                 System.out.println("Книга не найдена");

@@ -8,6 +8,7 @@ public class BookshelfTest {
 
     public static void main( String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Book book = new Book();
         Bookshelf bookshelf = new Bookshelf();
         if (bookshelf.getNumberBooks() == 0) {
             System.out.println("Шкаф пуст. Вы можете добавить в него первую книгу");
@@ -18,7 +19,7 @@ public class BookshelfTest {
         do {
             menu();
            // chooseMenuItem(scanner, bookshelf);
-        }while(chooseMenuItem(scanner, bookshelf) != quit);
+        }while(chooseMenuItem(scanner, bookshelf, book) != quit);
     }
 
     public static void menu() {
@@ -32,10 +33,10 @@ public class BookshelfTest {
         System.out.println("Введите номер команды");
     }
 
-    public static int chooseMenuItem(Scanner scanner, Bookshelf bookshelf) {
+    public static int chooseMenuItem(Scanner scanner, Bookshelf bookshelf, Book book) {
         int itemMenu = scanner.nextInt();
         if(itemMenu == 1) {
-            bookshelf.saveBooks();
+            bookshelf.saveBooks(book);
         }
         if(itemMenu == 2) {
             bookshelf.deleteBooks();
@@ -49,6 +50,16 @@ public class BookshelfTest {
         if(itemMenu == 5) {
             return quit;
         }
+        pressEnter(scanner);
         return itemMenu;
+    }
+
+    public static void pressEnter(Scanner scanner) {
+        System.out.println("Для продолжение работы нажмите клавишу Enter");
+        String choice;
+        do {
+            scanner.nextLine();
+            choice = scanner.nextLine();
+        } while(!choice.equals(""));
     }
 }

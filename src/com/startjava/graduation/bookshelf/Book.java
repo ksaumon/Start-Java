@@ -10,10 +10,6 @@ public class Book {
         this.author = author;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -26,20 +22,16 @@ public class Book {
         this.yearsPublishing = yearsPublishing;
     }
 
-    public int getYearsPublishing() {
-        return yearsPublishing;
-    }
-
     public void setBookInformationLength(int bookInformationLength) {
-        line();
+        toString();
     }
 
     public String getBookInformationLength() {
         return bookInformationLength;
     }
 
-    public String line(){
-        return author + name + yearsPublishing;
+    public String toString(){
+        return author + "," + name + "," + yearsPublishing;
     }
 
 }
