@@ -9,7 +9,6 @@ public class Bookshelf {
     Scanner scanner = new Scanner(System.in);
     private int numberBooks;
     private int numberShelves;
-    private String name;
 
     public int getNumberBooks() {
         return numberBooks;
@@ -20,46 +19,32 @@ public class Bookshelf {
     }
 
     public void saveBooks(Book book) {
-        if (numberBooks > 0) {
-            books[numberBooks] = new Book();
-        } else {
-            books[numberBooks] = book;
-        }
-        System.out.println("Введите автора");
-        scanner.nextLine();
-        book.setAuthor(scanner.nextLine());
-        System.out.println("Введите название книги");
-        book.setName(scanner.nextLine());
-        System.out.println("Введите год издания");
-        book.setYearsPublishing(scanner.nextInt());
+        books[numberBooks] = book;
         numberBooks++;
         printBookshelf();
     }
 
-    public void findBooks() {
-        System.out.println("Введите название книги");
-        String findNameBook = scanner.nextLine();
-        for (int i = 0; i < books.length; i++) {
+    public Book findBooks(String findNameBook) {
+        for (int i = 0; i < numberBooks; i++) {
             if (books[i].getName().equals(findNameBook)) {
-                System.out.println("Данная книга найдена" + books[numberBooks]);
-                break;
+                System.out.println("Данная книга найдена " + books[i]);
+                return books[i];
             }
         }
-        System.out.println("Данная книга не найдена");
+        return null;
     }
 
-    public void deleteBooks() {
-        System.out.println("Введите название книги");
-        scanner.nextLine();
-        String findNameBook = scanner.nextLine();
-        for (int i = 0; i < books.length; i++) {
+    public void deleteBooks(String findNameBook) {
+        for (int i = 0; i < numberBooks; i++) {
             if (books[i].getName().equals(findNameBook)) {
+                System.out.println("Книга удалена " + books[i]);
+                numberBooks--;
+                System.arraycopy(books, i + 1, books, i, numberBooks - i);
                 books[i] = null;
-            } else {
-                System.out.println("Книга не найдена");
+                return;
             }
         }
-
+        System.out.println("Книга не найдена");
     }
 
     public void printBookshelf() {
