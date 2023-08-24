@@ -1,23 +1,18 @@
 package com.startjava.graduation.bookshelf;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class BookshelfTest {
 
     private static final int quit = 5;
 
-    public static void main( String[] args) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Bookshelf bookshelf = new Bookshelf();
-        if (bookshelf.getNumberBooks() == 0) {
-            System.out.println("Шкаф пуст. Вы можете добавить в него первую книгу");
-        } else {
-            System.out.println("В шкафу книг -" + bookshelf.getNumberBooks() +
-                    ", Свободных полок -" + bookshelf.freeNumberShelves());
-        }
         do {
+            printBookshelf(bookshelf);
             menu();
-           // chooseMenuItem(scanner, bookshelf);
         }while(chooseMenuItem(scanner, bookshelf) != quit);
     }
 
@@ -29,6 +24,22 @@ public class BookshelfTest {
           4. clear bookshelf
           5. quit
           """);
+    }
+
+    public static void printBookshelf(Bookshelf bookshelf) {
+        if (bookshelf.getNumberBooks() == 0) {
+            System.out.println("Шкаф пуст. Вы можете добавить в него первую книгу");
+        } else {
+            Book[] books = Arrays.copyOf(bookshelf.getBook(), bookshelf.getNumberBooks());
+            System.out.println("В шкафу книг -" + bookshelf.getNumberBooks() +
+                    ", Свободных полок -" + bookshelf.freeNumberShelves());
+            for(Book book: books) {
+                System.out.println("|" + book + " ".repeat( bookshelf.getNumberShelves()
+                    - book.getBookInformationLength()) + "|");
+                System.out.println("|" + "-".repeat(bookshelf.getNumberShelves()) + "|");
+                }
+            System.out.println("|" + " ".repeat(bookshelf.getNumberShelves()) + "|\n");
+        }
     }
 
     public static int chooseMenuItem(Scanner scanner, Bookshelf bookshelf) {
@@ -44,7 +55,7 @@ public class BookshelfTest {
             deleteBooks(scanner, bookshelf);
         }
         if(itemMenu == 4) {
-            bookshelf.clearBookshelf();
+            bookshelf.clearBookcase();
         }
         if(itemMenu == 5) {
             return quit;

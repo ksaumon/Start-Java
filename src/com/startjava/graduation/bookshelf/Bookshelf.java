@@ -1,27 +1,36 @@
 package com.startjava.graduation.bookshelf;
 
 
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Bookshelf {
     public static final int CAPACITY = 10;
     private Book[] books = new Book[CAPACITY];
-    Scanner scanner = new Scanner(System.in);
     private int numberBooks;
     private int numberShelves;
+
+    public Book[] getBook() {
+        return books;
+    }
 
     public int getNumberBooks() {
         return numberBooks;
     }
+    public int getNumberShelves() {
+        return numberShelves;
+    }
 
     public int freeNumberShelves() {
-        return CAPACITY - numberShelves;
+        return CAPACITY - numberBooks;
     }
 
     public void saveBooks(Book book) {
         books[numberBooks] = book;
         numberBooks++;
-        printBookshelf();
+        if (numberShelves < book.getBookInformationLength()) {
+            numberShelves = book.getBookInformationLength();
+        }
     }
 
     public Book findBooks(String findNameBook) {
@@ -47,28 +56,10 @@ public class Bookshelf {
         System.out.println("Книга не найдена");
     }
 
-    public void printBookshelf() {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i] != null){
-                System.out.println(books[i] + "");
-            }
-        }
-    }
-
-    public void clearBookshelf() {
-
-    }
-
-    public void getQuantityBooks() {
-
-    }
-
-    public void getFreeShelves() {
-
-    }
-
-    public void clearCloset() {
-
+    public void clearBookcase() {
+        Arrays.fill(books, 0, numberBooks, null);
+        numberBooks = 0;
+        System.out.println("Шкаф очищен");
     }
 
 }
