@@ -6,14 +6,13 @@ import java.util.Scanner;
 public class BookshelfTest {
 
     private static final int quit = 5;
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Bookshelf bookshelf = new Bookshelf();
         do {
             printBookshelf(bookshelf);
             menu();
-        }while(chooseMenuItem(scanner, bookshelf) != quit);
+        } while(chooseMenuItem(scanner, bookshelf) != quit);
     }
 
     public static void menu() {
@@ -27,7 +26,7 @@ public class BookshelfTest {
     }
 
     public static void printBookshelf(Bookshelf bookshelf) {
-        if (bookshelf.getNumberBooks() == 0) {
+        if(bookshelf.getNumberBooks() == 0) {
             System.out.println("Шкаф пуст. Вы можете добавить в него первую книгу");
         } else {
             Book[] books = Arrays.copyOf(bookshelf.getBook(), bookshelf.getNumberBooks());
@@ -64,7 +63,7 @@ public class BookshelfTest {
         return itemMenu;
     }
 
-    public static void saveBooks(Scanner scanner, Bookshelf bookshelf) {
+    public static Book saveBooks( Scanner scanner, Bookshelf bookshelf) {
         System.out.println("Введите автора");
         scanner.nextLine();
         String author = scanner.nextLine();
@@ -74,6 +73,7 @@ public class BookshelfTest {
         int yearsPublishing = scanner.nextInt();
         Book book = new Book(author, name, yearsPublishing);
         bookshelf.saveBooks(book);
+        return book;
     }
 
     public static void findBooks(Scanner scanner, Bookshelf bookshelf) {
@@ -81,7 +81,7 @@ public class BookshelfTest {
         scanner.nextLine();
         String findNameBook = scanner.nextLine();
         Book book = bookshelf.findBooks(findNameBook);
-        if (book == null) {
+        if(book == null) {
             System.out.println("Данная книга не найдена");
         }
     }

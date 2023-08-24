@@ -1,7 +1,5 @@
 package com.startjava.graduation.bookshelf;
 
-
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Bookshelf {
@@ -17,6 +15,7 @@ public class Bookshelf {
     public int getNumberBooks() {
         return numberBooks;
     }
+
     public int getNumberShelves() {
         return numberShelves;
     }
@@ -26,16 +25,20 @@ public class Bookshelf {
     }
 
     public void saveBooks(Book book) {
-        books[numberBooks] = book;
-        numberBooks++;
-        if (numberShelves < book.getBookInformationLength()) {
+        if(numberBooks < CAPACITY) {
+            books[numberBooks] = book;
+            numberBooks++;
+        } else {
+            System.out.println("Ошибка: книга не сохранена");
+        }
+        if(numberShelves < book.getBookInformationLength()) {
             numberShelves = book.getBookInformationLength();
         }
     }
 
     public Book findBooks(String findNameBook) {
-        for (int i = 0; i < numberBooks; i++) {
-            if (books[i].getName().equals(findNameBook)) {
+        for(int i = 0; i < numberBooks; i++) {
+            if(books[i].getName().equals(findNameBook)) {
                 System.out.println("Данная книга найдена " + books[i]);
                 return books[i];
             }
@@ -44,12 +47,21 @@ public class Bookshelf {
     }
 
     public void deleteBooks(String findNameBook) {
-        for (int i = 0; i < numberBooks; i++) {
-            if (books[i].getName().equals(findNameBook)) {
+        for(int i = 0; i < numberBooks; i++) {
+            if(books[i].getName().equals(findNameBook)) {
+                int length = books[i].getBookInformationLength();
                 System.out.println("Книга удалена " + books[i]);
                 numberBooks--;
                 System.arraycopy(books, i + 1, books, i, numberBooks - i);
-                books[i] = null;
+                books[numberBooks] = null;
+                if(length == numberShelves) {
+                    numberShelves = 0;
+                    for(int j = 0; j < numberBooks; j++) {
+                        if(numberShelves < books[j].getBookInformationLength()) {
+                            numberShelves = books[j].getBookInformationLength();
+                        }
+                    }
+                }
                 return;
             }
         }
@@ -61,5 +73,4 @@ public class Bookshelf {
         numberBooks = 0;
         System.out.println("Шкаф очищен");
     }
-
 }
