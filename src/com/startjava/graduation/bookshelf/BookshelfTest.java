@@ -44,23 +44,16 @@ public class BookshelfTest {
     public static int chooseMenuItem(Scanner scanner, Bookshelf bookshelf) {
         System.out.println("Введите номер команды");
         int itemMenu = scanner.nextInt();
-        if(itemMenu == 1) {
-            saveBooks(scanner, bookshelf);
-        }
-        if(itemMenu == 2) {
-            findBooks(scanner, bookshelf);
-        }
-        if(itemMenu == 3) {
-            deleteBooks(scanner, bookshelf);
-        }
-        if(itemMenu == 4) {
-            bookshelf.clearBookcase();
-        }
-        if(itemMenu == 5) {
-            return quit;
+        switch (itemMenu) {
+            case 1 -> saveBooks(scanner, bookshelf);
+            case 2 -> findBooks(scanner, bookshelf);
+            case 3 -> deleteBooks(scanner, bookshelf);
+            case 4 -> bookshelf.clearBookcase();
+            case 5 -> {return quit;}
+            default -> System.out.println("Дакого номера нет. Введите номер из списка. ");
         }
         pressEnter(scanner);
-        return itemMenu;
+        return 0;
     }
 
     public static Book saveBooks( Scanner scanner, Bookshelf bookshelf) {
