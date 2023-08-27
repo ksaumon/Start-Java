@@ -24,8 +24,8 @@ public class Bookshelf {
         return capacity - numberBooks;
     }
 
-    public void save(Book book) {
-        if(numberBooks < capacity) {
+    public void save( Book book ) {
+        if (numberBooks < capacity) {
             books[numberBooks] = book;
             numberBooks++;
             findMaxLength(maxLength);
@@ -34,18 +34,18 @@ public class Bookshelf {
         }
     }
 
-    public Book find(String findTitle) {
-        for(int i = 0; i < numberBooks; i++) {
-            if(books[i].getTitle().equals(findTitle)) {
+    public Book find( String title ) {
+        for (int i = 0; i < numberBooks; i++) {
+            if (books[i].getTitle().equals(title)) {
                 return books[i];
             }
         }
         return null;
     }
 
-    public void delete(String findTitle) {
-        for(int i = 0; i < numberBooks; i++) {
-            if(books[i].getTitle().equals(findTitle)) {
+    public void delete( String title ) {
+        for (int i = 0; i < numberBooks; i++) {
+            if (books[i].getTitle().equals(title)) {
                 int length = books[i].getLength();
                 System.out.println("Книга удалена ");
                 numberBooks--;
@@ -58,11 +58,11 @@ public class Bookshelf {
         System.out.println("Книга не найдена");
     }
 
-    public void findMaxLength(int length) {
-        if(length == maxLength) {
+    public void findMaxLength( int length ) {
+        if (length == maxLength) {
             maxLength = 0;
-            for(int j = 0; j < numberBooks; j++) {
-                if(maxLength < books[j].getLength()) {
+            for (int j = 0; j < numberBooks; j++) {
+                if (maxLength < books[j].getLength()) {
                     maxLength = books[j].getLength();
                     capacity = maxLength;
                 }
