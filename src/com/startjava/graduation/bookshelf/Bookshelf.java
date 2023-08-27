@@ -3,69 +3,71 @@ package com.startjava.graduation.bookshelf;
 import java.util.Arrays;
 
 public class Bookshelf {
-    public static final int CAPACITY = 10;
-    private Book[] books = new Book[CAPACITY];
+    public static int capacity = 10;
+    private Book[] books = new Book[capacity];
     private int numberBooks;
-    private int numberShelves;
+    private int maxLength;
 
     public Book[] getBook() {
-        return books;
+        return Arrays.copyOf(books, numberBooks);
     }
 
     public int getNumberBooks() {
         return numberBooks;
     }
 
-    public int getNumberShelves() {
-        return numberShelves;
+    public int getMaxLength() {
+        return maxLength;
     }
 
-    public int freeNumberShelves() {
-        return CAPACITY - numberBooks;
+    public int getCountFreeShelves() {
+        return capacity - numberBooks;
     }
 
-    public void saveBooks(Book book) {
-        if(numberBooks < CAPACITY) {
+    public void save(Book book) {
+        if(numberBooks < capacity) {
             books[numberBooks] = book;
             numberBooks++;
+            findMaxLength(maxLength);
         } else {
             System.out.println("Ошибка: книга не сохранена");
         }
-        if(numberShelves < book.getBookInformationLength()) {
-            numberShelves = book.getBookInformationLength();
-        }
     }
 
-    public Book findBooks(String findNameBook) {
+    public Book find(String findNameBook) {
         for(int i = 0; i < numberBooks; i++) {
-            if(books[i].getName().equals(findNameBook)) {
-                System.out.println("Данная книга найдена " + books[i]);
+            if(books[i].getTitle().equals(findNameBook)) {
                 return books[i];
             }
         }
         return null;
     }
 
-    public void deleteBooks(String findNameBook) {
+    public void delete(String findNameBook) {
         for(int i = 0; i < numberBooks; i++) {
-            if(books[i].getName().equals(findNameBook)) {
-                int length = books[i].getBookInformationLength();
-                System.out.println("Книга удалена " + books[i]);
+            if(books[i].getTitle().equals(findNameBook)) {
+                int length = books[i].getLength();
+                System.out.println("Книга удалена ");
                 numberBooks--;
                 System.arraycopy(books, i + 1, books, i, numberBooks - i);
                 books[numberBooks] = null;
-                if(length == numberShelves) {
-                    numberShelves = 0;
-                    for(int j = 0; j < numberBooks; j++) {
-                        if(numberShelves < books[j].getBookInformationLength()) {
-                            numberShelves = books[j].getBookInformationLength();
-                        }
-                    }
-                }
+                findMaxLength(length);
                 return;
             }
         }
         System.out.println("Книга не найдена");
+    }
+
+    public void findMaxLength(int length) {
+        if(length == maxLength) {
+            maxLength = 0;
+            for(int j = 0; j < numberBooks; j++) {
+                if(maxLength < books[j].getLength()) {
+                    maxLength = books[j].getLength();
+                    capacity = maxLength;
+                }
+            }
+        }
     }
 
     public void clearBookcase() {
