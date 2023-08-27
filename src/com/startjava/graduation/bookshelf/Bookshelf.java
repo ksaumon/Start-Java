@@ -3,12 +3,12 @@ package com.startjava.graduation.bookshelf;
 import java.util.Arrays;
 
 public class Bookshelf {
-    public static int capacity = 10;
+    private int capacity = 10;
     private Book[] books = new Book[capacity];
     private int numberBooks;
     private int maxLength;
 
-    public Book[] getBook() {
+    public Book[] getBooks() {
         return Arrays.copyOf(books, numberBooks);
     }
 
@@ -34,18 +34,18 @@ public class Bookshelf {
         }
     }
 
-    public Book find(String findNameBook) {
+    public Book find(String findTitle) {
         for(int i = 0; i < numberBooks; i++) {
-            if(books[i].getTitle().equals(findNameBook)) {
+            if(books[i].getTitle().equals(findTitle)) {
                 return books[i];
             }
         }
         return null;
     }
 
-    public void delete(String findNameBook) {
+    public void delete(String findTitle) {
         for(int i = 0; i < numberBooks; i++) {
-            if(books[i].getTitle().equals(findNameBook)) {
+            if(books[i].getTitle().equals(findTitle)) {
                 int length = books[i].getLength();
                 System.out.println("Книга удалена ");
                 numberBooks--;

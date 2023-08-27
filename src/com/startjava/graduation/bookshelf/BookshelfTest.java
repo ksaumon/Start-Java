@@ -29,7 +29,7 @@ public class BookshelfTest {
         if(bookshelf.getNumberBooks() == 0) {
             System.out.println("Шкаф пуст. Вы можете добавить в него первую книгу");
         } else {
-            Book[] books = bookshelf.getBook();
+            Book[] books = bookshelf.getBooks();
             System.out.println("В шкафу книг - " + bookshelf.getNumberBooks() +
                     ", Свободных полок - " + bookshelf.getCountFreeShelves());
             for(Book book: books) {
@@ -43,13 +43,13 @@ public class BookshelfTest {
 
     private static int chooseMenuItem(Scanner scanner, Bookshelf bookshelf) {
         System.out.println("Введите номер команды");
-        int itemMenu = scanner.nextInt();
+        String itemMenu = scanner.nextLine();
         switch (itemMenu) {
-            case 1 -> saveBook(scanner, bookshelf);
-            case 2 -> findBook(scanner, bookshelf);
-            case 3 -> deleteBook(scanner, bookshelf);
-            case 4 -> bookshelf.clearBookcase();
-            case 5 -> {return quit;}
+            case "1" -> saveBook(scanner, bookshelf);
+            case "2" -> findBook(scanner, bookshelf);
+            case "3" -> deleteBook(scanner, bookshelf);
+            case "4" -> bookshelf.clearBookcase();
+            case "5" -> {return quit;}
             default -> System.out.println("Дакого номера нет. Введите номер из списка. ");
         }
         pressEnter(scanner);
@@ -58,18 +58,17 @@ public class BookshelfTest {
 
     private static Book saveBook( Scanner scanner, Bookshelf bookshelf) {
         System.out.println("Введите автора");
-        scanner.nextLine();
         String author = scanner.nextLine();
         String title = inputTitle(scanner);
         System.out.println("Введите год издания");
         int yearsPublishing = scanner.nextInt();
+        scanner.nextLine();
         Book book = new Book(author, title, yearsPublishing);
         bookshelf.save(book);
         return book;
     }
 
     private static void findBook(Scanner scanner, Bookshelf bookshelf) {
-        scanner.nextLine();
         String findTitle = inputTitle(scanner);
         Book book = bookshelf.find(findTitle);
         if(book == null) {
@@ -80,7 +79,6 @@ public class BookshelfTest {
     }
 
     private static void deleteBook(Scanner scanner, Bookshelf bookshelf) {
-        scanner.nextLine();
         String findTitle = inputTitle(scanner);
         bookshelf.delete(findTitle);
     }
