@@ -12,18 +12,18 @@ public class BookshelfTest {
         do {
             printBookshelf();
             printMenu();
-        } while(chooseMenuItem() != QUIT);
+        } while (chooseMenuItem() != QUIT);
     }
 
     private static void printBookshelf() {
-        if(bookshelf.getNumberBooks() == 0) {
+        if (bookshelf.getNumberBooks() == 0) {
             System.out.println("Шкаф пуст. Вы можете добавить в него первую книгу");
         } else {
             Book[] books = bookshelf.getBooks();
             int maxLength = bookshelf.getMaxLength();
             System.out.println("В шкафу книг - " + bookshelf.getNumberBooks() +
                     ", Свободных полок - " + bookshelf.getCountFreeShelves());
-            for(Book book : books) {
+            for (Book book : books) {
                 System.out.println("|" + book + " ".repeat(maxLength - book.getLength()) + "|");
                 System.out.println("|" + "-".repeat(maxLength) + "|");
             }
@@ -44,12 +44,14 @@ public class BookshelfTest {
     private static int chooseMenuItem() {
         System.out.println("Введите номер команды");
         String menuItem = scanner.nextLine();
-        switch (menuItem) {
+        switch(menuItem) {
             case "1" -> saveBook();
             case "2" -> findBook();
             case "3" -> deleteBook();
             case "4" -> bookshelf.clearBookcase();
-            case "5" -> {return QUIT;}
+            case "5" -> {
+                return QUIT;
+            }
             default -> System.out.println("Такого номера нет. Введите номер из списка. ");
         }
         pressEnter();
@@ -70,7 +72,7 @@ public class BookshelfTest {
     private static void findBook() {
         String title = inputTitle();
         Book book = bookshelf.find(title);
-        if(book == null) {
+        if (book == null) {
             System.out.println("Данная книга не найдена");
         } else {
             System.out.println(book);
@@ -93,6 +95,6 @@ public class BookshelfTest {
         do {
             scanner.nextLine();
             choice = scanner.nextLine();
-        } while(!choice.equals(""));
+        } while (! choice.equals(""));
     }
 }
