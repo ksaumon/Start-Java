@@ -3,8 +3,8 @@ package com.startjava.graduation.bookshelf;
 import java.util.Arrays;
 
 public class Bookshelf {
-    private int capacity = 10;
-    private Book[] books = new Book[capacity];
+    private static final int CAPACITY = 10;
+    private Book[] books = new Book[CAPACITY];
     private int numberBooks;
     private int maxLength;
 
@@ -21,11 +21,11 @@ public class Bookshelf {
     }
 
     public int getCountFreeShelves() {
-        return capacity - numberBooks;
+        return CAPACITY - numberBooks;
     }
 
-    public void save( Book book ) {
-        if (numberBooks < capacity) {
+    public void save(Book book) {
+        if(numberBooks < CAPACITY) {
             books[numberBooks] = book;
             numberBooks++;
             findMaxLength(maxLength);
@@ -34,18 +34,18 @@ public class Bookshelf {
         }
     }
 
-    public Book find( String title ) {
-        for (int i = 0; i < numberBooks; i++) {
-            if (books[i].getTitle().equals(title)) {
+    public Book find(String title) {
+        for(int i = 0; i < numberBooks; i++) {
+            if(books[i].getTitle().equals(title)) {
                 return books[i];
             }
         }
         return null;
     }
 
-    public void delete( String title ) {
-        for (int i = 0; i < numberBooks; i++) {
-            if (books[i].getTitle().equals(title)) {
+    public void delete(String title) {
+        for(int i = 0; i < numberBooks; i++) {
+            if(books[i].getTitle().equals(title)) {
                 int length = books[i].getLength();
                 System.out.println("Книга удалена ");
                 numberBooks--;
@@ -58,13 +58,12 @@ public class Bookshelf {
         System.out.println("Книга не найдена");
     }
 
-    public void findMaxLength( int length ) {
-        if (length == maxLength) {
+    public void findMaxLength(int length) {
+        if(length == maxLength) {
             maxLength = 0;
-            for (int j = 0; j < numberBooks; j++) {
-                if (maxLength < books[j].getLength()) {
-                    maxLength = books[j].getLength();
-                    capacity = maxLength;
+            for(int i = 0; i < numberBooks; i++) {
+                if(maxLength < books[i].getLength()) {
+                    maxLength = books[i].getLength();
                 }
             }
         }
