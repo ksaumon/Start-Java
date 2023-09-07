@@ -28,15 +28,15 @@ SELECT *
  WHERE launch <= (SELECT MIN(launch)
                     FROM jaegers);
 
- \echo Роботы, которые уничтожили больше всех kaiju
+\echo Роботы, которые уничтожили больше всех kaiju
 SELECT *
   FROM jaegers
  WHERE kaiju_kill >= (SELECT MAX(kaiju_kill)
                         FROM jaegers);
 
- \echo Средний вес роботов
- SELECT ROUND(AVG(weight), 3) AS avg_weight
-   FROM jaegers;
+\echo Средний вес роботов
+SELECT AVG(weight) AS avg_weight
+  FROM jaegers;
 
 \echo Увеличение количества убитых kaiju на 1 у не уничтоженных роботов
 UPDATE jaegers
