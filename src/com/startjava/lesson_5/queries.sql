@@ -35,7 +35,7 @@ SELECT *
                         FROM jaegers);
 
 \echo Средний вес роботов
-SELECT AVG(weight) AS avg_weight
+SELECT ROUND(AVG(weight)::numeric, 3) AS avg_weight
   FROM jaegers;
 
 \echo Увеличение количества убитых kaiju на 1 у не уничтоженных роботов
