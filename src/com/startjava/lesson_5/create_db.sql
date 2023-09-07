@@ -1,6 +1,6 @@
-DROP TABLE IF EXISTS jaegers;
-
 \c robots;
+
+DROP TABLE IF EXISTS jaegers;
 
 CREATE TABLE jaegers (
     id         SERIAL PRIMARY KEY,
