@@ -1,7 +1,7 @@
 \echo Все роботы
 SELECT *
   FROM jaegers
-  ORDER BY model_name;
+ ORDER BY model_name;
 
 \echo Не уничтоженные работы
 SELECT *
@@ -48,15 +48,15 @@ SELECT ROUND(AVG(weight), 3) AS avg_weight
 UPDATE jaegers
    SET kaiju_kill = kaiju_kill + 1
  WHERE status = 'Active';
+
 SELECT *
   FROM jaegers
  ORDER BY model_name;
 
-
-
 \echo Удаление уничтоженных роботов
 DELETE FROM jaegers
  WHERE status = 'Destroyed';
+
 SELECT *
   FROM jaegers
  ORDER BY model_name;
